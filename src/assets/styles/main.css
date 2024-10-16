@@ -513,6 +513,11 @@ body .home_section .content h1 {
   font-size: 48px;
   color: #0f2133;
 }
+@media screen and (max-width: 576px) {
+  body .home_section .content h1 {
+    font-size: 42px;
+  }
+}
 body .home_section .content h1 span {
   color: #7e98fd;
 }
