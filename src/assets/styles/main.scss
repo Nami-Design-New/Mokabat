@@ -1,0 +1,36 @@
+@import "./config";
+
+body {
+  position: relative;
+  overflow-x: hidden;
+  background: #e5eaff;
+  transition: background 0.3s ease-in-out;
+  font-family: "outfit", sans-serif;
+
+  &.dark_theme {
+    background: #0b1926;
+    .about_section {
+      h6 {
+        color: $white !important;
+      }
+      .about_card {
+        border-color: #1b2037;
+        h2,
+        p {
+          color: $white !important;
+        }
+      }
+    }
+  }
+
+  @import "./header";
+  @import "./home";
+
+  &.ar {
+    direction: rtl;
+    font-family: "baloo" !important;
+    .home_section .content .customBtn i {
+      transform: scale(-1);
+    }
+  }
+}
