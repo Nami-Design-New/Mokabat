@@ -5,7 +5,7 @@ export default function Services() {
     <section className="services_section">
       <div className="container">
         <div className="row align-items-center justify-content-center">
-          <div className="col-lg-12 p-2">
+          <div className="col-lg-12 p-2 mb-5">
             <div className="header">
               <h2>
                 Our Services For Your <span>Tech Driven Future</span>
@@ -17,7 +17,7 @@ export default function Services() {
               </p>
             </div>
           </div>
-          <div className="col-lg-9 col-12 p-2 mt-4">
+          <div className="col-lg-10 col-12 p-2">
             <Accordion defaultActiveKey="0">
               <Accordion.Item eventKey="0">
                 <Accordion.Header>01 &nbsp; &nbsp; Lab</Accordion.Header>

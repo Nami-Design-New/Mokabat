@@ -40,7 +40,7 @@ export default function ParticlesComponent() {
             modes: {
               repulse: {
                 distance: 200,
-                duration: 0.4,
+                duration: 0.1,
               },
             },
           },
@@ -57,7 +57,7 @@ export default function ParticlesComponent() {
                 default: "bounce",
               },
               random: false,
-              speed: 1,
+              speed: 0.2,
               straight: false,
             },
 
@@ -66,7 +66,7 @@ export default function ParticlesComponent() {
                 enable: true,
                 area: 800,
               },
-              value: 60,
+              value: 40,
             },
 
             opacity: {
@@ -78,7 +78,7 @@ export default function ParticlesComponent() {
             },
 
             size: {
-              value: { min: 0.5, max: 1.5 },
+              value: { min: 0.5, max: 1 },
             },
           },
           detectRetina: true,
