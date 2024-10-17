@@ -5,6 +5,7 @@ import Header from "./ui/layout/Header";
 import i18n from "./utils/i18n";
 import ParticlesComponent from "./ui/ParticlesComponent";
 import router from "./router";
+import Footer from "./ui/layout/Footer";
 
 function App() {
   const language = useSelector((state) => state.language.lang);
@@ -51,6 +52,7 @@ function App() {
           })}
         </Routes>
       </main>
+      <Footer />
     </>
   );
 }

@@ -111,18 +111,12 @@ export default function Testimonials() {
                   <p className="des">
                     As a Corporate representative PO collaborating with Jeel on
                     digitizing our relationship management journey (RMWB), my
-                    experience was defined by two key factors:
-                    <br /> <strong>Tailored Solutions:</strong> Jeel
-                    comprehended our division&apos;s unique needs and
-                    collaboratively developed a customized product that aligned
-                    perfectly with our relationship management goals,
-                    contributing significantly to our project&apos;s success.{" "}
-                    <br />
-                    <strong>Empowering Relationship Management:</strong>{" "}
-                    Jeel&apos;s support in digitizing the relationship
-                    management journey empowered our managers by streamlining
-                    workflows, enhancing data accessibility, and enabling better
-                    decision-making and efficient day-to-day operations.
+                    experience was defined by two key factors: Tailored
+                    Solutions: Jeel comprehended our division&apos;s unique
+                    needs and collaboratively developed a customized product
+                    that aligned perfectly with our relationship management
+                    goals, contributing significantly to our project&apos;s
+                    success.
                   </p>
                   <div className="user">
                     <img src="/images/1.jpg" alt="" />
