@@ -59,7 +59,7 @@ export default function LinkedInFeed() {
               <SwiperSlide>
                 <div className="feed">
                   <video
-                    src="/public/images/test.mp4"
+                    src="/images/test.mp4"
                     autoPlay
                     loop
                     muted

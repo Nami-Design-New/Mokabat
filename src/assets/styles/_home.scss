@@ -51,6 +51,7 @@
     height: 100%;
     position: relative;
     min-height: 600px;
+    overflow-x: hidden !important;
 
     @media screen and (max-width: 576px) {
       min-height: 400px;
