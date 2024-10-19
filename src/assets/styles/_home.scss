@@ -29,9 +29,9 @@
   min-height: 100dvh;
   position: relative;
   padding-top: 100px;
-  overflow-x: hidden !important;
 
   @media screen and (max-width: 576px) {
+    overflow-x: hidden !important;
     padding-top: 140px;
   }
 
