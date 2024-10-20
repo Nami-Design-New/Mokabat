@@ -3,7 +3,7 @@
 body {
   position: relative;
   overflow-x: hidden;
-  background: #e5eaff;
+  background: #d8ddf4;
   transition: background 0.3s ease-in-out;
   font-family: "outfit", sans-serif;
 
@@ -27,9 +27,103 @@ body {
     }
   }
 
+  .sectionHeader {
+    width: 100%;
+    height: 45vh;
+    padding: 3rem 0;
+    background: #050913;
+    background-image: url("/images/bg_5.jpg");
+    background-size: cover;
+    background-position: center bottom;
+    background-repeat: no-repeat;
+    .page {
+      flex-direction: column;
+      gap: 16px;
+      height: 100%;
+      display: flex;
+      justify-content: flex-end;
+      .links {
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        a {
+          color: $white;
+          &:last-child {
+            color: #a0a0a0;
+            pointer-events: none;
+          }
+        }
+        span {
+          color: $white;
+          font-size: 16px;
+        }
+      }
+      h2 {
+        font-size: 28px;
+        color: $white;
+      }
+    }
+  }
+
   @import "./header";
   @import "./home";
+  @import "./about";
   @import "./footer";
+
+  &.not_index_page {
+    header {
+      &.not_active {
+        nav .nav_links .nav_link a {
+          color: $white;
+        }
+        nav .actions .dropdown-toggle {
+          border-color: $white;
+          i {
+            color: $white;
+          }
+        }
+        nav .menu_btn {
+          border-color: $white;
+          color: $white;
+          &::after {
+            background: $white;
+          }
+          &:hover {
+            color: $main;
+          }
+        }
+        .customBtn {
+          color: $white;
+          border-color: $white;
+          &:hover {
+            color: $main;
+            &::after {
+              background: $white;
+            }
+          }
+        }
+      }
+      nav .nav_links.active {
+        .nav_link a {
+          color: $main !important;
+          &:hover,
+          &.active {
+            color: $second !important;
+          }
+        }
+        .menu_btn {
+          border-color: $main;
+          color: $main;
+          &::after {
+            background: $main;
+          }
+          &:hover {
+            color: $white;
+          }
+        }
+      }
+    }
+  }
 
   &.ar {
     direction: rtl;

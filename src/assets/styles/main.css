@@ -223,7 +223,7 @@ input[type=number]::-webkit-inner-spin-button {
 body {
   position: relative;
   overflow-x: hidden;
-  background: #e5eaff;
+  background: #d8ddf4;
   transition: background 0.3s ease-in-out;
   font-family: "outfit", sans-serif;
 }
@@ -242,6 +242,43 @@ body.dark_theme .about_section .about_card {
 body.dark_theme .about_section .about_card h2,
 body.dark_theme .about_section .about_card p {
   color: #fff !important;
+}
+body .sectionHeader {
+  width: 100%;
+  height: 45vh;
+  padding: 3rem 0;
+  background: #050913;
+  background-image: url("/images/bg_5.jpg");
+  background-size: cover;
+  background-position: center bottom;
+  background-repeat: no-repeat;
+}
+body .sectionHeader .page {
+  flex-direction: column;
+  gap: 16px;
+  height: 100%;
+  display: flex;
+  justify-content: flex-end;
+}
+body .sectionHeader .page .links {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+body .sectionHeader .page .links a {
+  color: #fff;
+}
+body .sectionHeader .page .links a:last-child {
+  color: #a0a0a0;
+  pointer-events: none;
+}
+body .sectionHeader .page .links span {
+  color: #fff;
+  font-size: 16px;
+}
+body .sectionHeader .page h2 {
+  font-size: 28px;
+  color: #fff;
 }
 body header {
   width: 100%;
@@ -282,7 +319,7 @@ body header nav .nav_links .nav_link a {
   transition: 0.3s ease-in-out;
 }
 body header nav .nav_links .nav_link a.active, body header nav .nav_links .nav_link a:hover {
-  color: #7e98fd;
+  color: #7e98fd !important;
 }
 body header nav .nav_links .nav_link.hide_lg {
   display: none;
@@ -1081,6 +1118,43 @@ body .aboutImage img {
     border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
   }
 }
+body .about_page {
+  padding: 100px 0 60px;
+}
+body .about_page .content {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+body .about_page .content h1 {
+  color: #b4eeff;
+  background-image: -webkit-linear-gradient(171deg, rgb(37, 0, 93) 0%, rgb(102, 0, 255) 61%, rgb(255, 184, 91) 100%);
+  margin-bottom: 32px;
+  background-size: 200% 200%;
+  background-clip: text;
+  -webkit-background-clip: text;
+  text-fill-color: transparent;
+  -webkit-text-fill-color: transparent;
+  animation: 6s infinite alternate gradientAnimation;
+}
+body .about_page .content p {
+  color: #fff;
+  line-height: 1.6;
+  text-align: center;
+}
+@keyframes gradientAnimation {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
 body footer {
   padding-top: 60px;
   background: #e5eaff;
@@ -1092,6 +1166,7 @@ body footer {
 }
 body footer .news_letter {
   padding: 60px 0;
+  border-bottom: 1px solid #2a2e36;
 }
 body footer .news_letter p {
   color: #fff;
@@ -1242,6 +1317,51 @@ body footer .footer_link {
 }
 body footer .footer_link:hover {
   color: #7e98fd;
+}
+body.not_index_page header.not_active nav .nav_links .nav_link a {
+  color: #fff;
+}
+body.not_index_page header.not_active nav .actions .dropdown-toggle {
+  border-color: #fff;
+}
+body.not_index_page header.not_active nav .actions .dropdown-toggle i {
+  color: #fff;
+}
+body.not_index_page header.not_active nav .menu_btn {
+  border-color: #fff;
+  color: #fff;
+}
+body.not_index_page header.not_active nav .menu_btn::after {
+  background: #fff;
+}
+body.not_index_page header.not_active nav .menu_btn:hover {
+  color: #0f2133;
+}
+body.not_index_page header.not_active .customBtn {
+  color: #fff;
+  border-color: #fff;
+}
+body.not_index_page header.not_active .customBtn:hover {
+  color: #0f2133;
+}
+body.not_index_page header.not_active .customBtn:hover::after {
+  background: #fff;
+}
+body.not_index_page header nav .nav_links.active .nav_link a {
+  color: #0f2133 !important;
+}
+body.not_index_page header nav .nav_links.active .nav_link a:hover, body.not_index_page header nav .nav_links.active .nav_link a.active {
+  color: #7e98fd !important;
+}
+body.not_index_page header nav .nav_links.active .menu_btn {
+  border-color: #0f2133;
+  color: #0f2133;
+}
+body.not_index_page header nav .nav_links.active .menu_btn::after {
+  background: #0f2133;
+}
+body.not_index_page header nav .nav_links.active .menu_btn:hover {
+  color: #fff;
 }
 body.ar {
   direction: rtl;

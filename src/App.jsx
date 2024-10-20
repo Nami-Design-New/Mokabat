@@ -1,6 +1,6 @@
 import { useEffect } from "react";
 import { useSelector } from "react-redux";
-import { Route, Routes } from "react-router-dom";
+import { Route, Routes, useLocation } from "react-router-dom";
 import Header from "./ui/layout/Header";
 import i18n from "./utils/i18n";
 import ParticlesComponent from "./ui/ParticlesComponent";
@@ -8,7 +8,9 @@ import router from "./router";
 import Footer from "./ui/layout/Footer";
 
 function App() {
+  const body = document.querySelector("body");
   const language = useSelector((state) => state.language.lang);
+  const location = useLocation();
 
   useEffect(() => {
     sessionStorage.setItem("lang", language);
@@ -18,9 +20,11 @@ function App() {
   }, [language]);
 
   useEffect(() => {
-    const handleScroll = () => {
-      const body = document.querySelector("body");
+    window.scrollTo(0, 0);
+  }, [location]);
 
+  useEffect(() => {
+    const handleScroll = () => {
       if (window.scrollY > 600) {
         body.classList.add("dark_theme");
       } else {
@@ -28,12 +32,19 @@ function App() {
       }
     };
 
-    window.addEventListener("scroll", handleScroll);
+    if (location.pathname === "/") {
+      body.classList.remove("dark_theme");
+      body.classList.remove("not_index_page");
+      window.addEventListener("scroll", handleScroll);
+    } else {
+      body.classList.add("not_index_page");
+      body.classList.add("dark_theme");
+    }
 
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [body.classList, location.pathname]);
 
   return (
     <>

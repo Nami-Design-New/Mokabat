@@ -30,7 +30,7 @@ header {
           transition: $transition;
           &.active,
           &:hover {
-            color: $second;
+            color: $second !important;
           }
         }
         &.hide_lg {
