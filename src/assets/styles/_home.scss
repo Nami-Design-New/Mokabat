@@ -525,3 +525,90 @@
     }
   }
 }
+
+.aboutImage {
+  width: 100%;
+  position: relative;
+  @include centerFlex();
+  padding: 24px;
+  &:before {
+    position: absolute;
+    content: "";
+    width: 90%;
+    height: 90%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: $second;
+    z-index: -1;
+    animation: border-transform-default-two 10s linear infinite alternate
+      forwards;
+  }
+
+  img {
+    animation: border-transform-default 10s linear infinite alternate forwards;
+    width: 85%;
+  }
+}
+
+@keyframes border-transform-default {
+  0%,
+  to {
+    border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
+  }
+
+  14% {
+    border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
+  }
+
+  28% {
+    border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
+  }
+
+  42% {
+    border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
+  }
+
+  56% {
+    border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
+  }
+
+  70% {
+    border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
+  }
+
+  84% {
+    border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
+  }
+}
+
+@keyframes border-transform-default-two {
+  0%,
+  to {
+    border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
+  }
+
+  14% {
+    border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
+  }
+
+  28% {
+    border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
+  }
+
+  42% {
+    border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
+  }
+
+  56% {
+    border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
+  }
+
+  70% {
+    border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
+  }
+
+  84% {
+    border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
+  }
+}

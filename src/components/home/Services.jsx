@@ -17,7 +17,14 @@ export default function Services() {
               </p>
             </div>
           </div>
-          <div className="col-lg-10 col-12 p-2">
+
+          <div className="col-lg-5 col-12 p-2">
+            <div className="aboutImage">
+              <img src="/images/border-animation.jpg" alt="" />
+            </div>
+          </div>
+
+          <div className="col-lg-7 col-12 p-2">
             <Accordion defaultActiveKey="0">
               <Accordion.Item eventKey="0">
                 <Accordion.Header>01 &nbsp; &nbsp; Lab</Accordion.Header>
