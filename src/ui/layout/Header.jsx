@@ -12,6 +12,7 @@ export default function Header() {
   const toggleRef = useRef(null);
   const dispatch = useDispatch();
   const { t } = useTranslation();
+  const [closing, setClosing] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
 
   useEffect(() => {
@@ -57,6 +58,14 @@ export default function Header() {
     }
   };
 
+  const handleCloseMenu = () => {
+    setClosing(true);
+    setTimeout(() => {
+      setShowMenu(false);
+      setClosing(false);
+    }, 300);
+  };
+
   return (
     <header ref={header}>
       <nav className="container">
@@ -64,7 +73,17 @@ export default function Header() {
           <img src="/images/logo.svg" alt="" />
         </Link>
 
-        <ul className={`nav_links ${showMenu ? "active" : ""}`} ref={menuRef}>
+        <ul
+          className={`nav_links ${showMenu ? "active" : ""} ${
+            closing ? "closing" : ""
+          }`}
+          ref={menuRef}
+        >
+          <li className="nav_link hide_lg">
+            <NavLink to="/">
+              <img src="/images/logo.svg" alt="logo" />
+            </NavLink>
+          </li>
           <li className="nav_link">
             <NavLink to="/">{t("home")}</NavLink>
           </li>
@@ -86,6 +105,9 @@ export default function Header() {
           <li className="nav_link">
             <NavLink to="/about">{t("contact")}</NavLink>
           </li>
+          <button className="menu_btn" onClick={handleCloseMenu}>
+            <i className="fa-regular fa-x"></i>
+          </button>
         </ul>
 
         <div className="actions">
