@@ -1130,6 +1130,7 @@ body .about_page .content {
 }
 body .about_page .content h1 {
   color: #b4eeff;
+  font-size: 52px;
   background-image: -webkit-linear-gradient(171deg, rgb(37, 0, 93) 0%, rgb(102, 0, 255) 61%, rgb(255, 184, 91) 100%);
   margin-bottom: 32px;
   background-size: 200% 200%;
