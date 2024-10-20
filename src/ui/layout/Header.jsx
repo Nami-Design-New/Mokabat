@@ -5,6 +5,7 @@ import { setLanguage } from "../../redux/slices/language";
 import { useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
+import AuthModal from "../../components/auth/AuthModal";
 
 export default function Header() {
   const header = useRef(null);
@@ -14,6 +15,8 @@ export default function Header() {
   const { t } = useTranslation();
   const [closing, setClosing] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  const [showAuthModal, setShowAuthModal] = useState(false);
+  const [authType, setAuthType] = useState("login");
 
   useEffect(() => {
     const handleScroll = () => {
@@ -111,7 +114,15 @@ export default function Header() {
         </ul>
 
         <div className="actions">
-          <Link to="/" className="customBtn">
+          <Link
+            to="/"
+            className="customBtn"
+            onClick={(e) => {
+              e.preventDefault();
+              setShowAuthModal(true);
+              setAuthType("join");
+            }}
+          >
             {t("joinMokabat")}
           </Link>
 
@@ -142,6 +153,11 @@ export default function Header() {
           </button>
         </div>
       </nav>
+      <AuthModal
+        type={authType}
+        show={showAuthModal}
+        setShow={setShowAuthModal}
+      />
     </header>
   );
 }

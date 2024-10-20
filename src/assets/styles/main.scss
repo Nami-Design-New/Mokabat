@@ -30,12 +30,25 @@ body {
   @import "./header";
   @import "./home";
   @import "./footer";
+  @import "./form-ui";
+  @import "./auth";
 
   &.ar {
     direction: rtl;
     font-family: "baloo" !important;
     .home_section .content .customBtn i {
       transform: scale(-1);
+    }
+
+    .closeModal {
+      left: 16px;
+      right: unset;
+    }
+
+    input,
+    textarea,
+    select {
+      direction: rtl;
     }
   }
 }

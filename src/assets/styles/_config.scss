@@ -85,6 +85,8 @@ input[type="number"] {
   -moz-appearance: textfield;
 }
 $main: #0f2133;
+$main10: #0f21331a;
+$dark: #0d0d0d;
 $second: #7e98fd;
 $border: #dddddd;
 $inputBg: #f8f8f8;
@@ -95,6 +97,7 @@ $lightGray: #eeeeee;
 $text: #666b88;
 $white: #fff;
 $inputStroke: #f2f2f2;
+$starColor: #ffd500;
 $success: #34b53a;
 $successLight: #34b53acc;
 $danger: #ff3a29;
@@ -258,4 +261,18 @@ $shadow: 0px 2px 8px #0000001a;
 
 .row {
   margin: 0;
+}
+
+.closeModal {
+  position: absolute;
+  top: 16px;
+  right: 16px;
+  width: 36px;
+  height: 36px;
+  border-radius: 50%;
+  @include centerFlex();
+  box-shadow: $shadow;
+  i {
+    color: $dark;
+  }
 }
