@@ -294,7 +294,18 @@ function Join({ setShow, setFormType }) {
           </label>
         </div>
       </div>
-      <SubmitButton name={t("auth.join")} loading={loading} />
+      <div className="d-flex justify-content-center align-items-center mt-4">
+        <SubmitButton
+          name={t("auth.join")}
+          loading={loading}
+          style={{
+            width: "unset !important",
+            paddingRight: "16px",
+            paddingLeft: "16px",
+            minWidth: "180px",
+          }}
+        />
+      </div>
       {/* <span className="noAccount">
         {t("auth.haveAccount")}{" "}
         <span onClick={() => setFormType("login")}>{t("auth.login")}</span>
