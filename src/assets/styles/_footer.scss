@@ -50,10 +50,50 @@ footer {
       }
     }
   }
+  .logo {
+    display: flex;
+    gap: 12px;
+    span {
+      width: 1px;
+      display: block;
+      background: $white;
+    }
+    img {
+      height: 60px;
+      object-fit: contain;
+    }
+  }
+  .social_media {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    margin-top: 42px;
+    a {
+      width: 40px;
+      height: 40px;
+      @include centerFlex();
+      border: 1px solid #2a2e36;
+      color: $white;
+      font-size: 14px;
+      border-radius: 50%;
+      transition: $transition;
+      &:hover {
+        background: $second;
+        border-color: $second;
+        color: $white;
+        transform: translateY(-4px);
+      }
+    }
+  }
   .copy_rights {
+    margin-top: 32px;
     padding: 16px 0;
     border-top: 1px solid #2a2e36;
     @include space-between();
+    @media screen and (max-width: 576px) {
+      flex-direction: column-reverse;
+      gap: 12px;
+    }
     h6 {
       font-size: 16x;
       color: $white;
@@ -66,10 +106,47 @@ footer {
         color: $second;
       }
     }
-    .links{
+    .links {
       display: flex;
       align-items: center;
-      gap: 12px;
+      gap: 16px;
+    }
+  }
+  .footer_title {
+    color: $white;
+    margin-bottom: 32px;
+    font-size: 28px;
+    position: relative;
+    &::after {
+      content: "";
+      height: 1px;
+      width: 100px;
+      background: radial-gradient(
+        90% 100% at 0% 50%,
+        $second 0%,
+        rgba(238, 238, 238, 0) 100%
+      );
+      position: absolute;
+      bottom: -12px;
+      left: 0;
+    }
+  }
+  .footer_links {
+    display: flex;
+    flex-wrap: wrap;
+    .footer_link {
+      min-width: 170px;
+    }
+  }
+  .footer_link {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+    color: $white;
+    transition: $transition;
+    margin-bottom: 16px;
+    &:hover {
+      color: $second;
     }
   }
 }

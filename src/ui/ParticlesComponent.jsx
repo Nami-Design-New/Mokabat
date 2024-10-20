@@ -66,7 +66,7 @@ export default function ParticlesComponent() {
                 enable: true,
                 area: 800,
               },
-              value: 40,
+              value: 50,
             },
 
             opacity: {

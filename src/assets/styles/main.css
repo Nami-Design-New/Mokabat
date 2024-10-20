@@ -1066,12 +1066,57 @@ body footer .news_letter form button:hover {
   background: #7e98fd;
   color: #fff;
 }
+body footer .logo {
+  display: flex;
+  gap: 12px;
+}
+body footer .logo span {
+  width: 1px;
+  display: block;
+  background: #fff;
+}
+body footer .logo img {
+  height: 60px;
+  -o-object-fit: contain;
+     object-fit: contain;
+}
+body footer .social_media {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-top: 42px;
+}
+body footer .social_media a {
+  width: 40px;
+  height: 40px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: 1px solid #2a2e36;
+  color: #fff;
+  font-size: 14px;
+  border-radius: 50%;
+  transition: 0.3s ease-in-out;
+}
+body footer .social_media a:hover {
+  background: #7e98fd;
+  border-color: #7e98fd;
+  color: #fff;
+  transform: translateY(-4px);
+}
 body footer .copy_rights {
+  margin-top: 32px;
   padding: 16px 0;
   border-top: 1px solid #2a2e36;
   display: flex;
   align-items: center;
   justify-content: space-between;
+}
+@media screen and (max-width: 576px) {
+  body footer .copy_rights {
+    flex-direction: column-reverse;
+    gap: 12px;
+  }
 }
 body footer .copy_rights h6 {
   font-size: 16x;
@@ -1088,7 +1133,40 @@ body footer .copy_rights a:hover {
 body footer .copy_rights .links {
   display: flex;
   align-items: center;
+  gap: 16px;
+}
+body footer .footer_title {
+  color: #fff;
+  margin-bottom: 32px;
+  font-size: 28px;
+  position: relative;
+}
+body footer .footer_title::after {
+  content: "";
+  height: 1px;
+  width: 100px;
+  background: radial-gradient(90% 100% at 0% 50%, #7e98fd 0%, rgba(238, 238, 238, 0) 100%);
+  position: absolute;
+  bottom: -12px;
+  left: 0;
+}
+body footer .footer_links {
+  display: flex;
+  flex-wrap: wrap;
+}
+body footer .footer_links .footer_link {
+  min-width: 170px;
+}
+body footer .footer_link {
+  display: flex;
+  align-items: center;
   gap: 12px;
+  color: #fff;
+  transition: 0.3s ease-in-out;
+  margin-bottom: 16px;
+}
+body footer .footer_link:hover {
+  color: #7e98fd;
 }
 body.ar {
   direction: rtl;
