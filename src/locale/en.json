@@ -17,7 +17,9 @@
     "city": "City",
     "email": "Email",
     "phone": "Phone Number",
-    "uploadDocument": "Upload Document"
+    "uploadDocument": "Upload Document",
+    "languages": "Languages",
+    "howDoYouKnowAboutUs": "How do you know about us?"
   },
   "writeHere": "Write Here",
   "home": "Home",

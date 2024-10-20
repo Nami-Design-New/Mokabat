@@ -17,7 +17,9 @@
     "city": "المدينة",
     "email": "البريد الالكتروني",
     "phone": "رقم الهاتف",
-    "uploadDocument": "تحميل المستند"
+    "uploadDocument": "تحميل المستند",
+    "languages": "اللغات",
+    "howDoYouKnowAboutUs": "كيف عرفت بنا؟"
   },
   "writeHere": "اكتب هنا",
   "home": "الرئيسية",

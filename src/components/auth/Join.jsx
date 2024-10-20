@@ -5,15 +5,23 @@ import InputField from "../../ui/form-elements/InputField";
 import { handleChange } from "../../utils/helpers";
 import SelectField from "../../ui/form-elements/SelectField";
 import PhoneInput from "../../ui/form-elements/PhoneInput";
+// import MultiSelect from "../../ui/form-elements/MultiSelect";
 
 const countries = [
   { name: "Egypt", value: "eg" },
   { name: "Saudi Arabia", value: "sa" },
 ];
 
+// const languages = [
+//   { name: "English", value: "en" },
+//   { name: "Arabic", value: "ar" },
+// ];
+
 function Join({ setShow, setFormType }) {
   const { t } = useTranslation();
   const [loading, setLoading] = useState(false);
+  // const [languagesSelectedOptions, setLanguagesSelectedOptions] = useState([]);
+
   const [formData, setFormData] = useState({
     firstname: "",
     lastname: "",
@@ -26,6 +34,7 @@ function Join({ setShow, setFormType }) {
     country_code: "",
     phone: "",
     file: null,
+    howKnowUs: "",
   });
 
   const handleSubmit = async (e) => {
@@ -46,12 +55,16 @@ function Join({ setShow, setFormType }) {
         country_code: "",
         phone: "",
         file: null,
+        languages: [],
+        howKnowUs: "",
       });
     } finally {
       setFormType("join");
       setLoading(false);
     }
   };
+
+  console.log(formData?.gender);
 
   const handleChangeUserName = (e) => {
     const { value } = e.target;
@@ -65,6 +78,17 @@ function Join({ setShow, setFormType }) {
     }
   };
 
+  // const handleSelectLanguages = (selectedItems) => {
+  //   setLanguagesSelectedOptions(selectedItems);
+  //   const selectedValues = selectedItems
+  //     ? selectedItems?.map((option) => option.value)
+  //     : [];
+  //   setFormData({
+  //     ...formData,
+  //     languages: selectedValues,
+  //   });
+  // };
+
   return (
     <form className="form" onSubmit={handleSubmit}>
       <div className="form-header">
@@ -74,7 +98,7 @@ function Join({ setShow, setFormType }) {
         <h2 className="title">{t("auth.joinTitle")}</h2>
         <p className="subtitle">{t("auth.joinSubtitle")}</p>
       </div>
-      {/* ame */}
+      {/* name */}
       <div className="form_group">
         <InputField
           required
@@ -118,7 +142,7 @@ function Join({ setShow, setFormType }) {
                 name="gender"
                 id="male"
                 value="male"
-                checked={formData?.type === "male"}
+                checked={formData?.gender === "male"}
                 onChange={(e) => handleChange(e, setFormData)}
               />
               <span>{t("auth.male")}</span>
@@ -129,8 +153,13 @@ function Join({ setShow, setFormType }) {
                 name="gender"
                 id="female"
                 value="female"
-                checked={formData?.type === "female"}
-                onChange={(e) => handleChange(e, setFormData)}
+                checked={formData?.gender === "female"}
+                onChange={(e) => {
+                  setFormData({
+                    ...formData,
+                    gender: e.target.value,
+                  });
+                }}
               />
               <span>{t("auth.female")}</span>
             </label>
@@ -192,6 +221,29 @@ function Join({ setShow, setFormType }) {
           }}
         />
       </div>
+      {/* languages & how do you know about us */}
+      {/* <div className="form_group">
+        <MultiSelect
+          label={t("auth.languages")}
+          id="languages"
+          name="languages"
+          selectedOptions={languagesSelectedOptions}
+          handleChange={handleSelectLanguages}
+          options={languages?.map((skill) => ({
+            label: skill?.name,
+            value: skill?.id,
+          }))}
+        />
+        <InputField
+          required
+          label={t("auth.howDoYouKnowAboutUs")}
+          placeholder={t("writeHere")}
+          id="howKnowUs"
+          name="howKnowUs"
+          value={formData.howKnowUs}
+          onChange={(e) => handleChangeUserName(e, setFormData)}
+        />
+      </div> */}
       {/* document */}
       <div className="form_group">
         <div className="input-field">
