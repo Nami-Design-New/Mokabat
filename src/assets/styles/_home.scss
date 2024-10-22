@@ -226,34 +226,28 @@
       border-radius: 16px;
       overflow: hidden;
       background: rgb(255 255 255 / 4%);
-      backdrop-filter: blur(6px);
       border: 1px solid #ffffff21;
+      backdrop-filter: blur(6px);
+      transition: $transition;
+      &.active {
+        background: $second;
+      }
       .accordion-button {
         box-shadow: none !important;
         background: transparent !important;
         color: $white !important;
         &::after {
-          background: #fff;
-          height: 16px;
-          width: 1px;
-          right: 28px;
-          position: absolute;
-          transition: $transition;
-        }
-        &::before {
-          content: "";
-          background: #fff;
-          height: 1px;
-          width: 16px;
-          margin-left: auto;
-          flex-shrink: 0;
-          right: 20px;
-          position: absolute;
+          content: "\f00d";
+          font-family: "Font Awesome 6 Pro";
+          background: none;
+          @include centerFlex();
+          font-size: 16px;
+          font-weight: 400;
+          transform: rotate(135deg);
+          transform-origin: center;
         }
         &:not(.collapsed)::after {
-          width: 16px !important;
-          height: 1px !important;
-          right: 20px !important;
+          transform: rotate(0deg);
         }
       }
       .accordion-body {

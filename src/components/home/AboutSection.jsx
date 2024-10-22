@@ -14,7 +14,7 @@ export default function AboutSection() {
           </div>
           <div className="col-12 p-2">
             <Swiper
-              speed={4000}
+              speed={8000}
               loop={true}
               slidesPerView={3}
               spaceBetween={24}

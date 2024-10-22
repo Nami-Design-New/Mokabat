@@ -16,15 +16,10 @@ export default function ParticlesComponent() {
     initParticles();
   }, []);
 
-  const particlesLoaded = (container) => {
-    console.log(container);
-  };
-
   return (
     init && (
       <Particles
         id="tsparticles"
-        particlesLoaded={particlesLoaded}
         options={{
           fpsLimit: 120,
 
@@ -78,7 +73,7 @@ export default function ParticlesComponent() {
             },
 
             size: {
-              value: { min: 0.5, max: 1 },
+              value: { min: 0.5, max: 1.5 },
             },
           },
           detectRetina: true,

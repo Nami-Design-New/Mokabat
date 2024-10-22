@@ -1,4 +1,6 @@
+import OurTeam from "../components/about/OurTeam";
 import SectionHeader from "../ui/layout/SectionHeader";
+import WhyUs from "./../components/about/WhyUs";
 
 export default function About() {
   return (
@@ -24,6 +26,8 @@ export default function About() {
           </div>
         </div>
       </section>
+      <WhyUs />
+      <OurTeam />
     </>
   );
 }
