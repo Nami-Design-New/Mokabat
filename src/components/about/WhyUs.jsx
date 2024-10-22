@@ -20,8 +20,8 @@ export default function WhyUs() {
             <div className="lazyImg">
               <div className="lazyDiv">
                 <div className="lazy">
-                  <SimpleParallax>
-                    <img src="/images/border-animation.jpg" alt="our_aim" />
+                  <SimpleParallax speed={0.5} scale={1.2}>
+                    <img src="/images/about1.jpg" alt="our_aim" />
                   </SimpleParallax>
                 </div>
               </div>
