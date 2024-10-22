@@ -92,11 +92,12 @@ export default function Footer() {
               target="_blank"
               rel="noreferrer"
               className="footer_link"
-              to="https://www.google.com/maps/search/?api=1&query=46.631772338348333%2C24.693552260382027&query_place_id=ChIJZ-xr9s0dLz4RmrQJvyixJZU"
+              to="https://maps.app.goo.gl/gNd6HKnUq1K8Jp1U6"
             >
               <i className="fas fa-map-marker-alt"></i>{" "}
               <span>
-                Jeel Digital Innovation Center at Laysen Valley Building #15
+                Al-Amin Abdullah Al-Ali Al-Naeem Street, Al-Malaz, Riyadh 12836,
+                Kingdom of Saudi Arabia
               </span>
             </Link>
             <Link to="mailto:info@mokabat.com" className="footer_link">

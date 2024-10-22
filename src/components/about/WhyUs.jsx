@@ -80,8 +80,10 @@ export default function WhyUs() {
               </div>
             </div>
           </div>
+        </div>
 
-          <div className="col-lg-6 col-12 p-2">
+        <div className="row">
+          <div className="col-lg-6 col-12 p-2 order-lg-0 order-1">
             <div className="info">
               <h2 className="aboutTitle">
                 Our <span>Vision</span>
@@ -110,7 +112,7 @@ export default function WhyUs() {
               </div>
             </div>
           </div>
-          <div className="col-lg-6 col-12 p-2">
+          <div className="col-lg-6 col-12 p-2 order-lg-1 order-0">
             <div className="lazyImg">
               <div className="lazyDiv">
                 <div className="lazy">
@@ -121,7 +123,9 @@ export default function WhyUs() {
               </div>
             </div>
           </div>
+        </div>
 
+        <div className="row">
           <div className="col-lg-6 col-12 p-2">
             <div className="lazyImg">
               <div className="lazyDiv">

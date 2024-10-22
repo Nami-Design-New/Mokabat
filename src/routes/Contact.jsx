@@ -33,11 +33,11 @@ export default function Contact() {
                   <div className="block">
                     <h6>Our Location</h6>
                     <Link
-                      to="https://maps.app.goo.gl/ashrkC5XvpoJCjYU6"
+                      to="https://maps.app.goo.gl/gNd6HKnUq1K8Jp1U6"
                       target="_blank"
                     >
-                      Jeel Digital Innovation Center at Laysen Valley Building
-                      #15
+                      Al-Amin Abdullah Al-Ali Al-Naeem Street, Al-Malaz, Riyadh
+                      12836, Kingdom of Saudi Arabia
                     </Link>
                   </div>
                   <div className="block">
@@ -139,7 +139,7 @@ export default function Contact() {
         <div className="container">
           <div className="col-12 p-2">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3624.970150930544!2d46.6317728!3d24.6935528!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f1dcdf66bec67%3A0x9525b128bf09b49a!2z2KzZitmE!5e0!3m2!1sar!2seg!4v1729598132614!5m2!1sar!2seg"
+              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46051.26341000033!2d46.76029332397902!3d24.64747086994118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f043b45575437%3A0xa2bebdcec14359bd!2z2YXZhtiq2LLZhyDYp9mE2YXZhNmDINi52KjYr9in2YTZhNmH!5e0!3m2!1sar!2seg!4v1729602376391!5m2!1sar!2seg"
               allowfullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"
