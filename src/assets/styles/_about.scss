@@ -46,6 +46,74 @@
 
 .whyus_section {
   padding: 60px 0;
+  .statistic {
+    padding: 24px 0;
+    display: flex;
+    gap: 12px;
+    align-items: center;
+    justify-content: flex-end;
+    .counterUp {
+      font-weight: bold;
+      font-size: 100px;
+      background: #a7a9ac10;
+      background-size: contain;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      -webkit-text-stroke: 1px #a7a9ac;
+      font-family: "Manrope Alt", Sans-serif;
+      @media (max-width: 768px) {
+        font-size: 70px;
+      }
+    }
+    h6 {
+      font-weight: bold;
+      text-transform: uppercase;
+      writing-mode: vertical-rl;
+      max-height: 100px;
+      color: $second;
+      text-align: center;
+    }
+  }
+  .info {
+    padding: 48px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    gap: 16px;
+    @media (max-width: 768px) {
+      padding: 48px 16px;
+    }
+    h2 {
+      color: $white;
+      font-size: 32px;
+      span {
+        color: $second;
+      }
+    }
+    .des {
+      color: $white;
+    }
+    ul {
+      display: flex;
+      flex-direction: column;
+      gap: 18px;
+      margin-top: 16px;
+      li {
+        position: relative;
+        display: flex;
+        align-items: center;
+        gap: 12px;
+        img {
+          height: 32px;
+        }
+        h6 {
+          margin: 0;
+          color: $second;
+        }
+      }
+    }
+  }
   .lazyImg {
     position: relative;
     height: 100%;
