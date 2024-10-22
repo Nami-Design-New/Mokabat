@@ -48,13 +48,13 @@ export default function Testimonials() {
                   <p className="des">
                     Efigence&apos;s mission is to transform the world through
                     exceptional customer service via innovative products and
-                    services. Thanks to our partnership with Jeel, we&apos;ve
+                    services. Thanks to our partnership with mokabat, we&apos;ve
                     delivered significant value in the Kingdom and across the
-                    Middle East. Jeel&apos;s efficient and creative approach
+                    Middle East. mokabat&apos;s efficient and creative approach
                     underpins our success and customer satisfaction. Their
                     diverse expertise ensures tailored service for every
                     customer, overcoming challenges with a shared commitment to
-                    results. Jeel is our trusted partner, delivering the
+                    results. mokabat is our trusted partner, delivering the
                     competitive edge our customers deserve.
                   </p>
                   <div className="user">
@@ -77,9 +77,9 @@ export default function Testimonials() {
                     <i className="fa-solid fa-star"></i>
                   </div>
                   <p className="des">
-                    I&apos;m writing to express deep gratitude to Jeel for their
+                    I&apos;m writing to express deep gratitude to mokabat for their
                     exceptional support during Riyad Bank&apos;s open banking
-                    implementation. Over the past year, Jeel consistently
+                    implementation. Over the past year, mokabat consistently
                     exceeded expectations. They are highly responsive to
                     business needs, possess extensive API industry expertise,
                     and ensure timely project completion. mokabats&apos;s
@@ -109,10 +109,10 @@ export default function Testimonials() {
                     <i className="fa-solid fa-star"></i>
                   </div>
                   <p className="des">
-                    As a Corporate representative PO collaborating with Jeel on
+                    As a Corporate representative PO collaborating with mokabat on
                     digitizing our relationship management journey (RMWB), my
                     experience was defined by two key factors: Tailored
-                    Solutions: Jeel comprehended our division&apos;s unique
+                    Solutions: mokabat comprehended our division&apos;s unique
                     needs and collaboratively developed a customized product
                     that aligned perfectly with our relationship management
                     goals, contributing significantly to our project&apos;s
@@ -138,15 +138,15 @@ export default function Testimonials() {
                     <i className="fa-solid fa-star"></i>
                   </div>
                   <p className="des">
-                    Partnering with Jeel has been a transformative journey
+                    Partnering with mokabat has been a transformative journey
                     marked by their innovative solutions, dedication to
                     excellence, and open communication. Their integration of
                     cutting-edge tech and embrace of unconventional ideas led to
-                    remarkable outcomes. Jeel&apos;s commitment to quality and
+                    remarkable outcomes. mokabat&apos;s commitment to quality and
                     problem-solving, along with their understanding of our
                     unique needs, ensured efficient project delivery. If you
                     seek a partner that challenges the status quo and turns
-                    ideas into reality, I wholeheartedly recommend Jeel for
+                    ideas into reality, I wholeheartedly recommend mokabat for
                     their innovative spirit and dedication to excellence.
                   </p>
                   <div className="user">

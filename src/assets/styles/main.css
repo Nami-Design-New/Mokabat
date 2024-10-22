@@ -1337,6 +1337,16 @@ body .about_page .content p {
   line-height: 1.6;
   text-align: center;
 }
+body .about_page .content .download_assets {
+  margin-top: 12px;
+  padding: 12px 32px;
+  border-radius: 60px;
+  color: #fff;
+  border: 1px solid #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
 @keyframes gradientAnimation {
   0% {
     background-position: 0% 50%;
@@ -1524,9 +1534,6 @@ body .our_team_section .team-member {
   border-radius: 12px;
   transition: 0.3s ease-in-out;
 }
-body .our_team_section .team-member:hover .img .social-media {
-  height: 200px;
-}
 body .our_team_section .team-member .img {
   width: 100%;
   border-radius: 4px;
@@ -1538,33 +1545,6 @@ body .our_team_section .team-member .img img {
   aspect-ratio: 1/1;
   -o-object-fit: contain;
      object-fit: contain;
-}
-body .our_team_section .team-member .img .social-media {
-  transition: 0.3s ease-in-out;
-  position: absolute;
-  top: 8px;
-  left: 8px;
-  display: flex;
-  flex-direction: column;
-  gap: 12px;
-  height: 0;
-  overflow: hidden;
-}
-body .our_team_section .team-member .img .social-media a {
-  width: 30px;
-  height: 30px;
-  border-radius: 4px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  transition: 0.3s ease-in-out;
-  -webkit-backdrop-filter: blur(16px) saturate(180%);
-          backdrop-filter: blur(16px) saturate(180%);
-  background-color: rgba(255, 255, 255, 0.1);
-}
-body .our_team_section .team-member .img .social-media a i {
-  font-size: 14px;
-  color: #fff;
 }
 body .our_team_section .team-member h6 {
   font-size: 18px;
@@ -1579,6 +1559,26 @@ body .our_team_section .team-member p {
   font-size: 14px;
   text-align: center;
   color: #fff;
+}
+body .our_team_section .team-member .social-media {
+  transition: 0.3s ease-in-out;
+  display: flex;
+  justify-content: center;
+  gap: 12px;
+}
+body .our_team_section .team-member .social-media a {
+  width: 32px;
+  height: 32px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  transition: 0.3s ease-in-out;
+  background-color: #fff;
+}
+body .our_team_section .team-member .social-media a i {
+  font-size: 14px;
+  color: #0f2133;
 }
 body .projects_page {
   padding: 100px 0 60px;
@@ -1664,6 +1664,72 @@ body .projects_page .project_card .subtitle {
 body .projects_page .project_card .description {
   color: #fff;
   font-size: 18px;
+}
+body .media_page {
+  padding: 100px 0;
+}
+body .media_page .blog_card {
+  width: 100%;
+  border-radius: 16px;
+  overflow: hidden;
+  display: block;
+  background: rgba(255, 255, 255, 0.04);
+}
+body .media_page .blog_card .img {
+  width: 100%;
+  aspect-ratio: 3/2;
+}
+body .media_page .blog_card .img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+}
+body .media_page .blog_card .content {
+  padding: 24px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+body .media_page .blog_card .content h4 {
+  color: #fff;
+  font-size: 18px;
+}
+body .media_page .blog_card .content .foo {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+body .media_page .blog_card .content span {
+  width: -moz-fit-content;
+  width: fit-content;
+  padding: 8px 16px;
+  border-radius: 40px;
+  background: #7e98fd;
+  color: #fff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+}
+body .media_page .blog_card .content span.link {
+  border-radius: 50%;
+  width: 42px;
+  padding: 0;
+  height: 42px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .media_page .blog_card .content span.link img {
+  width: 16px;
+  height: 16px;
+  transition: 0.3s ease-in-out;
+}
+body .media_page .blog_card:hover .content span.link img {
+  transform: rotate(-45deg) !important;
 }
 body footer {
   padding-top: 60px;

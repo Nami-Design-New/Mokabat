@@ -28,6 +28,16 @@
       line-height: 1.6;
       text-align: center;
     }
+    .download_assets {
+      margin-top: 12px;
+      padding: 12px 32px;
+      border-radius: 60px;
+      color: $white;
+      border: 1px solid $white;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
   }
 }
 
@@ -223,11 +233,6 @@
     padding: 16px;
     border-radius: 12px;
     transition: $transition;
-    &:hover {
-      .img .social-media {
-        height: 200px;
-      }
-    }
     .img {
       width: 100%;
       border-radius: 4px;
@@ -237,30 +242,6 @@
         width: 100%;
         aspect-ratio: 1/1;
         object-fit: contain;
-      }
-      .social-media {
-        transition: $transition;
-        position: absolute;
-        top: 8px;
-        left: 8px;
-        display: flex;
-        flex-direction: column;
-        gap: 12px;
-        height: 0;
-        overflow: hidden;
-        a {
-          width: 30px;
-          height: 30px;
-          border-radius: 4px;
-          @include centerFlex();
-          transition: $transition;
-          backdrop-filter: blur(16px) saturate(180%);
-          background-color: rgba(255, 255, 255, 0.1);
-          i {
-            font-size: 14px;
-            color: $white;
-          }
-        }
       }
     }
     h6 {
@@ -276,6 +257,24 @@
       font-size: 14px;
       text-align: center;
       color: $white;
+    }
+    .social-media {
+      transition: $transition;
+      display: flex;
+      justify-content: center;
+      gap: 12px;
+      a {
+        width: 32px;
+        height: 32px;
+        border-radius: 50%;
+        @include centerFlex();
+        transition: $transition;
+        background-color: $white;
+        i {
+          font-size: 14px;
+          color: $main;
+        }
+      }
     }
   }
 }

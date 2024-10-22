@@ -144,7 +144,7 @@ export default function WhyUs() {
               </h2>
               <p className="des">
                 Whether you are a fintech, a government entity, a smart city, or
-                any other business, joining Jeel provides you with immense
+                any other business, joining mokabat provides you with immense
                 value.
               </p>
               <ul>

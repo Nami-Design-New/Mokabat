@@ -15,12 +15,17 @@ export default function About() {
                 <p>
                   ‘’Innovation is the main driver of advancement in this
                   world.’’ From this belief and out of the forward-thinking
-                  nature of the need for digital innovation, Jeel was born. Jeel
-                  is at the forefront of the digital revolution with digital
-                  squads capable of rapidly prototyping, launching, and scaling
-                  new products and businesses to serve fintechs, government
-                  entities, smart cities, and other businesses in the market.
+                  nature of the need for digital innovation, mokabat was born.
+                  mokabat is at the forefront of the digital revolution with
+                  digital squads capable of rapidly prototyping, launching, and
+                  scaling new products and businesses to serve fintechs,
+                  government entities, smart cities, and other businesses in the
+                  market.
                 </p>
+                <a href="" className="download_assets">
+                  Download Company Brochure{" "}
+                  <i className="fa-regular fa-cloud-arrow-down"></i>
+                </a>
               </div>
             </div>
           </div>

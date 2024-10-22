@@ -1,0 +1,59 @@
+.media_page {
+  padding: 100px 0;
+  .blog_card {
+    width: 100%;
+    border-radius: 16px;
+    overflow: hidden;
+    display: block;
+    background: rgb(255 255 255 / 4%);
+    .img {
+      width: 100%;
+      aspect-ratio: 3 / 2;
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        object-position: center;
+      }
+    }
+    .content {
+      padding: 24px 16px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+      h4 {
+        color: $white;
+        font-size: 18px;
+      }
+      .foo {
+        @include space-between();
+      }
+      span {
+        width: fit-content;
+        padding: 8px 16px;
+        border-radius: 40px;
+        background: $second;
+        color: $white;
+        display: flex;
+        align-items: center;
+        gap: 8px;
+        font-size: 14px;
+        &.link {
+          border-radius: 50%;
+          width: 42px;
+          padding: 0;
+          height: 42px;
+          @include centerFlex();
+          img {
+            width: 16px;
+            height: 16px;
+            transition: $transition;
+          }
+        }
+      }
+    }
+    &:hover .content span.link img {
+      transform: rotate(-45deg) !important;
+    }
+  }
+}

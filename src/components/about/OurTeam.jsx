@@ -40,31 +40,31 @@ export default function OurTeam() {
             <div className="team-member" data-aos="fade-up">
               <div className="img">
                 <img src="/images/teem1.png" alt="team-member" />
-                <ul className="social-media">
-                  <li>
-                    <a href="#">
-                      <i className="fa-brands fa-facebook-f"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i className="fa-brands fa-instagram"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i className="fa-brands fa-twitter"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i className="fa-brands fa-linkedin-in"></i>
-                    </a>
-                  </li>
-                </ul>
               </div>
               <h6>Amer Rajkhan</h6>
               <p>CEO</p>
+              <ul className="social-media">
+                <li>
+                  <a href="#">
+                    <i className="fa-brands fa-facebook-f"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i className="fa-brands fa-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i className="fa-brands fa-twitter"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i className="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </li>
+              </ul>
             </div>
           </SwiperSlide>
 
@@ -72,31 +72,31 @@ export default function OurTeam() {
             <div className="team-member" data-aos="fade-up">
               <div className="img">
                 <img src="/images/teem2.png" alt="team-member" />
-                <ul className="social-media">
-                  <li>
-                    <a href="#">
-                      <i className="fa-brands fa-facebook-f"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i className="fa-brands fa-instagram"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i className="fa-brands fa-twitter"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i className="fa-brands fa-linkedin-in"></i>
-                    </a>
-                  </li>
-                </ul>
               </div>
               <h6>Aljohara Al-Mandil</h6>
               <p>Head of Digital Lab</p>
+              <ul className="social-media">
+                <li>
+                  <a href="#">
+                    <i className="fa-brands fa-facebook-f"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i className="fa-brands fa-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i className="fa-brands fa-twitter"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i className="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </li>
+              </ul>
             </div>
           </SwiperSlide>
 
@@ -104,31 +104,31 @@ export default function OurTeam() {
             <div className="team-member" data-aos="fade-up">
               <div className="img">
                 <img src="/images/teem3.png" alt="team-member" />
-                <ul className="social-media">
-                  <li>
-                    <a href="#">
-                      <i className="fa-brands fa-facebook-f"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i className="fa-brands fa-instagram"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i className="fa-brands fa-twitter"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i className="fa-brands fa-linkedin-in"></i>
-                    </a>
-                  </li>
-                </ul>
               </div>
               <h6>Saeed Siddiki</h6>
               <p>Head of digital Insights</p>
+              <ul className="social-media">
+                <li>
+                  <a href="#">
+                    <i className="fa-brands fa-facebook-f"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i className="fa-brands fa-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i className="fa-brands fa-twitter"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i className="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </li>
+              </ul>
             </div>
           </SwiperSlide>
 
@@ -136,31 +136,31 @@ export default function OurTeam() {
             <div className="team-member" data-aos="fade-up">
               <div className="img">
                 <img src="/images/teem4.png" alt="team-member" />
-                <ul className="social-media">
-                  <li>
-                    <a href="#">
-                      <i className="fa-brands fa-facebook-f"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i className="fa-brands fa-instagram"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i className="fa-brands fa-twitter"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i className="fa-brands fa-linkedin-in"></i>
-                    </a>
-                  </li>
-                </ul>
               </div>
               <h6>Abdullah Masfoh</h6>
               <p>Head of Digital Platform</p>
+              <ul className="social-media">
+                <li>
+                  <a href="#">
+                    <i className="fa-brands fa-facebook-f"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i className="fa-brands fa-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i className="fa-brands fa-twitter"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i className="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </li>
+              </ul>
             </div>
           </SwiperSlide>
 
@@ -168,31 +168,31 @@ export default function OurTeam() {
             <div className="team-member" data-aos="fade-up">
               <div className="img">
                 <img src="/images/teem5.png" alt="team-member" />
-                <ul className="social-media">
-                  <li>
-                    <a href="#">
-                      <i className="fa-brands fa-facebook-f"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i className="fa-brands fa-instagram"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i className="fa-brands fa-twitter"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i className="fa-brands fa-linkedin-in"></i>
-                    </a>
-                  </li>
-                </ul>
               </div>
               <h6>Riad Hamoui</h6>
               <p>Head of Marketing</p>
+              <ul className="social-media">
+                <li>
+                  <a href="#">
+                    <i className="fa-brands fa-facebook-f"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i className="fa-brands fa-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i className="fa-brands fa-twitter"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i className="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </li>
+              </ul>
             </div>
           </SwiperSlide>
 
@@ -200,31 +200,31 @@ export default function OurTeam() {
             <div className="team-member" data-aos="fade-up">
               <div className="img">
                 <img src="/images/teem6.png" alt="team-member" />
-                <ul className="social-media">
-                  <li>
-                    <a href="#">
-                      <i className="fa-brands fa-facebook-f"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i className="fa-brands fa-instagram"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i className="fa-brands fa-twitter"></i>
-                    </a>
-                  </li>
-                  <li>
-                    <a href="#">
-                      <i className="fa-brands fa-linkedin-in"></i>
-                    </a>
-                  </li>
-                </ul>
               </div>
               <h6>Ahmed Aledreessi</h6>
               <p>Head of Digital Factory</p>
+              <ul className="social-media">
+                <li>
+                  <a href="#">
+                    <i className="fa-brands fa-facebook-f"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i className="fa-brands fa-instagram"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i className="fa-brands fa-twitter"></i>
+                  </a>
+                </li>
+                <li>
+                  <a href="#">
+                    <i className="fa-brands fa-linkedin-in"></i>
+                  </a>
+                </li>
+              </ul>
             </div>
           </SwiperSlide>
         </Swiper>

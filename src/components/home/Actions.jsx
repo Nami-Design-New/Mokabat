@@ -32,7 +32,7 @@ export default function Actions() {
           </div>
           <div className="col-lg-5 col-12 p-3">
             <div className="program_card">
-              <img src="/images/Jeel_-_Cart_-_Speak_to_inspire.webp" alt="" />
+              <img src="/images/mokabat_-_Cart_-_Speak_to_inspire.webp" alt="" />
               <Link to="/programs/speak-to-inspire" className="program_link">
                 <h6>Speak To Inspire</h6>
                 <div className="hiddenText">
