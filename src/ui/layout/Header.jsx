@@ -113,7 +113,7 @@ export default function Header() {
         </ul>
 
         <div className="actions">
-          <Link to="/" className="customBtn">
+          <Link to="/join-mokabat" className="customBtn">
             {t("joinMokabat")}
           </Link>
 

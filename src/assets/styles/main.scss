@@ -48,6 +48,7 @@ body {
         gap: 8px;
         a {
           color: $white;
+          text-transform: capitalize;
           &:last-child {
             color: #a0a0a0;
             pointer-events: none;
@@ -61,12 +62,14 @@ body {
       h2 {
         font-size: 28px;
         color: $white;
+        text-transform: capitalize;
       }
     }
   }
 
   @import "./header";
   @import "./home";
+  @import "./contact";
   @import "./about";
   @import "./footer";
 

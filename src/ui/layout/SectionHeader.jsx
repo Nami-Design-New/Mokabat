@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom";
 
-export default function SectionHeader() {
+export default function SectionHeader({ title }) {
+  const location = window.location.pathname.split("/")[1];
   return (
     <section className="sectionHeader">
       <div className="container h-100">
@@ -10,9 +11,9 @@ export default function SectionHeader() {
             <span>
               <i className="fa-regular fa-angle-right"></i>
             </span>
-            <Link to="/about">About</Link>
+            <Link to={`/${location}`}>{location}</Link>
           </div>
-          <h2>About Mokabat</h2>
+          <h2>{title || location}</h2>
         </div>
       </div>
     </section>
