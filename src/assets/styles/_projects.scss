@@ -30,7 +30,7 @@
     flex-direction: column;
     gap: 120px;
     @media screen and (max-width: 576px) {
-      gap: 60px;
+      gap: 32px;
     }
   }
   .img {
@@ -52,6 +52,9 @@
     flex-direction: column;
     justify-content: center;
     gap: 24px;
+    @media screen and (max-width: 576px) {
+      padding: 0;
+    }
     .title {
       color: $white;
       font-size: 28px;

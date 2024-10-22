@@ -1612,7 +1612,7 @@ body .projects_page .projects {
 }
 @media screen and (max-width: 576px) {
   body .projects_page .projects {
-    gap: 60px;
+    gap: 32px;
   }
 }
 body .projects_page .img {
@@ -1637,6 +1637,11 @@ body .projects_page .project_card {
   flex-direction: column;
   justify-content: center;
   gap: 24px;
+}
+@media screen and (max-width: 576px) {
+  body .projects_page .project_card {
+    padding: 0;
+  }
 }
 body .projects_page .project_card .title {
   color: #fff;
