@@ -1610,9 +1610,19 @@ body .projects_page .projects {
   flex-direction: column;
   gap: 120px;
 }
+@media screen and (max-width: 576px) {
+  body .projects_page .projects {
+    gap: 60px;
+  }
+}
 body .projects_page .img {
   width: 100%;
   aspect-ratio: 3/2;
+}
+@media screen and (max-width: 576px) {
+  body .projects_page .img {
+    aspect-ratio: 1/1;
+  }
 }
 body .projects_page .img img {
   width: 100%;
