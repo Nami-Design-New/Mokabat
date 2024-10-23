@@ -23,7 +23,9 @@ export default function SectionHeader({ title }) {
 
             {location.map((item, index) => (
               <Fragment key={index}>
-                <Link to={createBreadcrumbPath(index)}>{item}</Link>
+                <Link to={createBreadcrumbPath(index)}>
+                  {item?.split("-").join(" ")}
+                </Link>
                 {index < location.length - 1 && (
                   <span>
                     <i className="fa-regular fa-angle-right"></i>
@@ -32,7 +34,9 @@ export default function SectionHeader({ title }) {
               </Fragment>
             ))}
           </div>
-          <h2>{title || location[location.length - 1]}</h2>
+          <h2>
+            {title || location[location.length - 1]?.split("-").join(" ")}
+          </h2>
         </div>
       </div>
     </section>
