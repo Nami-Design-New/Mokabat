@@ -107,6 +107,9 @@ export default function Header() {
           <li className="nav_link" onClick={handleCloseMenu}>
             <NavLink to="/contact">{t("contact")}</NavLink>
           </li>
+          <li className="nav_link hide_lg" onClick={handleCloseMenu}>
+            <NavLink to="/join-mokabat">{t("joinMokabat")}</NavLink>
+          </li>
           <button className="menu_btn" onClick={handleCloseMenu}>
             <i className="fa-regular fa-x"></i>
           </button>
