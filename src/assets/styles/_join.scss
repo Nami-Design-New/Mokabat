@@ -67,6 +67,9 @@
           height: 32px;
           color: $second;
         }
+        @media screen and (max-width: 576px) {
+          width: 100%;
+        }
       }
       select {
         @include clearInput();
@@ -76,6 +79,9 @@
         padding: 0 12px;
         color: $white;
         border: 1px solid rgba(255, 255, 255, 0.28);
+        @media screen and (max-width: 576px) {
+          width: 100%;
+        }
       }
     }
   }

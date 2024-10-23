@@ -2140,6 +2140,11 @@ body .join_page .join_header .filter_form .search_form button {
   height: 32px;
   color: #7e98fd;
 }
+@media screen and (max-width: 576px) {
+  body .join_page .join_header .filter_form .search_form {
+    width: 100%;
+  }
+}
 body .join_page .join_header .filter_form select {
   border: none;
   background: none;
@@ -2150,6 +2155,11 @@ body .join_page .join_header .filter_form select {
   padding: 0 12px;
   color: #fff;
   border: 1px solid rgba(255, 255, 255, 0.28);
+}
+@media screen and (max-width: 576px) {
+  body .join_page .join_header .filter_form select {
+    width: 100%;
+  }
 }
 body .join_page .vacancies {
   display: flex;
