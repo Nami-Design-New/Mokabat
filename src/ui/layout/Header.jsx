@@ -92,9 +92,9 @@ export default function Header() {
           <li className="nav_link" onClick={handleCloseMenu}>
             <NavLink to="/about">{t("about")}</NavLink>
           </li>
-          <li className="nav_link" onClick={handleCloseMenu}>
+          {/* <li className="nav_link" onClick={handleCloseMenu}>
             <NavLink to="/services">{t("services")}</NavLink>
-          </li>
+          </li> */}
           <li className="nav_link" onClick={handleCloseMenu}>
             <NavLink to="/media">{t("media")}</NavLink>
           </li>
