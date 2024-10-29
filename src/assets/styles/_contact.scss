@@ -18,7 +18,7 @@
       border-radius: 80px;
     }
     h1 {
-      color: $white;
+      color: $main;
       font-size: 42px;
       margin-bottom: 32px;
       @media screen and (max-width: 576px) {
@@ -35,7 +35,7 @@
         flex-direction: column;
         gap: 12px;
         a {
-          color: $white;
+          color: $main;
           transition: $transition;
           &:hover {
             color: $second;
@@ -43,7 +43,7 @@
         }
         h6 {
           margin-top: 24px;
-          color: $white;
+          color: $main;
         }
         .socials {
           display: flex;
@@ -55,7 +55,7 @@
   }
   .contact_form {
     padding: 48px 32px;
-    background: rgb(255 255 255 / 4%);
+    box-shadow: rgba(99, 99, 99, 0.074) 0px 2px 8px 0px;
     backdrop-filter: blur(6px);
     border-radius: 24px;
     @media screen and (max-width: 576px) {
@@ -90,7 +90,7 @@
           }
           &.h {
             top: -4px;
-            color: $white;
+            color: $main;
           }
         }
         input,
@@ -100,7 +100,7 @@
           border: none;
           outline: none;
           background: none;
-          color: $white;
+          color: $main;
           &:focus + span::after {
             width: calc(100% - 32px);
           }
@@ -119,15 +119,15 @@
             transition: $transition;
             left: 50%;
             height: 1px;
-            background: $white;
+            background: $main;
             position: absolute;
             transform: translate(-50%);
           }
         }
       }
       button {
-        background: $white;
-        color: $main;
+        background: $main;
+        color: $white;
         display: flex;
         align-items: center;
         gap: 4px;
@@ -140,7 +140,7 @@
           transition: $transition;
           width: 16px;
           opacity: 1;
-          color: $main;
+          color: $white;
           @include centerFlex();
           &:last-child {
             opacity: 0;

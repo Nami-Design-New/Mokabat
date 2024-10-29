@@ -1,8 +1,15 @@
+import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
-import { Navigation } from "swiper/modules";
+import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import SectionHeader from "../ui/layout/SectionHeader";
+import "swiper/css";
+import "swiper/css/free-mode";
+import "swiper/css/navigation";
+import "swiper/css/thumbs";
 
 export default function Services() {
+  const [thumbsSwiper, setThumbsSwiper] = useState(null);
+
   return (
     <>
       <SectionHeader />
@@ -13,9 +20,9 @@ export default function Services() {
             speed={1000}
             slidesPerView={1}
             spaceBetween={16}
-            modules={[Navigation]}
+            thumbs={{ swiper: thumbsSwiper }}
+            modules={[FreeMode, Navigation, Thumbs]}
             className="services_swiper"
-            autoplay={{ delay: 1000, disableOnInteraction: false }}
           >
             <SwiperSlide>
               <div className="row justify-content-between">
@@ -109,15 +116,82 @@ export default function Services() {
               </div>
             </SwiperSlide>
             <SwiperSlide>
-              <div className="row">
+              <div className="row justify-content-between">
                 <div className="col-lg-5 col-12 p-2">
                   <div className="img">
-                    <img src="/images/digital-lab-new.webp" alt="lab" />
+                    <img src="/images/digital-platform-new.webp" alt="lab" />
                   </div>
                 </div>
-                <div className="col-lg-7 col-12 p-2">
+                <div className="col-lg-6 col-12 p-2">
                   <div className="sercvice_content">
-                    <h2>Lab</h2>
+                    <h2>Platform</h2>
+                    <p>
+                      Even if you are not building from scratch, we create the
+                      green field for you by providing fast-track
+                      solutions.&nbsp;
+                    </p>
+                    <ul>
+                      <li>
+                        Develop standard restful API services such as Open
+                        Banking and Open API services.
+                      </li>
+                      <li>
+                        We are much ahead of implementing BaaS which plays a
+                        vital role to support FinTech needs such as E-wallet as
+                        a service and B2B as a service.
+                      </li>
+                      <li>
+                        Our platforms offer BI engine that generates a dashboard
+                        for visualization in addition to features such as fraud
+                        management and alert system, training module, HOST
+                        security module, managed services, and Recon &amp;
+                        settle.
+                      </li>
+                    </ul>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="row justify-content-between">
+                <div className="col-lg-5 col-12 p-2">
+                  <div className="img">
+                    <img src="/images/digital-business.webp" alt="lab" />
+                  </div>
+                </div>
+                <div className="col-lg-6 col-12 p-2">
+                  <div className="sercvice_content">
+                    <h2>Business</h2>
+                    <p>
+                      Your product is ready, but it's impossible for you to be
+                      successful without identifying your go-to market strategy.
+                    </p>
+                    <p>
+                      We work on a clear and concise strategy to define and
+                      communicate your company's unique selling points by
+                      developing and honing an appropriate commercialization
+                      strategy, which is highly dependent on building and
+                      maintaining detailed and reliable business intelligence on
+                      prospects, competitors, and market dynamics. We oversee
+                      the communications, PR, and marketing strategy,
+                      identifying partnership opportunities and outreach, and
+                      building the company's reputation internally and
+                      externally.
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </SwiperSlide>
+            <SwiperSlide>
+              <div className="row justify-content-between">
+                <div className="col-lg-5 col-12 p-2">
+                  <div className="img">
+                    <img src="/images/digital-insight.webp" alt="lab" />
+                  </div>
+                </div>
+                <div className="col-lg-6 col-12 p-2">
+                  <div className="sercvice_content">
+                    <h2>Insights</h2>
                     <p>
                       In today's hyper "everything" business environment, the
                       norm is to ingest, aggregate, and push "insights &amp;
@@ -135,6 +209,44 @@ export default function Services() {
               </div>
             </SwiperSlide>
           </Swiper>
+
+          <div className="thumbs">
+            <Swiper
+              speed={1000}
+              slidesPerView={6}
+              spaceBetween={16}
+              className="services_swiper"
+              onSwiper={setThumbsSwiper}
+              loop={true}
+              freeMode={true}
+              watchSlidesProgress={true}
+              modules={[FreeMode, Navigation, Thumbs]}
+              breakpoints={{
+                992: {
+                  slidesPerView: 6,
+                },
+                768: {
+                  slidesPerView: 5,
+                },
+                350: {
+                  slidesPerView: 3,
+                },
+              }}
+            >
+              {[
+                "Lab",
+                "Studio",
+                "Factory",
+                "Platform",
+                "Business",
+                "Insights",
+              ].map((title, index) => (
+                <SwiperSlide key={index}>
+                  <button>{title}</button>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
         </div>
       </section>
     </>

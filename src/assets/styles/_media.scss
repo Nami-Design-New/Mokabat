@@ -1,11 +1,11 @@
 .media_page {
-  padding: 100px 0;
+  padding: 60px 0;
   .blog_card {
     width: 100%;
     border-radius: 16px;
     overflow: hidden;
     display: block;
-    background: rgb(255 255 255 / 4%);
+    box-shadow: rgba(99, 99, 99, 0.074) 0px 2px 8px 0px;
     .img {
       width: 100%;
       aspect-ratio: 3 / 2;
@@ -22,7 +22,7 @@
       flex-direction: column;
       gap: 8px;
       h4 {
-        color: $white;
+        color: $main;
         font-size: 18px;
       }
       .foo {
@@ -74,12 +74,15 @@
     }
   }
   .blog {
-    color: $white;
+    color: $main;
     display: flex;
     flex-direction: column;
     gap: 12px;
     h1 {
       font-size: 26px;
+    }
+    p {
+      font-size: 18px;
     }
     span {
       width: fit-content;

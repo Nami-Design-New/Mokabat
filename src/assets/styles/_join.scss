@@ -24,7 +24,7 @@
       animation: 6s infinite alternate gradientAnimation;
     }
     p {
-      color: $white;
+      color: $main;
       line-height: 1.6;
       text-align: center;
     }
@@ -36,7 +36,7 @@
       gap: 12px;
     }
     h2 {
-      color: $white;
+      color: $main;
       margin: 0;
       font-size: 32px;
       span {
@@ -51,8 +51,7 @@
         flex-direction: column;
       }
       .search_form {
-        background: #050913;
-        border: 1px solid rgba(255, 255, 255, 0.28);
+        box-shadow: rgba(99, 99, 99, 0.074) 0px 2px 8px 0px;
         border-radius: 50px;
         padding: 8px 32px;
         display: flex;
@@ -61,7 +60,7 @@
         input {
           width: 200px;
           @include clearInput();
-          color: $white;
+          color: $main;
         }
         button {
           height: 32px;
@@ -73,12 +72,11 @@
       }
       select {
         @include clearInput();
-        background: #050913;
         height: 48px;
         border-radius: 50px;
         padding: 0 12px;
-        color: $white;
-        border: 1px solid rgba(255, 255, 255, 0.28);
+        color: $main;
+        box-shadow: rgba(99, 99, 99, 0.074) 0px 2px 8px 0px;
         @media screen and (max-width: 576px) {
           width: 100%;
         }
@@ -90,8 +88,7 @@
     flex-direction: column;
     gap: 16px;
     .vacancy_card {
-      background: rgb(255 255 255 / 4%);
-      border: 1px solid #ffffff21;
+      box-shadow: rgba(99, 99, 99, 0.074) 0px 2px 8px 0px;
       padding: 24px;
       border-radius: 16px;
       display: flex;
@@ -99,10 +96,10 @@
       gap: 8px;
       h6 {
         font-size: 18px;
-        color: $white;
+        color: $main;
       }
       p {
-        color: $white;
+        color: $main;
         font-size: 14px;
       }
       .bottom {

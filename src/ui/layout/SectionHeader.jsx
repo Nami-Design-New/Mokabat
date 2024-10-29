@@ -1,18 +1,18 @@
-import { Fragment } from "react";
-import { Link } from "react-router-dom";
+// import { Fragment } from "react";
+// import { Link } from "react-router-dom";
 
 export default function SectionHeader({ title }) {
   const location = window.location.pathname.split("/").filter(Boolean);
 
-  const createBreadcrumbPath = (index) => {
-    return "/" + location.slice(0, index + 1).join("/");
-  };
+  // const createBreadcrumbPath = (index) => {
+  //   return "/" + location.slice(0, index + 1).join("/");
+  // };
 
   return (
     <section className="sectionHeader">
       <div className="container h-100">
         <div className="page">
-          <div className="links">
+          {/* <div className="links">
             <Link to="/">Home</Link>
 
             {location.length > 0 && (
@@ -33,7 +33,7 @@ export default function SectionHeader({ title }) {
                 )}
               </Fragment>
             ))}
-          </div>
+          </div> */}
           <h2>
             {title || location[location.length - 1]?.split("-").join(" ")}
           </h2>

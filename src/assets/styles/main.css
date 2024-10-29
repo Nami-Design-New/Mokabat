@@ -234,10 +234,9 @@ body .sectionHeader {
   width: 100%;
   height: 45vh;
   padding: 3rem 0;
-  background: #050913;
-  background-image: url("/images/bg_5.jpg");
+  background-image: url("/images/Group-min.png");
   background-size: cover;
-  background-position: center bottom;
+  background-position: bottom;
   background-repeat: no-repeat;
 }
 body .sectionHeader .page {
@@ -265,8 +264,8 @@ body .sectionHeader .page .links span {
   font-size: 16px;
 }
 body .sectionHeader .page h2 {
-  font-size: 28px;
-  color: #fff;
+  font-size: 42px;
+  color: #0f2133;
   text-transform: capitalize;
 }
 body header {
@@ -1083,7 +1082,7 @@ body .contact_section .contact_info span {
   border-radius: 80px;
 }
 body .contact_section .contact_info h1 {
-  color: #fff;
+  color: #0f2133;
   font-size: 42px;
   margin-bottom: 32px;
 }
@@ -1104,7 +1103,7 @@ body .contact_section .contact_info .blocks .block {
   gap: 12px;
 }
 body .contact_section .contact_info .blocks .block a {
-  color: #fff;
+  color: #0f2133;
   transition: 0.3s ease-in-out;
 }
 body .contact_section .contact_info .blocks .block a:hover {
@@ -1112,7 +1111,7 @@ body .contact_section .contact_info .blocks .block a:hover {
 }
 body .contact_section .contact_info .blocks .block h6 {
   margin-top: 24px;
-  color: #fff;
+  color: #0f2133;
 }
 body .contact_section .contact_info .blocks .block .socials {
   display: flex;
@@ -1121,7 +1120,7 @@ body .contact_section .contact_info .blocks .block .socials {
 }
 body .contact_section .contact_form {
   padding: 48px 32px;
-  background: rgba(255, 255, 255, 0.04);
+  box-shadow: rgba(99, 99, 99, 0.074) 0px 2px 8px 0px;
   -webkit-backdrop-filter: blur(6px);
           backdrop-filter: blur(6px);
   border-radius: 24px;
@@ -1163,7 +1162,7 @@ body .contact_section .contact_form form .inputfield label.message-label {
 }
 body .contact_section .contact_form form .inputfield label.h {
   top: -4px;
-  color: #fff;
+  color: #0f2133;
 }
 body .contact_section .contact_form form .inputfield input,
 body .contact_section .contact_form form .inputfield textarea {
@@ -1172,7 +1171,7 @@ body .contact_section .contact_form form .inputfield textarea {
   border: none;
   outline: none;
   background: none;
-  color: #fff;
+  color: #0f2133;
 }
 body .contact_section .contact_form form .inputfield input:focus + span::after,
 body .contact_section .contact_form form .inputfield textarea:focus + span::after {
@@ -1193,13 +1192,13 @@ body .contact_section .contact_form form .inputfield .highlight::after {
   transition: 0.3s ease-in-out;
   left: 50%;
   height: 1px;
-  background: #fff;
+  background: #0f2133;
   position: absolute;
   transform: translate(-50%);
 }
 body .contact_section .contact_form form button {
-  background: #fff;
-  color: #0f2133;
+  background: #0f2133;
+  color: #fff;
   display: flex;
   align-items: center;
   gap: 4px;
@@ -1214,7 +1213,7 @@ body .contact_section .contact_form form button span {
   transition: 0.3s ease-in-out;
   width: 16px;
   opacity: 1;
-  color: #0f2133;
+  color: #fff;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1274,7 +1273,7 @@ body .about_page .content h1 {
   animation: 6s infinite alternate gradientAnimation;
 }
 body .about_page .content p {
-  color: #fff;
+  color: #0f2133;
   line-height: 1.6;
   text-align: center;
 }
@@ -1284,8 +1283,8 @@ body .download_assets {
   width: -moz-fit-content;
   width: fit-content;
   border-radius: 60px;
-  color: #fff;
-  border: 1px solid #fff;
+  color: #0f2133;
+  border: 1px solid #0f2133;
   display: flex;
   align-items: center;
   gap: 8px;
@@ -1349,14 +1348,14 @@ body .whyus_section .info {
   }
 }
 body .whyus_section .info h2 {
-  color: #fff;
+  color: #0f2133;
   font-size: 32px;
 }
 body .whyus_section .info h2 span {
   color: #7e98fd;
 }
 body .whyus_section .info .des {
-  color: #fff;
+  color: #0f2133;
 }
 body .whyus_section .info ul {
   display: flex;
@@ -1386,7 +1385,7 @@ body .lazyImg::before {
   position: absolute;
   left: 0;
   top: 50%;
-  border: 10px solid #fff;
+  border: 10px solid #0f2133;
   width: 100%;
   height: 90%;
   transform: translateY(-50%);
@@ -1417,7 +1416,7 @@ body .lazyDiv::after {
   width: 100%;
   height: 100%;
   z-index: 2;
-  background-color: #050913;
+  background-color: #ffffff;
   transition: transform 1.2s 0.5s cubic-bezier(0.165, 0.84, 0.44, 1);
   transform: translateX(0%);
 }
@@ -1455,7 +1454,7 @@ body .our_team_section .header {
   max-width: 660px;
 }
 body .our_team_section .header h2 {
-  color: #fff;
+  color: #0f2133;
   text-align: center;
   text-wrap: balance;
   font-size: 32px;
@@ -1464,12 +1463,12 @@ body .our_team_section .header h2 span {
   color: #7e98fd;
 }
 body .our_team_section .header p {
-  color: #fff;
+  color: #0f2133;
   text-align: center;
 }
 body .our_team_section .team-member {
   width: 100%;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(0, 0, 0, 0.04);
   border: 1px solid rgba(255, 255, 255, 0.1294117647);
   -webkit-backdrop-filter: blur(6px);
           backdrop-filter: blur(6px);
@@ -1496,12 +1495,12 @@ body .our_team_section .team-member h6 {
   font-weight: 700;
   margin-top: 16px;
   margin-bottom: 0px;
-  color: #fff;
+  color: #0f2133;
 }
 body .our_team_section .team-member p {
   font-size: 14px;
   text-align: center;
-  color: #fff;
+  color: #0f2133;
 }
 body .our_team_section .team-member .social-media {
   transition: 0.3s ease-in-out;
@@ -1530,7 +1529,7 @@ body .projects_page h1 {
   width: min(100%, 600px);
   margin: 0 auto;
   text-align: center;
-  color: #fff;
+  color: #0f2133;
   font-size: 52px;
   margin-bottom: 100px;
 }
@@ -1587,7 +1586,7 @@ body .projects_page .project_card {
   }
 }
 body .projects_page .project_card .title {
-  color: #fff;
+  color: #0f2133;
   font-size: 28px;
   position: relative;
 }
@@ -1605,18 +1604,18 @@ body .projects_page .project_card .subtitle {
   font-size: 16px;
 }
 body .projects_page .project_card .description {
-  color: #fff;
+  color: #0f2133;
   font-size: 18px;
 }
 body .media_page {
-  padding: 100px 0;
+  padding: 60px 0;
 }
 body .media_page .blog_card {
   width: 100%;
   border-radius: 16px;
   overflow: hidden;
   display: block;
-  background: rgba(255, 255, 255, 0.04);
+  box-shadow: rgba(99, 99, 99, 0.074) 0px 2px 8px 0px;
 }
 body .media_page .blog_card .img {
   width: 100%;
@@ -1637,7 +1636,7 @@ body .media_page .blog_card .content {
   gap: 8px;
 }
 body .media_page .blog_card .content h4 {
-  color: #fff;
+  color: #0f2133;
   font-size: 18px;
 }
 body .media_page .blog_card .content .foo {
@@ -1694,13 +1693,16 @@ body .media_details .banner img {
   border-radius: 24px;
 }
 body .media_details .blog {
-  color: #fff;
+  color: #0f2133;
   display: flex;
   flex-direction: column;
   gap: 12px;
 }
 body .media_details .blog h1 {
   font-size: 26px;
+}
+body .media_details .blog p {
+  font-size: 18px;
 }
 body .media_details .blog span {
   width: -moz-fit-content;
@@ -2030,7 +2032,7 @@ body .join_page .header h1 {
   animation: 6s infinite alternate gradientAnimation;
 }
 body .join_page .header p {
-  color: #fff;
+  color: #0f2133;
   line-height: 1.6;
   text-align: center;
 }
@@ -2046,7 +2048,7 @@ body .join_page .join_header {
   }
 }
 body .join_page .join_header h2 {
-  color: #fff;
+  color: #0f2133;
   margin: 0;
   font-size: 32px;
 }
@@ -2064,8 +2066,7 @@ body .join_page .join_header .filter_form {
   }
 }
 body .join_page .join_header .filter_form .search_form {
-  background: #050913;
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  box-shadow: rgba(99, 99, 99, 0.074) 0px 2px 8px 0px;
   border-radius: 50px;
   padding: 8px 32px;
   display: flex;
@@ -2077,7 +2078,7 @@ body .join_page .join_header .filter_form .search_form input {
   border: none;
   background: none;
   outline: none;
-  color: #fff;
+  color: #0f2133;
 }
 body .join_page .join_header .filter_form .search_form button {
   height: 32px;
@@ -2092,12 +2093,11 @@ body .join_page .join_header .filter_form select {
   border: none;
   background: none;
   outline: none;
-  background: #050913;
   height: 48px;
   border-radius: 50px;
   padding: 0 12px;
-  color: #fff;
-  border: 1px solid rgba(255, 255, 255, 0.28);
+  color: #0f2133;
+  box-shadow: rgba(99, 99, 99, 0.074) 0px 2px 8px 0px;
 }
 @media screen and (max-width: 576px) {
   body .join_page .join_header .filter_form select {
@@ -2110,8 +2110,7 @@ body .join_page .vacancies {
   gap: 16px;
 }
 body .join_page .vacancies .vacancy_card {
-  background: rgba(255, 255, 255, 0.04);
-  border: 1px solid rgba(255, 255, 255, 0.1294117647);
+  box-shadow: rgba(99, 99, 99, 0.074) 0px 2px 8px 0px;
   padding: 24px;
   border-radius: 16px;
   display: flex;
@@ -2120,10 +2119,10 @@ body .join_page .vacancies .vacancy_card {
 }
 body .join_page .vacancies .vacancy_card h6 {
   font-size: 18px;
-  color: #fff;
+  color: #0f2133;
 }
 body .join_page .vacancies .vacancy_card p {
-  color: #fff;
+  color: #0f2133;
   font-size: 14px;
 }
 body .join_page .vacancies .vacancy_card .bottom {
@@ -2158,6 +2157,9 @@ body .services_page .img img {
   -o-object-fit: contain;
      object-fit: contain;
 }
+body .services_page .swiper-slide {
+  height: auto;
+}
 body .services_page .sercvice_content {
   display: flex;
   flex-direction: column;
@@ -2169,18 +2171,41 @@ body .services_page .sercvice_content h2 {
   margin-bottom: 24px;
 }
 body .services_page .sercvice_content p {
-  color: #fff;
+  color: #0f2133;
   font-size: 18px;
 }
 body .services_page .sercvice_content ul {
   margin-top: 12px;
   padding-left: 16px;
   list-style: disc;
-  color: #fff;
+  color: #0f2133;
   font-size: 18px;
   display: flex;
   flex-direction: column;
   gap: 8px;
+}
+body .thumbs {
+  width: 100%;
+  padding: 12px;
+  background: #fafafa;
+  border-radius: 12px;
+}
+body .thumbs button {
+  width: 100%;
+  height: 50px;
+  gap: 6px;
+  transition: 0.3s ease-in-out;
+  border-radius: 12px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  outline: none;
+}
+body .thumbs .swiper-slide-thumb-active button {
+  background: #7e98fd;
+  color: #fff;
 }
 body footer {
   padding-top: 60px;
