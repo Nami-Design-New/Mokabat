@@ -103,6 +103,19 @@ export default function Header() {
             <NavLink to="/projects">{t("projects")}</NavLink>
           </li>
           <li className="nav_link" onClick={handleCloseMenu}>
+            <Dropdown>
+              <Dropdown.Toggle id="dropdown-basic">
+                Actions <i className="fa-regular fa-angle-down"></i>
+              </Dropdown.Toggle>
+              <Dropdown.Menu className="menu">
+                <div className="inner_menu">
+                  <NavLink to="/programs">Programs</NavLink>
+                  <NavLink to="/bootcamp">Bootcamp</NavLink>
+                </div>
+              </Dropdown.Menu>
+            </Dropdown>
+          </li>
+          <li className="nav_link" onClick={handleCloseMenu}>
             <NavLink to="/contact">{t("contact")}</NavLink>
           </li>
           <li className="nav_link hide_lg" onClick={handleCloseMenu}>

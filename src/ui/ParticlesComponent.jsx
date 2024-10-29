@@ -42,7 +42,7 @@ export default function ParticlesComponent() {
 
           particles: {
             color: {
-              value: "#ffffff",
+              value: "#212121",
             },
 
             move: {
@@ -69,7 +69,7 @@ export default function ParticlesComponent() {
             },
 
             shape: {
-              type: "square",
+              type: "circle",
             },
 
             size: {

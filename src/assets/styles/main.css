@@ -268,6 +268,214 @@ body .sectionHeader .page h2 {
   color: #0f2133;
   text-transform: capitalize;
 }
+body .programs_page {
+  padding: 120px 0;
+}
+body .programs_page .content {
+  display: flex;
+  height: 100%;
+  justify-content: center;
+  flex-direction: column;
+}
+body .programs_page .content h3 {
+  color: #7e98fd;
+  margin-bottom: 24px;
+}
+body .programs_page .programs_calender {
+  box-shadow: rgba(99, 99, 99, 0.074) 0px 2px 8px 0px;
+  width: 100%;
+  border-radius: 24px;
+  padding: 12px;
+  display: flex;
+}
+body .programs_page .programs_calender .programs {
+  width: 100%;
+}
+body .programs_page .programs_calender .programs h6 {
+  margin-top: 8px;
+  color: #0f2133;
+  text-align: center;
+  border-radius: 8px;
+  background: #eee;
+  padding: 12px 0;
+}
+body .programs_page .programs_calender .programs .menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+  max-height: 220px;
+  padding: 12px;
+  overflow: scroll;
+}
+body .programs_page .programs_calender .programs .menu a span {
+  display: block;
+  color: #0f2133;
+  margin-bottom: 12px;
+}
+body .programs_page .programs_calender .programs .menu a p {
+  font-size: 14px;
+  color: #777777;
+}
+body .programs_page .prpgramm_card {
+  box-shadow: rgba(99, 99, 99, 0.074) 0px 2px 8px 0px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+}
+body .programs_page .prpgramm_card .img {
+  width: 100%;
+}
+body .programs_page .prpgramm_card .img img {
+  border-radius: 12px;
+  width: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  aspect-ratio: 1/1;
+}
+body .programs_page .prpgramm_card .content {
+  padding: 12px;
+  height: -moz-fit-content;
+  height: fit-content;
+}
+body .programs_page .prpgramm_card .content p {
+  font-size: 12px;
+  color: #777777;
+}
+body .programs_page .prpgramm_card .content h4 {
+  color: #0f2133;
+  font-size: 18px;
+}
+body .bootcamp_details {
+  padding: 120px 0;
+}
+body .bootcamp_details .img {
+  width: 100%;
+  aspect-ratio: 3/2;
+}
+body .bootcamp_details .img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
+  -o-object-position: center;
+     object-position: center;
+  border-radius: 12px;
+}
+body .bootcamp_details .content {
+  display: flex;
+  gap: 12px;
+  flex-direction: column;
+  height: 100%;
+  justify-content: center;
+}
+body .bootcamp_details .content h3 {
+  color: #0f2133;
+  font-size: 42px;
+}
+body .bootcamp_details .content p {
+  color: #777777;
+  font-size: 18px;
+  max-width: 500px;
+}
+body .bootcamp_details .header {
+  width: min(100%, 700px);
+  margin: 0 auto;
+  margin-bottom: 24px;
+}
+body .bootcamp_details .header h2 {
+  color: #0f2133;
+  text-align: center;
+}
+body .bootcamp_details .header h2 span {
+  color: #7e98fd;
+}
+body .bootcamp_details .header p {
+  text-align: center;
+  color: #0f2133;
+}
+body .bootcamp_details .goal_card {
+  padding: 24px;
+  border-radius: 12px;
+  background: #fafafa;
+  height: 100%;
+}
+body .bootcamp_details .goal_card h2 {
+  font-size: 18px;
+  color: #0f2133;
+}
+body .bootcamp_details .goal_card p {
+  color: #777777;
+  font-size: 14px;
+  margin: 0;
+}
+body .bootcamp_details .tabs {
+  width: 100%;
+  background: #fafafa;
+  border-radius: 12px;
+  display: flex;
+}
+body .bootcamp_details .tabs button {
+  padding: 16px;
+  border-radius: 12px;
+  flex: 1;
+  transition: 0.3s ease-in-out;
+}
+body .bootcamp_details .tabs button.active {
+  background: #0f2133;
+  color: #fff;
+}
+body .bootcamp_details .session_card {
+  width: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 12px;
+}
+body .bootcamp_details .session_card .img {
+  width: 100%;
+  aspect-ratio: 1/1;
+}
+body .bootcamp_details .session_card .content {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 24px;
+  transition: 0.3s ease-in-out;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+body .bootcamp_details .session_card .content span {
+  color: #fff;
+}
+body .bootcamp_details .session_card .content h2 {
+  font-size: 18px;
+  color: #fff;
+}
+body .bootcamp_details .session_card .content p {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.3s ease-in-out;
+  margin: 0;
+  color: #fff;
+  font-size: 14px;
+  opacity: 0;
+}
+body .bootcamp_details .session_card:hover .content {
+  background: rgba(126, 151, 253, 0.3215686275);
+}
+body .bootcamp_details .session_card:hover .content p {
+  opacity: 1;
+  max-height: 10rem;
+}
+body .rmdp-wrapper {
+  box-shadow: none;
+}
+body .rmdp-panel {
+  min-width: unset;
+  width: 100%;
+}
 body header {
   width: 100%;
   position: fixed;
@@ -322,6 +530,9 @@ body header nav .nav_links .nav_link.hide_lg img {
   body header nav .nav_links .nav_link.hide_lg {
     display: block;
   }
+}
+body header nav .nav_links .dropdown {
+  display: flex;
 }
 @media screen and (max-width: 992px) {
   body header nav .nav_links {
@@ -398,6 +609,45 @@ body header nav .nav_links .nav_link.hide_lg img {
     animation: fadeOut 0.3s forwards;
   }
 }
+body header nav .nav_links .dropdown-toggle {
+  background: transparent;
+  padding: 0;
+  line-height: normal;
+  color: #0f2133;
+  border: 0;
+}
+body header nav .nav_links .dropdown-toggle:focus {
+  background: transparent;
+}
+body header nav .nav_links .menu {
+  flex-direction: column;
+  padding: 16px 24px !important;
+  top: 20px !important;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1019607843);
+  border: 0 !important;
+  gap: 12px;
+  --bs-dropdown-min-width: unset !important;
+}
+body header nav .nav_links .menu img {
+  height: 22px;
+  width: 22px;
+  border-radius: 50%;
+  -o-object-fit: cover;
+     object-fit: cover;
+}
+body header nav .nav_links .menu .inner_menu {
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+body header nav .nav_links .menu a,
+body header nav .nav_links .menu button {
+  display: flex;
+  font-size: 14px;
+  align-items: center;
+  gap: 8px;
+  color: #0f2133;
+}
 body header nav .actions {
   flex: 1;
   display: flex;
@@ -431,7 +681,6 @@ body header nav .actions .dropdown-toggle:focus {
 body header nav .actions .menu {
   flex-direction: column;
   padding: 16px 24px !important;
-  border-radius: 16px !important;
   top: 20px !important;
   box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1019607843);
   border: 0 !important;
