@@ -8,13 +8,14 @@ export default function AboutSection() {
       <div className="container">
         <div className="row">
           <div className="col-12 p-2 mb-3">
+            <h2 className="text-center">About Mokabat</h2>
             <h6 className="text-center">
               To be at the forefront of digital change in innovative products.
             </h6>
           </div>
           <div className="col-12 p-2">
             <Swiper
-              speed={8000}
+              speed={10000}
               loop={true}
               slidesPerView={3}
               spaceBetween={24}
@@ -23,14 +24,14 @@ export default function AboutSection() {
               autoplay={{ delay: 0, disableOnInteraction: false }}
               breakpoints={{
                 992: {
-                  slidesPerView: 3
+                  slidesPerView: 3,
                 },
                 768: {
-                  slidesPerView: 2
+                  slidesPerView: 2,
                 },
                 350: {
-                  slidesPerView: 1
-                }
+                  slidesPerView: 1,
+                },
               }}
             >
               <SwiperSlide>

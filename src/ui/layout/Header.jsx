@@ -19,10 +19,8 @@ export default function Header() {
     const handleScroll = () => {
       if (window.scrollY > 1) {
         header.current.classList.add("active");
-        header.current.classList.remove("not_active");
       } else {
         header.current.classList.remove("active");
-        header.current.classList.add("not_active");
       }
     };
 
@@ -69,7 +67,7 @@ export default function Header() {
   };
 
   return (
-    <header ref={header} className="not_active">
+    <header ref={header}>
       <nav className="container">
         <Link to="/" className="logo">
           <img src="/images/logo.svg" alt="" />
@@ -92,9 +90,9 @@ export default function Header() {
           <li className="nav_link" onClick={handleCloseMenu}>
             <NavLink to="/about">{t("about")}</NavLink>
           </li>
-          {/* <li className="nav_link" onClick={handleCloseMenu}>
+          <li className="nav_link" onClick={handleCloseMenu}>
             <NavLink to="/services">{t("services")}</NavLink>
-          </li> */}
+          </li>
           <li className="nav_link" onClick={handleCloseMenu}>
             <NavLink to="/media">{t("media")}</NavLink>
           </li>

@@ -8,7 +8,6 @@ import router from "./router";
 import Footer from "./ui/layout/Footer";
 
 function App() {
-  const body = document.querySelector("body");
   const language = useSelector((state) => state.language.lang);
   const location = useLocation();
 
@@ -22,29 +21,6 @@ function App() {
   useEffect(() => {
     window.scrollTo(0, 0);
   }, [location]);
-
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 600) {
-        body.classList.add("dark_theme");
-      } else {
-        body.classList.remove("dark_theme");
-      }
-    };
-
-    if (location.pathname === "/") {
-      body.classList.remove("dark_theme");
-      body.classList.remove("not_index_page");
-      window.addEventListener("scroll", handleScroll);
-    } else {
-      body.classList.add("not_index_page");
-      body.classList.add("dark_theme");
-    }
-
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, [body.classList, location.pathname]);
 
   return (
     <>

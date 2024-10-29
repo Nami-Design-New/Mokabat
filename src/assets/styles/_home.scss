@@ -150,6 +150,9 @@
     #000 20% 70%,
     rgba(0, 0, 0, 0) 93%
   );
+  .swiper {
+    padding: 32px 0;
+  }
   .swiper-wrapper {
     transition-timing-function: linear;
     .swiper-slide {
@@ -164,7 +167,7 @@
     padding: 16px;
     border-radius: 16px;
     height: 100%;
-    border: 1px solid $white;
+    box-shadow: rgba(99, 99, 99, 0.074) 0px 2px 8px 0px;
     .content {
       display: flex;
       align-items: center;
@@ -195,6 +198,9 @@
 
 .services_section {
   padding: 60px 0;
+  // position: sticky;
+  // overflow-y: scroll;
+  // top: -100px;
   .header {
     display: flex;
     align-items: center;
@@ -204,7 +210,7 @@
     margin: 0 auto;
     max-width: 660px;
     h2 {
-      color: $white;
+      color: $main;
       text-align: center;
       text-wrap: balance;
       font-size: 32px;
@@ -213,7 +219,7 @@
       }
     }
     p {
-      color: $white;
+      color: $main;
       text-align: center;
     }
   }
@@ -224,17 +230,24 @@
     .accordion-item {
       border-radius: 16px;
       overflow: hidden;
-      background: rgb(255 255 255 / 4%);
-      border: 1px solid #ffffff21;
+      border: 0;
       backdrop-filter: blur(6px);
       transition: $transition;
+      background: $white;
+      box-shadow: rgba(99, 99, 99, 0.074) 0px 2px 8px 0px;
       &.active {
         background: $second;
+        button {
+          color: $white !important;
+        }
+        &::after {
+          color: $white !important;
+        }
       }
       .accordion-button {
         box-shadow: none !important;
         background: transparent !important;
-        color: $white !important;
+        color: $main !important;
         &::after {
           content: "\f00d";
           font-family: "Font Awesome 6 Pro";
@@ -270,7 +283,7 @@
   .header {
     @include space-between();
     h2 {
-      color: $white;
+      color: $main;
       text-align: center;
       text-wrap: balance;
       font-size: 32px;
@@ -340,10 +353,11 @@
   .header {
     @include space-between();
     h2 {
-      color: $white;
-      text-align: center;
+      color: $main;
+      text-align: start;
       text-wrap: balance;
       font-size: 32px;
+      margin: 0;
       span {
         color: $second;
       }
@@ -356,8 +370,8 @@
         width: 42px;
         height: 42px;
         border-radius: 50%;
-        border: 1px solid $white;
-        color: $white;
+        border: 1px solid $main;
+        color: $main;
         transition: $transition;
         &:hover {
           background: $second;
@@ -365,6 +379,9 @@
           color: $white;
         }
       }
+    }
+    @media screen and (max-width: 576px) {
+      align-items: flex-end;
     }
   }
   .call_wrapper {
@@ -405,9 +422,9 @@
   .feedback_card {
     border-radius: 16px;
     padding: 32px;
-    background: rgb(255 255 255 / 4%);
+    background: $white;
+    border: 1px solid #0000000f;
     backdrop-filter: blur(6px);
-    border: 1px solid #ffffff21;
     height: 100%;
     width: 100%;
     display: flex;
@@ -421,7 +438,7 @@
       color: $second;
     }
     p {
-      color: $white;
+      color: $main;
     }
     .user {
       display: flex;
@@ -440,10 +457,10 @@
         gap: 4px;
         h4 {
           font-size: 18px;
-          color: $white;
+          color: $main;
         }
         h6 {
-          color: $white;
+          color: $main;
           font-size: 14px;
         }
       }
@@ -462,16 +479,13 @@
     margin: 0 auto;
     max-width: 660px;
     h2 {
-      color: $white;
+      color: $second;
       text-align: center;
       text-wrap: balance;
       font-size: 32px;
-      span {
-        color: $second;
-      }
     }
     p {
-      color: $white;
+      color: $main;
       text-align: center;
     }
   }
@@ -524,84 +538,8 @@
   position: relative;
   @include centerFlex();
   padding: 24px;
-  &:before {
-    position: absolute;
-    content: "";
-    width: 90%;
-    height: 90%;
-    top: 50%;
-    left: 50%;
-    transform: translate(-50%, -50%);
-    background-color: $second;
-    z-index: -1;
-    animation: border-transform-default-two 10s linear infinite alternate
-      forwards;
-  }
 
   img {
-    animation: border-transform-default 10s linear infinite alternate forwards;
-    width: 85%;
-  }
-}
-
-@keyframes border-transform-default {
-  0%,
-  to {
-    border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
-  }
-
-  14% {
-    border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
-  }
-
-  28% {
-    border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
-  }
-
-  42% {
-    border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
-  }
-
-  56% {
-    border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
-  }
-
-  70% {
-    border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
-  }
-
-  84% {
-    border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
-  }
-}
-
-@keyframes border-transform-default-two {
-  0%,
-  to {
-    border-radius: 63% 37% 54% 46%/55% 48% 52% 45%;
-  }
-
-  14% {
-    border-radius: 54% 46% 38% 62%/49% 70% 30% 51%;
-  }
-
-  28% {
-    border-radius: 40% 60% 54% 46%/49% 60% 40% 51%;
-  }
-
-  42% {
-    border-radius: 61% 39% 55% 45%/61% 38% 62% 39%;
-  }
-
-  56% {
-    border-radius: 50% 50% 34% 66%/56% 68% 32% 44%;
-  }
-
-  70% {
-    border-radius: 61% 39% 67% 33%/70% 50% 50% 30%;
-  }
-
-  84% {
-    border-radius: 46% 54% 50% 50%/35% 61% 39% 65%;
+    width: 90%;
   }
 }

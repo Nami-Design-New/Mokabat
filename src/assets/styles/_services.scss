@@ -1,0 +1,35 @@
+.services_page {
+  padding: 60px 0;
+  .img {
+    width: 100%;
+    @include centerFlex();
+    img {
+      width: 100%;
+      object-fit: contain;
+    }
+  }
+  .sercvice_content {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    height: 100%;
+    h2 {
+      color: $second;
+      margin-bottom: 24px;
+    }
+    p {
+      color: $white;
+      font-size: 18px;
+    }
+    ul {
+      margin-top: 12px;
+      padding-left: 16px;
+      list-style: disc;
+      color: $white;
+      font-size: 18px;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+  }
+}

@@ -3,28 +3,12 @@
 body {
   position: relative;
   overflow-x: hidden;
-  background: #d8ddf4;
+  background: $white;
   transition: background 0.3s ease-in-out;
   font-family: "outfit", sans-serif;
 
   main {
     min-height: 100vh;
-  }
-
-  &.dark_theme {
-    background: #050913;
-    .about_section {
-      h6 {
-        color: $white !important;
-      }
-      .about_card {
-        border-color: #ffffff21;
-        h2,
-        p {
-          color: $white !important;
-        }
-      }
-    }
   }
 
   .sectionHeader {
@@ -67,40 +51,6 @@ body {
     }
   }
 
-  .media_details {
-    padding: 60px 0;
-    .banner {
-      width: 100%;
-      aspect-ratio: 6 / 2;
-      @media screen and (max-width: 576px) {
-        aspect-ratio: 3 / 2;
-      }
-      img {
-        width: 100%;
-        height: 100%;
-        object-fit: cover;
-        border-radius: 24px;
-      }
-    }
-    .blog {
-      color: $white;
-      display: flex;
-      flex-direction: column;
-      gap: 12px;
-      h1 {
-        font-size: 26px;
-      }
-      span {
-        width: fit-content;
-        background: $second;
-        color: $white;
-        padding: 8px 24px;
-        border-radius: 80px;
-        font-size: 14px;
-      }
-    }
-  }
-
   @import "./header";
   @import "./home";
   @import "./contact";
@@ -109,62 +59,8 @@ body {
   @import "./media";
   @import "./form-ui";
   @import "./join";
+  @import "./services";
   @import "./footer";
-
-  &.not_index_page {
-    header {
-      &.not_active {
-        nav .nav_links .nav_link a {
-          color: $white;
-        }
-        nav .actions .dropdown-toggle {
-          border-color: $white;
-          i {
-            color: $white;
-          }
-        }
-        nav .menu_btn {
-          border-color: $white;
-          color: $white;
-          &::after {
-            background: $white;
-          }
-          &:hover {
-            color: $main;
-          }
-        }
-        .customBtn {
-          color: $white;
-          border-color: $white;
-          &:hover {
-            color: $main;
-            &::after {
-              background: $white;
-            }
-          }
-        }
-      }
-      nav .nav_links.active {
-        .nav_link a {
-          color: $main !important;
-          &:hover,
-          &.active {
-            color: $second !important;
-          }
-        }
-        .menu_btn {
-          border-color: $main;
-          color: $main;
-          &::after {
-            background: $main;
-          }
-          &:hover {
-            color: $white;
-          }
-        }
-      }
-    }
-  }
 
   &.ar {
     direction: rtl;

@@ -69,7 +69,7 @@ export default function ParticlesComponent() {
             },
 
             shape: {
-              type: "star",
+              type: "square",
             },
 
             size: {

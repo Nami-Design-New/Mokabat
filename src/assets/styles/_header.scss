@@ -7,7 +7,8 @@ header {
   z-index: 999;
   transition: $transition;
   &.active {
-    background: $white;
+    background: #ffffff80;
+    backdrop-filter: blur(10px);
   }
   nav {
     display: flex;
