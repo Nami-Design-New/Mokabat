@@ -3,6 +3,7 @@ import Bootcamp from "./routes/Bootcamp";
 import BootcampDetails from "./routes/BootcampDetails";
 import Contact from "./routes/Contact";
 import Home from "./routes/Home";
+import Insight from "./routes/Insight";
 import Insights from "./routes/Insights";
 import Join from "./routes/Join";
 import Media from "./routes/Media";
@@ -35,6 +36,10 @@ const router = [
   {
     path: "/insights",
     element: <Insights />,
+  },
+  {
+    path: "/insights/1",
+    element: <Insight />,
   },
   {
     path: "/projects",

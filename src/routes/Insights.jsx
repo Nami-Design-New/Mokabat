@@ -129,36 +129,44 @@ export default function Insights() {
           </SwiperSlide>
         </Swiper>
         <div className="sw_pagiantion"></div>
-
         <div className="row mt-5">
           <div className="col-lg-3 col- md-6 col-12 p-2">
-            <Link className="insight_link">
+            <Link to="/insights/1" className="insight_link">
               <div className="img">
                 <img src="/images/CBDC.jpg" alt="" />
                 <div className="content">
-                  
+                  <h4>Transforming Finance and Banking</h4>
                 </div>
               </div>
             </Link>
           </div>
           <div className="col-lg-3 col- md-6 col-12 p-2">
-            <Link className="insight_link">
+            <Link to="/insights/1" className="insight_link">
               <div className="img">
                 <img src="/images/Digital-Innovation.jpg" alt="" />
+                <div className="content">
+                  <h4>Powering Innovation Capabilities</h4>
+                </div>
               </div>
             </Link>
           </div>
           <div className="col-lg-3 col- md-6 col-12 p-2">
-            <Link className="insight_link">
+            <Link to="/insights/1" className="insight_link">
               <div className="img">
                 <img src="/images/ESG.jpg" alt="" />
+                <div className="content">
+                  <h4>Banking for a Better World</h4>
+                </div>
               </div>
             </Link>
           </div>
           <div className="col-lg-3 col- md-6 col-12 p-2">
-            <Link className="insight_link">
+            <Link to="/insights/1" className="insight_link">
               <div className="img">
                 <img src="/images/Fintech-Banking.jpg" alt="" />
+                <div className="content">
+                  <h4>The Fintech Revolution</h4>
+                </div>
               </div>
             </Link>
           </div>

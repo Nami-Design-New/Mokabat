@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import SectionHeader from "../ui/layout/SectionHeader";
 
 export default function Contact() {
   function highlight(e) {
@@ -14,7 +13,6 @@ export default function Contact() {
 
   return (
     <>
-      <SectionHeader title={"Contact Us"} />
       <section className="contact_section">
         <div className="container">
           <div className="row">

@@ -42,7 +42,7 @@ export default function ParticlesComponent() {
 
           particles: {
             color: {
-              value: "#212121",
+              value: "#7e98fd",
             },
 
             move: {
@@ -73,7 +73,7 @@ export default function ParticlesComponent() {
             },
 
             size: {
-              value: { min: 0.5, max: 1.5 },
+              value: { min: 0.5, max: 3 },
             },
           },
           detectRetina: true,

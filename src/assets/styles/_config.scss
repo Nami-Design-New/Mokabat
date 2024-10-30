@@ -39,6 +39,7 @@
   line-height: 1.4;
   box-sizing: border-box;
   scroll-behavior: smooth;
+  overscroll-behavior: none;
   -webkit-tap-highlight-color: transparent;
 }
 
@@ -261,10 +262,5 @@ $shadow: 0px 2px 8px #0000001a;
 }
 
 .rmdp-wrapper {
-  box-shadow: none;
-}
-
-.rmdp-panel {
-  min-width: unset;
-  width: 100%;
+  box-shadow: none !important;
 }

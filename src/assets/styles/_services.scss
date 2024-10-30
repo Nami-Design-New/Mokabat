@@ -1,5 +1,6 @@
 .services_page {
-  padding: 60px 0;
+  padding: 100px 0;
+  position: relative;
   .img {
     width: 100%;
     @include centerFlex();
@@ -42,6 +43,9 @@
   padding: 12px;
   background: #fafafa;
   border-radius: 12px;
+  position: sticky;
+  bottom: 0;
+  z-index: 99;
   button {
     width: 100%;
     height: 50px;

@@ -1,11 +1,9 @@
 import OurTeam from "../components/about/OurTeam";
-import SectionHeader from "../ui/layout/SectionHeader";
 import WhyUs from "./../components/about/WhyUs";
 
 export default function About() {
   return (
     <>
-      <SectionHeader title={"About Mokabat"} />
       <section className="about_page">
         <div className="container">
           <div className="row justify-content-center">
