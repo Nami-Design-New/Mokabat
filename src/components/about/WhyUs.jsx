@@ -1,146 +1,104 @@
-import { useEffect, useState, useRef } from "react";
-import lozad from "lozad";
-import SimpleParallax from "simple-parallax-js";
-import CountUp from "react-countup";
+import { useRef, useState, useEffect } from "react";
 
 export default function WhyUs() {
-  const [startCount, setStartCount] = useState(false);
   const sectionRef = useRef(null);
+  const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
-    const observer = lozad(".lazy", {
-      loaded: function (el) {
-        el.parentNode.classList.add("loaded");
-      },
-    });
-    observer.observe();
-
-    const intersectionObserver = new IntersectionObserver(
-      (entries) => {
-        if (entries[0].isIntersecting) {
-          setStartCount(true);
+    const options = { root: sectionRef.current, threshold: 0.5 };
+    const observer = new IntersectionObserver((entries) => {
+      entries.forEach((entry) => {
+        if (entry.isIntersecting) {
+          setActiveIndex(parseInt(entry.target.dataset.index));
         }
-      },
-      { threshold: 0.1 }
-    );
+      });
+    }, options);
 
-    if (sectionRef.current) {
-      intersectionObserver.observe(sectionRef.current);
-    }
+    const contentCards = sectionRef.current.querySelectorAll(".content-card");
+    contentCards.forEach((card, index) => {
+      card.dataset.index = index;
+      observer.observe(card);
+    });
 
     return () => {
-      if (sectionRef.current) {
-        // eslint-disable-next-line react-hooks/exhaustive-deps
-        intersectionObserver.unobserve(sectionRef.current);
-      }
+      contentCards.forEach((card) => observer.unobserve(card));
     };
   }, []);
 
   return (
     <section className="whyus_section" ref={sectionRef}>
       <div className="container">
-        <div className="row">
-          <div className="col-lg-6 col-12 p-2">
-            <div className="lazyImg">
-              <div className="lazyDiv">
-                <div className="lazy">
-                  <SimpleParallax speed={0.5} scale={1.2}>
-                    <img src="/images/about1.jpg" alt="our_aim" />
-                  </SimpleParallax>
+        <div className="row tabs-row">
+          <div className="tabs-wrapper col-3">
+            <div className="tabs">
+              {[
+                "Our Aims",
+                "How ?",
+                "Our Vision",
+                "Our Mission",
+                "Why Mokabat ?",
+              ].map((tab, index) => (
+                <div
+                  key={index}
+                  className={`tab ${index === activeIndex ? "active" : ""}`}
+                >
+                  {tab}
                 </div>
-              </div>
+              ))}
             </div>
           </div>
-          <div className="col-lg-6 col-12 p-2">
-            <div className="info">
-              <h2 className="aboutTitle">
+          <div className="tabs-content-wrapper col-6 py-2 px-4">
+            <div
+              className={`content-card ${activeIndex === 0 ? "active" : ""}`}
+            >
+              <h2>
                 Our <span>Aims</span>
               </h2>
               <p className="des">
                 Our aim is to innovatively address the rapid technological
                 advancements disrupting industries and societies.
               </p>
-
-              <h2 className="aboutTitle">
+            </div>
+            <div
+              className={`content-card ${activeIndex === 1 ? "active" : ""}`}
+            >
+              <h2>
                 <span>How ?</span>
               </h2>
               <p className="des">
                 By embodying the latest financial technologies and solutions and
                 nurturing a thriving ecosystem where the industry’s talents can
-                flourish. With a strong will, vision, and the right tools, we
-                want to transform people’s dreams into reality and create a
-                better tomorrow.
+                flourish.
               </p>
-
-              <div className="statistic">
-                <h1 className="counterUp">
-                  {startCount && <CountUp duration={5} start={0} end={10} />}+
-                </h1>
-                <h6>Years of Experience</h6>
-              </div>
             </div>
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-lg-6 col-12 p-2 order-lg-0 order-1">
-            <div className="info">
-              <h2 className="aboutTitle">
+            <div
+              className={`content-card ${activeIndex === 2 ? "active" : ""}`}
+            >
+              <h2>
                 Our <span>Vision</span>
               </h2>
               <p className="des">
                 To be at the forefront of the digital revolution in financial
                 technologies and innovative solutions.
               </p>
-
-              <h2 className="aboutTitle">
+            </div>
+            <div
+              className={`content-card ${activeIndex === 3 ? "active" : ""}`}
+            >
+              <h2>
                 Our <span>Mission</span>
               </h2>
               <p className="des">
                 To enable the right environment for tomorrow’s financial
                 technologies aspirers through incubation, acceleration, and
-                partnerships, and leveraging world-class execution capabilities
-                to guide digital products from ideation to execution and
-                scale-up.
+                partnerships.
               </p>
-
-              <div className="statistic">
-                <h1 className="counterUp">
-                  {startCount && <CountUp duration={5} start={0} end={150} />}+
-                </h1>
-                <h6>Project Completed</h6>
-              </div>
             </div>
-          </div>
-          <div className="col-lg-6 col-12 p-2 order-lg-1 order-0">
-            <div className="lazyImg">
-              <div className="lazyDiv">
-                <div className="lazy">
-                  <SimpleParallax speed={0.5} scale={1.2}>
-                    <img src="/images/img_59.jpg" alt="our_aim" />
-                  </SimpleParallax>
-                </div>
-              </div>
-            </div>
-          </div>
-        </div>
-
-        <div className="row">
-          <div className="col-lg-6 col-12 p-2">
-            <div className="lazyImg">
-              <div className="lazyDiv">
-                <div className="lazy">
-                  <SimpleParallax speed={0.5} scale={1.2}>
-                    <img src="/images/img_63.jpg" alt="our_aim" />
-                  </SimpleParallax>
-                </div>
-              </div>
-            </div>
-          </div>
-          <div className="col-lg-6 col-12 p-2">
-            <div className="info">
-              <h2 className="aboutTitle">
-                why <span>Mokabat ?</span>
+            <div
+              className={`content-card ${activeIndex === 4 ? "active" : ""}`}
+            >
+              <h2>
+                Why <span>Mokabat ?</span>
               </h2>
               <p className="des">
                 Whether you are a fintech, a government entity, a smart city, or
@@ -176,6 +134,20 @@ export default function WhyUs() {
                   </h6>
                 </li>
               </ul>
+            </div>
+          </div>
+          <div className="img-wrapper col-3">
+            <div className="lazyImg">
+              <img
+                src={`${
+                  activeIndex === 0 || activeIndex === 1
+                    ? "/images/about1.jpg"
+                    : activeIndex === 2 || activeIndex === 3
+                    ? "/images/img_59.jpg"
+                    : "/images/img_63.jpg"
+                }`}
+                alt="our_aim"
+              />
             </div>
           </div>
         </div>

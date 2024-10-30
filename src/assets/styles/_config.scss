@@ -87,6 +87,10 @@ input[type="number"] {
 }
 $main: #0f2133;
 $second: #7e98fd;
+$second10: #7e97fd23;
+$second30: #7e97fd56;
+$second50: #7e97fd89;
+$second70: #7e97fdbc;
 $border: #dddddd;
 $inputBg: #f8f8f8;
 $inputHint: #aaaaaa;
@@ -263,4 +267,28 @@ $shadow: 0px 2px 8px #0000001a;
 
 .rmdp-wrapper {
   box-shadow: none !important;
+}
+
+.home-loader-wrapper {
+  width: 100%;
+  height: 100dvh;
+  position: fixed;
+  top: 0;
+  left: 0;
+  background-color: $white;
+  @include centerFlex();
+  z-index: 20000;
+
+  .home-loader {
+    width: 200px;
+    height: 200px;
+    mask-image: url("/icons/m.svg");
+    mask-size: contain;
+    mask-position: center;
+    mask-repeat: no-repeat;
+    position: relative;
+    background-color: $main;
+    border: 1px solid red;
+
+  }
 }
