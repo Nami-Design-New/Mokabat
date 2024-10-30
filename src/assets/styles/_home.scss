@@ -198,9 +198,6 @@
 
 .services_section {
   padding: 60px 0;
-  // position: sticky;
-  // overflow-y: scroll;
-  // top: -100px;
   .header {
     display: flex;
     align-items: center;
@@ -268,12 +265,32 @@
       }
     }
   }
-  .img {
+  .images_container {
     width: 100%;
+    height: 100%;
+    @include centerFlex();
+  }
+
+  .aboutImage {
+    display: grid;
+    place-items: center;
+    width: 100%;
+
     img {
-      width: 100%;
-      object-fit: contain;
-      object-position: center;
+      width: 90%;
+      opacity: 0;
+      transform: translateX(20px);
+      transition: transform 0.3s ease, opacity 0.3s ease;
+      position: absolute;
+      &.fade-in {
+        opacity: 1;
+        transform: translateX(0);
+      }
+
+      &.fade-out {
+        opacity: 0;
+        transform: translateX(-20px);
+      }
     }
   }
 }
@@ -495,6 +512,7 @@
     border-radius: 16px;
     position: relative;
     overflow: hidden;
+    box-shadow: rgba(99, 99, 99, 0.074) 0px 2px 8px 0px;
     img {
       width: 100%;
       height: 100%;
@@ -530,16 +548,5 @@
         max-height: 10rem;
       }
     }
-  }
-}
-
-.aboutImage {
-  width: 100%;
-  position: relative;
-  @include centerFlex();
-  padding: 24px;
-
-  img {
-    width: 90%;
   }
 }

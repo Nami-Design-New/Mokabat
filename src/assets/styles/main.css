@@ -1752,15 +1752,32 @@ body .services_section .accordion .accordion-item .accordion-body {
   background: transparent !important;
   color: #fff !important;
 }
-body .services_section .img {
+body .services_section .images_container {
+  width: 100%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+body .services_section .aboutImage {
+  display: grid;
+  place-items: center;
   width: 100%;
 }
-body .services_section .img img {
-  width: 100%;
-  -o-object-fit: contain;
-     object-fit: contain;
-  -o-object-position: center;
-     object-position: center;
+body .services_section .aboutImage img {
+  width: 90%;
+  opacity: 0;
+  transform: translateX(20px);
+  transition: transform 0.3s ease, opacity 0.3s ease;
+  position: absolute;
+}
+body .services_section .aboutImage img.fade-in {
+  opacity: 1;
+  transform: translateX(0);
+}
+body .services_section .aboutImage img.fade-out {
+  opacity: 0;
+  transform: translateX(-20px);
 }
 body .linkedin_section {
   padding: 60px 0;
@@ -1985,6 +2002,7 @@ body .actions_section .program_card {
   border-radius: 16px;
   position: relative;
   overflow: hidden;
+  box-shadow: rgba(99, 99, 99, 0.074) 0px 2px 8px 0px;
 }
 body .actions_section .program_card img {
   width: 100%;
@@ -2019,17 +2037,6 @@ body .actions_section .program_card .program_link .hiddenText {
 }
 body .actions_section .program_card:hover .hiddenText {
   max-height: 10rem;
-}
-body .aboutImage {
-  width: 100%;
-  position: relative;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 24px;
-}
-body .aboutImage img {
-  width: 90%;
 }
 body .insights_page {
   padding: 120px 0;
