@@ -20,7 +20,7 @@ export default function BootcampDetails() {
           </div>
           <div className="col-lg-6 col-12 p-2">
             <div className="img">
-              <img src="/images/tektalk_outer_image.webp" alt="" />
+              <img src="/images/chatgpt.webp" alt="" />
             </div>
           </div>
         </div>
@@ -103,7 +103,7 @@ export default function BootcampDetails() {
           <div className="col-lg-4 col-12 p-2">
             <div className="session_card">
               <div className="img">
-                <img src="/images/tektalk_outer_image.webp" alt="" />
+                <img src="/images/chatgpt.webp" alt="" />
                 <div className="content">
                   <span>Session 1</span>
                   <h2>Chat GPT</h2>
@@ -121,7 +121,7 @@ export default function BootcampDetails() {
           <div className="col-lg-4 col-12 p-2">
             <div className="session_card">
               <div className="img">
-                <img src="/images/tektalk_outer_image.webp" alt="" />
+                <img src="/images/chatgpt.webp" alt="" />
                 <div className="content">
                   <span>Session 1</span>
                   <h2>Chat GPT</h2>
@@ -139,7 +139,7 @@ export default function BootcampDetails() {
           <div className="col-lg-4 col-12 p-2">
             <div className="session_card">
               <div className="img">
-                <img src="/images/tektalk_outer_image.webp" alt="" />
+                <img src="/images/chatgpt.webp" alt="" />
                 <div className="content">
                   <span>Session 1</span>
                   <h2>Chat GPT</h2>

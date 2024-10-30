@@ -259,3 +259,12 @@ $shadow: 0px 2px 8px #0000001a;
 .row {
   margin: 0;
 }
+
+.rmdp-wrapper {
+  box-shadow: none;
+}
+
+.rmdp-panel {
+  min-width: unset;
+  width: 100%;
+}
