@@ -71,3 +71,32 @@ body {
     }
   }
 }
+
+.intro_loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background: $white;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+  transition-behavior: allow-discrete;
+  &.hide {
+    opacity: 0;
+    display: none;
+  }
+}
+
+@keyframes zoomout {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(10);
+  }
+}

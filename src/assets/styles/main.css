@@ -1314,6 +1314,15 @@ body header nav .nav_links .dropdown {
     font-size: 20px;
     font-weight: 600;
   }
+  body header nav .nav_links li .menu {
+    position: static !important;
+    transform: translate3d(0, 12px, 0) !important;
+  }
+  body header nav .nav_links li .dropdown {
+    display: flex;
+    align-items: start;
+    flex-direction: column;
+  }
   body header nav .nav_links a {
     text-align: start;
   }
@@ -1763,6 +1772,7 @@ body .services_section .aboutImage {
   display: grid;
   place-items: center;
   width: 100%;
+  position: relative;
 }
 body .services_section .aboutImage img {
   width: 90%;
@@ -2898,4 +2908,33 @@ body.ar {
 }
 body.ar .home_section .content .customBtn i {
   transform: scale(-1);
+}
+
+.intro_loader {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100dvw;
+  height: 100dvh;
+  background: #fff;
+  z-index: 99999;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  opacity: 1;
+  transition: 0.3s ease-in-out;
+  transition-behavior: allow-discrete;
+}
+.intro_loader.hide {
+  opacity: 0;
+  display: none;
+}
+
+@keyframes zoomout {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(10);
+  }
 }/*# sourceMappingURL=main.css.map */
