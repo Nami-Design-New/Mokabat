@@ -5,7 +5,7 @@ export default function WhyUs() {
   const [activeIndex, setActiveIndex] = useState(0);
 
   useEffect(() => {
-    const options = { root: sectionRef.current, threshold: 0.5 };
+    const options = { root: null, threshold: 0.5 };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
