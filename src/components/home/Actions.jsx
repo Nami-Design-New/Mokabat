@@ -17,7 +17,7 @@ export default function Actions() {
           <div className="col-lg-5 col-12 p-3">
             <div className="program_card">
               <img src="/images/tektalk_outer_image.webp" alt="" />
-              <Link to="/programs/tektalk" className="program_link">
+              <Link to="/bootcamp/1" className="program_link">
                 <h6>Tektalk</h6>
                 <div className="hiddenText">
                   <p>
@@ -33,7 +33,7 @@ export default function Actions() {
           <div className="col-lg-5 col-12 p-3">
             <div className="program_card">
               <img src="/images/speak_to_inspire.webp" alt="" />
-              <Link to="/programs/speak-to-inspire" className="program_link">
+              <Link to="/bootcamp/1" className="program_link">
                 <h6>Speak To Inspire</h6>
                 <div className="hiddenText">
                   <p>
