@@ -149,15 +149,26 @@
       gap: 32px;
       justify-content: center;
       flex-direction: column;
+      @media screen and (max-width: 576px) {
+        padding: 0 2rem;
+      }
       h3 {
         color: $white;
         font-size: 48px;
         max-width: 33rem;
+        @media screen and (max-width: 576px) {
+          font-size: 32px;
+          text-align: center;
+          max-width: unset;
+        }
       }
       .btns {
         display: flex;
         align-items: center;
         gap: 16px;
+        @media screen and (max-width: 576px) {
+          flex-direction: column;
+        }
         button {
           border: 1px solid $white;
           color: $white;
@@ -166,6 +177,15 @@
           display: flex;
           align-items: center;
           gap: 8px;
+          transition: $transition;
+          &:hover {
+            background: $white;
+            color: $main;
+          }
+          @media screen and (max-width: 576px) {
+            width: 100%;
+            justify-content: center;
+          }
         }
       }
     }
