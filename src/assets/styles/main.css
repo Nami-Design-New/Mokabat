@@ -742,17 +742,17 @@ body footer {
   padding-top: 60px;
   background: #e5eaff;
   position: relative;
-  background-image: url("/images/bg_5.jpg");
+  background-image: linear-gradient(to top, rgba(229, 234, 255, 0.8117647059), #ffffff), url(/images/footer.jpg);
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
 }
 body footer .news_letter {
   padding: 60px 0;
-  border-bottom: 1px solid #2a2e36;
+  border-bottom: 1px solid #dedede;
 }
 body footer .news_letter p {
-  color: #fff;
+  color: #0f2133;
   text-align: center;
   font-size: 14px;
   margin-bottom: 8px;
@@ -761,7 +761,7 @@ body footer .news_letter p span {
   color: #7e98fd;
 }
 body footer .news_letter h3 {
-  color: #fff;
+  color: #0f2133;
   margin-bottom: 24px;
   font-size: 24px;
   text-align: center;
@@ -774,19 +774,19 @@ body footer .news_letter form {
   border-radius: 100px;
   padding: 4px;
   padding-inline-start: 24px;
-  border: 1px solid #fff;
+  border: 1px solid #0f2133;
 }
 body footer .news_letter form input {
   border: none;
   background: none;
   outline: none;
   width: 100%;
-  color: #fff;
+  color: #0f2133;
 }
 body footer .news_letter form button {
   padding: 12px 24px;
-  background: #fff;
-  color: #0f2133;
+  background: #0f2133;
+  color: #fff;
   border-radius: 100px;
   transition: 0.3s ease-in-out;
 }
@@ -801,7 +801,7 @@ body footer .logo {
 body footer .logo span {
   width: 1px;
   display: block;
-  background: #fff;
+  background: #0f2133;
 }
 body footer .logo img {
   height: 60px;
@@ -821,7 +821,7 @@ body footer .social_media a {
   align-items: center;
   justify-content: center;
   border: 1px solid #2a2e36;
-  color: #fff;
+  color: #0f2133;
   font-size: 14px;
   border-radius: 50%;
   transition: 0.3s ease-in-out;
@@ -835,7 +835,7 @@ body footer .social_media a:hover {
 body footer .copy_rights {
   margin-top: 32px;
   padding: 16px 0;
-  border-top: 1px solid #2a2e36;
+  border-top: 1px solid #dedede;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -848,10 +848,10 @@ body footer .copy_rights {
 }
 body footer .copy_rights h6 {
   font-size: 16x;
-  color: #fff;
+  color: #0f2133;
 }
 body footer .copy_rights a {
-  color: #fff;
+  color: #0f2133;
   transition: 0.3s ease-in-out;
   font-size: 16px;
 }
@@ -864,7 +864,7 @@ body footer .copy_rights .links {
   gap: 16px;
 }
 body footer .footer_title {
-  color: #fff;
+  color: #0f2133;
   margin-bottom: 32px;
   font-size: 28px;
   position: relative;
@@ -894,7 +894,7 @@ body footer .footer_link {
   display: flex;
   align-items: center;
   gap: 12px;
-  color: #fff;
+  color: #0f2133;
   transition: 0.3s ease-in-out;
   margin-bottom: 16px;
 }

@@ -2,15 +2,16 @@ footer {
   padding-top: 60px;
   background: #e5eaff;
   position: relative;
-  background-image: url("/images/bg_5.jpg");
+  background-image: linear-gradient(to top, #e5eaffcf, #ffffff),
+    url(/images/footer.jpg);
   background-position: top center;
   background-repeat: no-repeat;
   background-size: cover;
   .news_letter {
     padding: 60px 0;
-    border-bottom: 1px solid #2a2e36;
+    border-bottom: 1px solid #dedede;
     p {
-      color: $white;
+      color: $main;
       text-align: center;
       font-size: 14px;
       margin-bottom: 8px;
@@ -19,7 +20,7 @@ footer {
       }
     }
     h3 {
-      color: $white;
+      color: $main;
       margin-bottom: 24px;
       font-size: 24px;
       text-align: center;
@@ -32,16 +33,16 @@ footer {
       border-radius: 100px;
       padding: 4px;
       padding-inline-start: 24px;
-      border: 1px solid $white;
+      border: 1px solid $main;
       input {
         @include clearInput();
         width: 100%;
-        color: $white;
+        color: $main;
       }
       button {
         padding: 12px 24px;
-        background: $white;
-        color: $main;
+        background: $main;
+        color: $white;
         border-radius: 100px;
         transition: $transition;
         &:hover {
@@ -57,7 +58,7 @@ footer {
     span {
       width: 1px;
       display: block;
-      background: $white;
+      background: $main;
     }
     img {
       height: 60px;
@@ -74,7 +75,7 @@ footer {
       height: 40px;
       @include centerFlex();
       border: 1px solid #2a2e36;
-      color: $white;
+      color: $main;
       font-size: 14px;
       border-radius: 50%;
       transition: $transition;
@@ -89,7 +90,7 @@ footer {
   .copy_rights {
     margin-top: 32px;
     padding: 16px 0;
-    border-top: 1px solid #2a2e36;
+    border-top: 1px solid #dedede;
     @include space-between();
     @media screen and (max-width: 576px) {
       flex-direction: column-reverse;
@@ -97,10 +98,10 @@ footer {
     }
     h6 {
       font-size: 16x;
-      color: $white;
+      color: $main;
     }
     a {
-      color: $white;
+      color: $main;
       transition: $transition;
       font-size: 16px;
       &:hover {
@@ -114,7 +115,7 @@ footer {
     }
   }
   .footer_title {
-    color: $white;
+    color: $main;
     margin-bottom: 32px;
     font-size: 28px;
     position: relative;
@@ -146,7 +147,7 @@ footer {
     display: flex;
     align-items: center;
     gap: 12px;
-    color: $white;
+    color: $main;
     transition: $transition;
     margin-bottom: 16px;
     &:hover {
