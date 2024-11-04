@@ -1800,6 +1800,7 @@ body .about_section .about_card {
   padding: 16px;
   border-radius: 16px;
   height: 100%;
+  background: #fff;
   box-shadow: rgba(99, 99, 99, 0.074) 0px 2px 8px 0px;
 }
 body .about_section .about_card .content {
@@ -3153,5 +3154,5 @@ body.ar .home_section .content .customBtn i {
   z-index: -10;
   -o-object-fit: cover;
      object-fit: cover;
-  filter: brightness(1.2) hue-rotate(0deg) saturate(0%) contrast(100%);
+  filter: brightness(1.1) contrast(100%) opacity(0.3);
 }/*# sourceMappingURL=main.css.map */
