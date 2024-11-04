@@ -3154,5 +3154,5 @@ body.ar .home_section .content .customBtn i {
   z-index: -10;
   -o-object-fit: cover;
      object-fit: cover;
-  filter: brightness(1.2) contrast(105%);
+  filter: brightness(1.1) contrast(100%) opacity(0.3);
 }/*# sourceMappingURL=main.css.map */
