@@ -2206,20 +2206,33 @@ body .pros_section .header_title span {
 }
 body .pros_section .project_cardd {
   padding: 24px;
+  height: 100%;
   border-radius: 16px;
   background: #fff;
   box-shadow: rgba(99, 99, 99, 0.074) 0px 2px 8px 0px;
   display: flex;
+  justify-content: space-between;
   flex-direction: column;
 }
 body .pros_section .project_cardd .img {
   width: 100%;
   display: flex;
   justify-content: flex-end;
-  transform: translateY(-80px);
+  transform: translateY(-60px);
 }
 body .pros_section .project_cardd .img img {
-  width: 70%;
+  width: 80%;
+}
+body .pros_section .project_cardd.small .img img {
+  width: 50%;
+}
+body .pros_section .project_cardd h3 {
+  color: #7e98fd;
+  margin-bottom: 12px;
+}
+body .pros_section .project_cardd p {
+  color: #777777;
+  margin: 0;
 }
 body .insights_page {
   padding: 120px 0;

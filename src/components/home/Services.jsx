@@ -59,7 +59,7 @@ export default function Services() {
             </div>
           </div>
 
-          <div className="col-lg-7 col-12 p-2">
+          <div className="col-lg-7 col-12 p-2" data-aos="fade-up">
             <Accordion activeKey={activeKey} onSelect={handleSelect}>
               {[
                 {
