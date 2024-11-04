@@ -21,8 +21,8 @@ export default function Insight() {
         <div className="img">
           <img src="/images/CBDC.jpg" alt="" />
           <div className="content">
-            <h3>Transforming Finance and Banking</h3>
-            <div className="btns">
+            <h3 data-aos="fade-up">Transforming Finance and Banking</h3>
+            <div className="btns" data-aos="fade-up">
               <button>
                 Download files{" "}
                 <i className="fa-regular fa-cloud-arrow-down"></i>
@@ -35,10 +35,10 @@ export default function Insight() {
         </div>
       </div>
       <div className="container mt-5">
-        <p>
+        <p data-aos="fade-up">
           <b>Strategies for Banks in a Digital Currency World</b>
         </p>
-        <p>
+        <p data-aos="fade-up">
           Central Bank Digital Currency (CBDC) is gaining traction worldwide as
           countries explore its potential benefits, including improved monetary
           policy design, enhanced financial accessibility, real-time payments,
@@ -52,11 +52,11 @@ export default function Insight() {
         </p>
         <div className="row">
           <div className="col-12 p-2">
-            <h2 className="header">
+            <h2 className="header" data-aos="fade-up">
               Read <span>Next</span>
             </h2>
           </div>
-          <div className="col-lg-4 col- md-6 col-12 p-2">
+          <div className="col-lg-4 col- md-6 col-12 p-2" data-aos="fade-up">
             <Link to="/insights/1" className="insight_link">
               <div className="img">
                 <img src="/images/Digital-Innovation.jpg" alt="" />
@@ -66,7 +66,7 @@ export default function Insight() {
               </div>
             </Link>
           </div>
-          <div className="col-lg-4 col- md-6 col-12 p-2">
+          <div className="col-lg-4 col- md-6 col-12 p-2" data-aos="fade-up">
             <Link to="/insights/1" className="insight_link">
               <div className="img">
                 <img src="/images/ESG.jpg" alt="" />
@@ -76,7 +76,7 @@ export default function Insight() {
               </div>
             </Link>
           </div>
-          <div className="col-lg-4 col- md-6 col-12 p-2">
+          <div className="col-lg-4 col- md-6 col-12 p-2" data-aos="fade-up">
             <Link to="/insights/1" className="insight_link">
               <div className="img">
                 <img src="/images/Fintech-Banking.jpg" alt="" />

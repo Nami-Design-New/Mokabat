@@ -2,14 +2,14 @@ export default function MediaDetails() {
   return (
     <section className="media_details">
       <div className="container d-flex flex-column gap-5">
-        <div className="banner">
+        <div className="banner" data-aos="fade-up">
           <img src="/images/blog1.jpg" alt="blog-banner" />
         </div>
 
         <div className="blog">
-          <h1>Design Thinking Unveiled</h1>
-          <span>Thursday 23 November 2023</span>
-          <p>
+          <h1 data-aos="fade-up">Design Thinking Unveiled</h1>
+          <span data-aos="fade-up">Thursday 23 November 2023</span>
+          <p data-aos="fade-up">
             In a recent TekTalk session that took place on November 23, 2023, we
             had the privilege of delving into the fascinating world of design
             thinking with the expertise of Zuzanna Siodła, Michał Rybak, and
@@ -17,8 +17,10 @@ export default function MediaDetails() {
             closer look at the highlights and key takeaways from this
             enlightening exploration.
           </p>
-          <h6>Crafting Seamless Experiences with Design Experts</h6>
-          <p>
+          <h6 data-aos="fade-up">
+            Crafting Seamless Experiences with Design Experts
+          </h6>
+          <p data-aos="fade-up">
             During the session, we had the opportunity to create seamless
             experiences with their expertise as our guides. These seasoned
             designers simplified the complexities, emphasizing the practical

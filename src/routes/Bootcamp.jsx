@@ -8,7 +8,7 @@ export default function Bootcamp() {
         <div className="row">
           <div className="col-lg-6 col-12 p-2">
             <div className="content">
-              <h3>Programs</h3>
+              <h3 data-aos="fade-up">Programs</h3>
               <p>
                 Mokabat is at the forefront of the digital revolution with
                 digital squads capable of rapidly prototyping, launching, and
@@ -19,7 +19,7 @@ export default function Bootcamp() {
             </div>
           </div>
           <div className="col-lg-6 col-12 p-2">
-            <div className="programs_calender">
+            <div className="programs_calender" data-aos="fade-up">
               <Calendar />
               <div className="programs">
                 <h6>Programs</h6>
@@ -51,7 +51,7 @@ export default function Bootcamp() {
         </div>
         <div className="row mt-5">
           <div className="col-lg-3 col-md-6 col-12 p-2">
-            <Link to="/bootcamp/1" className="prpgramm_card">
+            <Link to="/bootcamp/1" className="prpgramm_card" data-aos="fade-up">
               <div className="img">
                 <img src="/images/speak_to_inspire.webp" alt="" />
               </div>
@@ -66,6 +66,21 @@ export default function Bootcamp() {
             </Link>
           </div>
           <div className="col-lg-3 col-md-6 col-12 p-2">
+            <Link to="/bootcamp/1" className="prpgramm_card" data-aos="fade-up">
+              <div className="img">
+                <img src="/images/speak_to_inspire.webp" alt="" />
+              </div>
+              <div className="content">
+                <p>Friday 18 August 2023</p>
+                <h4>Speak To Inspire</h4>
+                <p>
+                  As pioneers in technology and fintech, we introduce the Speak
+                  To Inspire program: an exclusive series of sessions discussing
+                </p>
+              </div>
+            </Link>
+          </div>
+          <div className="col-lg-3 col-md-6 col-12 p-2" data-aos="fade-up">
             <Link to="/bootcamp/1" className="prpgramm_card">
               <div className="img">
                 <img src="/images/speak_to_inspire.webp" alt="" />
@@ -80,22 +95,7 @@ export default function Bootcamp() {
               </div>
             </Link>
           </div>
-          <div className="col-lg-3 col-md-6 col-12 p-2">
-            <Link to="/bootcamp/1" className="prpgramm_card">
-              <div className="img">
-                <img src="/images/speak_to_inspire.webp" alt="" />
-              </div>
-              <div className="content">
-                <p>Friday 18 August 2023</p>
-                <h4>Speak To Inspire</h4>
-                <p>
-                  As pioneers in technology and fintech, we introduce the Speak
-                  To Inspire program: an exclusive series of sessions discussing
-                </p>
-              </div>
-            </Link>
-          </div>
-          <div className="col-lg-3 col-md-6 col-12 p-2">
+          <div className="col-lg-3 col-md-6 col-12 p-2" data-aos="fade-up">
             <Link to="/bootcamp/1" className="prpgramm_card">
               <div className="img">
                 <img src="/images/speak_to_inspire.webp" alt="" />

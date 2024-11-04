@@ -29,10 +29,10 @@ export default function Services() {
         <div className="row align-items-center justify-content-center">
           <div className="col-lg-12 p-2 mb-5">
             <div className="header">
-              <h2>
+              <h2 data-aos="fade-up">
                 Our Services For Your <span>Tech Driven Future</span>
               </h2>
-              <p>
+              <p data-aos="fade-up">
                 We offer custom solutions from start to finish, covering
                 everything from ideation and design to development, testing,
                 growth, and knowledge sharing.
@@ -40,7 +40,7 @@ export default function Services() {
             </div>
           </div>
 
-          <div className="col-lg-5 col-12 p-2">
+          <div className="col-lg-5 col-12 p-2" data-aos="zoom-in-up">
             <div className="aboutImage">
               {images.map((src, index) => (
                 <img

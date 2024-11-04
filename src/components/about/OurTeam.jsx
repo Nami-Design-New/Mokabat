@@ -7,10 +7,10 @@ export default function OurTeam() {
     <section className="our_team_section">
       <div className="container">
         <div className="header">
-          <h2>
+          <h2 data-aos="fade-up">
             Our <span>Team</span>
           </h2>
-          <p>
+          <p data-aos="fade-up">
             Our team provides advanced knowledge and capabilities to help you
             create a better tomorrow.
           </p>
@@ -24,6 +24,7 @@ export default function OurTeam() {
           modules={[Autoplay]}
           className="about_swiper"
           autoplay={{ delay: 4000, disableOnInteraction: false }}
+          data-aos="fade-up"
           breakpoints={{
             992: {
               slidesPerView: 5,

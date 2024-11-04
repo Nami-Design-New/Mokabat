@@ -8,8 +8,8 @@ export default function Programs() {
         <div className="row">
           <div className="col-lg-6 col-12 p-2">
             <div className="content">
-              <h3>Programs</h3>
-              <p>
+              <h3 data-aos="fade-up">Programs</h3>
+              <p data-aos="fade-up">
                 Mokabat is at the forefront of the digital revolution with
                 digital squads capable of rapidly prototyping, launching, and
                 scaling new products and businesses to serve fintechs,
@@ -19,7 +19,7 @@ export default function Programs() {
             </div>
           </div>
           <div className="col-lg-6 col-12 p-2">
-            <div className="programs_calender">
+            <div className="programs_calender" data-aos="fade-up">
               <Calendar />
               <div className="programs">
                 <h6>Programs</h6>
@@ -51,7 +51,7 @@ export default function Programs() {
         </div>
         <div className="row mt-5">
           <div className="col-lg-3 col-md-6 col-12 p-2">
-            <Link to="/bootcamp/1" className="prpgramm_card">
+            <Link to="/bootcamp/1" className="prpgramm_card" data-aos="fade-up">
               <div className="img">
                 <img src="/images/tektalk_outer_image.webp" alt="" />
               </div>
@@ -66,7 +66,7 @@ export default function Programs() {
             </Link>
           </div>
           <div className="col-lg-3 col-md-6 col-12 p-2">
-            <Link to="/bootcamp/1" className="prpgramm_card">
+            <Link to="/bootcamp/1" className="prpgramm_card" data-aos="fade-up">
               <div className="img">
                 <img src="/images/tektalk_outer_image.webp" alt="" />
               </div>
@@ -81,7 +81,7 @@ export default function Programs() {
             </Link>
           </div>
           <div className="col-lg-3 col-md-6 col-12 p-2">
-            <Link to="/bootcamp/1" className="prpgramm_card">
+            <Link to="/bootcamp/1" className="prpgramm_card" data-aos="fade-up">
               <div className="img">
                 <img src="/images/tektalk_outer_image.webp" alt="" />
               </div>
@@ -96,7 +96,7 @@ export default function Programs() {
             </Link>
           </div>
           <div className="col-lg-3 col-md-6 col-12 p-2">
-            <Link to="/bootcamp/1" className="prpgramm_card">
+            <Link to="/bootcamp/1" className="prpgramm_card" data-aos="fade-up">
               <div className="img">
                 <img src="/images/tektalk_outer_image.webp" alt="" />
               </div>

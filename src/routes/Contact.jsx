@@ -18,17 +18,17 @@ export default function Contact() {
           <div className="row">
             <div className="col-lg-6 col-12 p-2">
               <div className="contact_info">
-                <span>get in touch</span>
-                <h1>
+                <span data-aos="fade-up">get in touch</span>
+                <h1 data-aos="fade-up">
                   We are always ready to help you and answer your questions
                 </h1>
                 <div className="blocks">
-                  <div className="block">
+                  <div className="block" data-aos="fade-up">
                     <h6>Call Center</h6>
                     <Link to="tel:+966 54 555 5555">+966 54 555 5555</Link>
                     <Link to="tel:+966 54 555 5555">+966 54 555 5555</Link>
                   </div>
-                  <div className="block">
+                  <div className="block" data-aos="fade-up">
                     <h6>Our Location</h6>
                     <Link
                       to="https://maps.app.goo.gl/gNd6HKnUq1K8Jp1U6"
@@ -38,11 +38,11 @@ export default function Contact() {
                       12836, Kingdom of Saudi Arabia
                     </Link>
                   </div>
-                  <div className="block">
+                  <div className="block" data-aos="fade-up">
                     <h6>Email</h6>
                     <Link to="mailto:info@mokabat.com">info@mokabat.com</Link>
                   </div>
-                  <div className="block">
+                  <div className="block" data-aos="fade-up">
                     <h6>Social network</h6>
                     <div className="socials">
                       <Link>
@@ -66,7 +66,7 @@ export default function Contact() {
               </div>
             </div>
             <div className="col-lg-6 col-12 p-2">
-              <div className="contact_form">
+              <div className="contact_form" data-aos="fade-up">
                 <form autoComplete="off">
                   <div className="inputfield">
                     <label htmlFor="name">Full Name</label>
@@ -133,7 +133,7 @@ export default function Contact() {
         </div>
       </section>
 
-      <section className="map_section">
+      <section className="map_section" data-aos="zoom-in-up">
         <div className="container">
           <div className="col-12 p-2">
             <iframe

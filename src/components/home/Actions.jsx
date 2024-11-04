@@ -7,15 +7,15 @@ export default function Actions() {
         <div className="row justify-content-center">
           <div className="col-12 p-2 mb-4">
             <div className="header">
-              <h2>Actions</h2>
-              <p>
+              <h2 data-aos="fade-up">Actions</h2>
+              <p data-aos="fade-up">
                 Explore our diverse Programs for start-ups and small companies,
                 or join empowering Bootcamps led by expert instructors.
               </p>
             </div>
           </div>
           <div className="col-lg-5 col-12 p-3">
-            <div className="program_card">
+            <div className="program_card" data-aos="fade-up">
               <img src="/images/tektalk_outer_image.webp" alt="" />
               <Link to="/bootcamp/1" className="program_link">
                 <h6>Tektalk</h6>
@@ -31,7 +31,7 @@ export default function Actions() {
             </div>
           </div>
           <div className="col-lg-5 col-12 p-3">
-            <div className="program_card">
+            <div className="program_card" data-aos="fade-up">
               <img src="/images/speak_to_inspire.webp" alt="" />
               <Link to="/bootcamp/1" className="program_link">
                 <h6>Speak To Inspire</h6>

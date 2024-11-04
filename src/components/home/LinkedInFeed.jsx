@@ -8,7 +8,7 @@ export default function LinkedInFeed() {
       <div className="container">
         <div className="row">
           <div className="col-12 p-2 mb-5">
-            <div className="header">
+            <div className="header" data-aos="fade-up">
               <h2>
                 LinkedIn <span>Feed</span>
               </h2>
@@ -21,7 +21,7 @@ export default function LinkedInFeed() {
               </a>
             </div>
           </div>
-          <div className="col-lg-12 p-2">
+          <div className="col-lg-12 p-2" data-aos="fade-up">
             <Swiper
               speed={4000}
               loop={true}
