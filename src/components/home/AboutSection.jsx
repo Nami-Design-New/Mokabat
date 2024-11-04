@@ -8,12 +8,14 @@ export default function AboutSection() {
       <div className="container">
         <div className="row">
           <div className="col-12 p-2 mb-3">
-            <h2 className="text-center">About Mokabat</h2>
-            <h6 className="text-center">
+            <h2 className="text-center" data-aos="fade-up">
+              About Mokabat
+            </h2>
+            <h6 className="text-center" data-aos="fade-up">
               To be at the forefront of digital change in innovative products.
             </h6>
           </div>
-          <div className="col-12 p-2">
+          <div className="col-12 p-2" data-aos="fade-up">
             <Swiper
               speed={10000}
               loop={true}

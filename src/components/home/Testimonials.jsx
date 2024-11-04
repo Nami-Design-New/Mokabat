@@ -8,7 +8,7 @@ export default function Testimonials() {
       <div className="container">
         <div className="row">
           <div className="col-12 p-2 mb-5">
-            <div className="header">
+            <div className="header" data-aos="fade-up">
               <h2>
                 Your feedback is <span>highly valued</span>
               </h2>
@@ -22,7 +22,7 @@ export default function Testimonials() {
               </div>
             </div>
           </div>
-          <div className="col-lg-7 col-12 p-2">
+          <div className="col-lg-7 col-12 p-2" data-aos="fade-up">
             <Swiper
               speed={1000}
               loop={true}
@@ -160,7 +160,7 @@ export default function Testimonials() {
               </SwiperSlide>
             </Swiper>
           </div>
-          <div className="col-lg-5 col-12 p-2">
+          <div className="col-lg-5 col-12 p-2" data-aos="fade-up">
             <div className="call_wrapper">
               <span>Let&apos;s work together</span>
               <h4>Unleash Your Digital Potential.</h4>

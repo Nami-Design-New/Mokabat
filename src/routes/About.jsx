@@ -9,8 +9,8 @@ export default function About() {
           <div className="row justify-content-center">
             <div className="col-lg-10 col-12 p-2">
               <div className="content">
-                <h1>Who We Are </h1>
-                <p>
+                <h1 data-aos="fade-up">Who We Are </h1>
+                <p data-aos="fade-up">
                   ‘’Innovation is the main driver of advancement in this
                   world.’’ From this belief and out of the forward-thinking
                   nature of the need for digital innovation, mokabat was born.
@@ -20,7 +20,7 @@ export default function About() {
                   government entities, smart cities, and other businesses in the
                   market.
                 </p>
-                <a href="" className="download_assets">
+                <a data-aos="fade-up" href="" className="download_assets">
                   Download Company Brochure{" "}
                   <i className="fa-regular fa-cloud-arrow-down"></i>
                 </a>

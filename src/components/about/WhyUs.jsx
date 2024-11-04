@@ -26,7 +26,7 @@ export default function WhyUs() {
   }, []);
 
   return (
-    <section className="whyus_section" ref={sectionRef}>
+    <section className="whyus_section" ref={sectionRef} data-aos="fade-up">
       <div className="container">
         <div className="row tabs-row">
           <div className="tabs-wrapper col-3">

@@ -76,7 +76,7 @@ export default function Media() {
         <div className="container">
           <div className="row">
             <div className="col-lg-4 col-md-6 col-12 p-2">
-              <Link to="/media/1" className="blog_card">
+              <Link to="/media/1" className="blog_card" data-aos="fade-up">
                 <div className="img">
                   <img src="/images/blog1.jpg" alt="blog" />
                 </div>
@@ -94,7 +94,7 @@ export default function Media() {
               </Link>
             </div>
             <div className="col-lg-4 col-md-6 col-12 p-2">
-              <Link to="/media/1" className="blog_card">
+              <Link to="/media/1" className="blog_card" data-aos="fade-up">
                 <div className="img">
                   <img src="/images/blog1.jpg" alt="blog" />
                 </div>
@@ -112,7 +112,7 @@ export default function Media() {
               </Link>
             </div>
             <div className="col-lg-4 col-md-6 col-12 p-2">
-              <Link to="/media/1" className="blog_card">
+              <Link to="/media/1" className="blog_card" data-aos="fade-up">
                 <div className="img">
                   <img src="/images/blog1.jpg" alt="blog" />
                 </div>
@@ -130,7 +130,7 @@ export default function Media() {
               </Link>
             </div>
             <div className="col-lg-4 col-md-6 col-12 p-2">
-              <Link to="/media/1" className="blog_card">
+              <Link to="/media/1" className="blog_card" data-aos="fade-up">
                 <div className="img">
                   <img src="/images/blog1.jpg" alt="blog" />
                 </div>
@@ -148,7 +148,7 @@ export default function Media() {
               </Link>
             </div>
             <div className="col-lg-4 col-md-6 col-12 p-2">
-              <Link to="/media/1" className="blog_card">
+              <Link to="/media/1" className="blog_card" data-aos="fade-up">
                 <div className="img">
                   <img src="/images/blog1.jpg" alt="blog" />
                 </div>
@@ -166,7 +166,7 @@ export default function Media() {
               </Link>
             </div>
             <div className="col-lg-4 col-md-6 col-12 p-2">
-              <Link to="/media/1" className="blog_card">
+              <Link to="/media/1" className="blog_card" data-aos="fade-up">
                 <div className="img">
                   <img src="/images/blog1.jpg" alt="blog" />
                 </div>

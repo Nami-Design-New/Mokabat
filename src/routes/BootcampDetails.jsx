@@ -8,8 +8,8 @@ export default function BootcampDetails() {
         <div className="row">
           <div className="col-lg-6 col-12 p-2">
             <div className="content">
-              <h3>TekTalk</h3>
-              <p>
+              <h3 data-aos="fade-up">TekTalk</h3>
+              <p data-aos="fade-up">
                 A series of exclusive sessions focusing on cutting-edge tech
                 topics. We’ll delve into crucial areas like ChatGPT, AI, the
                 metaverse, and other fintech-related technologies. Our goal is
@@ -19,7 +19,7 @@ export default function BootcampDetails() {
             </div>
           </div>
           <div className="col-lg-6 col-12 p-2">
-            <div className="img">
+            <div className="img" data-aos="zoom-in-up">
               <img src="/images/chatgpt.webp" alt="" />
             </div>
           </div>
@@ -27,10 +27,10 @@ export default function BootcampDetails() {
         <div className="row mt-5">
           <div className="col-12 p-2 mt-5">
             <div className="header">
-              <h2>
+              <h2 data-aos="fade-up">
                 Program <span>Goals</span>
               </h2>
-              <p>
+              <p data-aos="fade-up">
                 TEK TALK sessions bring updated knowledge, skill growth, and
                 innovation. They boost engagement, spark collaboration, enhance
                 competitiveness, and foster an adaptable culture for future
@@ -39,7 +39,7 @@ export default function BootcampDetails() {
             </div>
           </div>
           <div className="col-lg-6 col-12 p-2">
-            <div className="goal_card">
+            <div className="goal_card" data-aos="fade-up">
               <h2>Diverse Tech Sessions</h2>
               <p>
                 Exclusive sessions on AI, the metaverse, fintech, and more,
@@ -49,7 +49,7 @@ export default function BootcampDetails() {
             </div>
           </div>
           <div className="col-lg-6 col-12 p-2">
-            <div className="goal_card">
+            <div className="goal_card" data-aos="fade-up">
               <h2>Knowledge and Skill Enhancement</h2>
               <p>
                 These sessions provide updated knowledge, skill growth, and
@@ -58,7 +58,7 @@ export default function BootcampDetails() {
             </div>
           </div>
           <div className="col-lg-6 col-12 p-2">
-            <div className="goal_card">
+            <div className="goal_card" data-aos="fade-up">
               <h2>Collaborative Environment</h2>
               <p>
                 They encourage engagement, spark collaboration, and enhance
@@ -67,7 +67,7 @@ export default function BootcampDetails() {
             </div>
           </div>
           <div className="col-lg-6 col-12 p-2">
-            <div className="goal_card">
+            <div className="goal_card" data-aos="fade-up">
               <h2>Future-Ready Culture</h2>
               <p>
                 These sessions foster adaptability, cultivating a culture
@@ -79,11 +79,11 @@ export default function BootcampDetails() {
         <div className="row justify-content-center mt-5">
           <div className="col-12 p-2">
             <div className="header">
-              <h2>Sessions</h2>
+              <h2 data-aos="fade-up">Sessions</h2>
             </div>
           </div>
           <div className="col-lg-8 col-12 p-2">
-            <div className="tabs">
+            <div className="tabs" data-aos="fade-up">
               <button
                 onClick={() => setActiveTab(1)}
                 className={activeTab === 1 ? "active" : ""}
@@ -101,7 +101,7 @@ export default function BootcampDetails() {
         </div>
         <div className="row mt-4">
           <div className="col-lg-4 col-12 p-2">
-            <div className="session_card">
+            <div className="session_card" data-aos="fade-up">
               <div className="img">
                 <img src="/images/chatgpt.webp" alt="" />
                 <div className="content">
@@ -119,7 +119,7 @@ export default function BootcampDetails() {
             </div>
           </div>
           <div className="col-lg-4 col-12 p-2">
-            <div className="session_card">
+            <div className="session_card" data-aos="fade-up">
               <div className="img">
                 <img src="/images/chatgpt.webp" alt="" />
                 <div className="content">
@@ -137,7 +137,7 @@ export default function BootcampDetails() {
             </div>
           </div>
           <div className="col-lg-4 col-12 p-2">
-            <div className="session_card">
+            <div className="session_card" data-aos="fade-up">
               <div className="img">
                 <img src="/images/chatgpt.webp" alt="" />
                 <div className="content">

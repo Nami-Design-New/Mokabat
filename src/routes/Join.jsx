@@ -9,8 +9,8 @@ export default function Join() {
         <div className="row justify-content-center">
           <div className="col-lg-10 p-2 mb-5">
             <div className="header">
-              <h1>Let&apos;s Make An Impact</h1>
-              <p>
+              <h1 data-aos="fade-up">Let&apos;s Make An Impact</h1>
+              <p data-aos="fade-up">
                 Every day, beliefs influence what we do, our relationships, and
                 our triumphs. At mokabat, we operate by a steadfast commitment
                 to four core ideals that motivate us to provide the greatest
@@ -20,7 +20,7 @@ export default function Join() {
             </div>
           </div>
           <div className="col-12 p-2 pt-5 pb-5">
-            <div className="join_header">
+            <div className="join_header" data-aos="fade-up">
               <h2>
                 Open <span>Vacancies</span>
               </h2>
@@ -54,7 +54,7 @@ export default function Join() {
             </div>
           </div>
           <div className="vacancies">
-            <div className="vacancy_card">
+            <div className="vacancy_card" data-aos="fade-up">
               <h6>Risk Manager</h6>
               <p>
                 Sales Manager Responsibilities: Managing organizational sales by
@@ -74,7 +74,7 @@ export default function Join() {
                 <button onClick={() => setShowModal(true)}>Apply Now</button>
               </div>
             </div>
-            <div className="vacancy_card">
+            <div className="vacancy_card" data-aos="fade-up">
               <h6>Sales Manager</h6>
               <p>
                 Sales Manager Responsibilities: Managing organizational sales by
@@ -94,7 +94,7 @@ export default function Join() {
                 <button onClick={() => setShowModal(true)}>Apply Now</button>
               </div>
             </div>
-            <div className="vacancy_card">
+            <div className="vacancy_card" data-aos="fade-up">
               <h6>IT Senior Manager</h6>
               <p>
                 Sales Manager Responsibilities: Managing organizational sales by

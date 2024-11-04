@@ -5,7 +5,7 @@ import { Swiper, SwiperSlide } from "swiper/react";
 export default function Insights() {
   return (
     <section className="insights_page">
-      <div className="container">
+      <div className="container" data-aos="fade-up">
         <Swiper
           speed={1000}
           loop={true}
@@ -130,7 +130,7 @@ export default function Insights() {
         </Swiper>
         <div className="sw_pagiantion"></div>
         <div className="row mt-5">
-          <div className="col-lg-3 col- md-6 col-12 p-2">
+          <div className="col-lg-3 col- md-6 col-12 p-2" data-aos="fade-up">
             <Link to="/insights/1" className="insight_link">
               <div className="img">
                 <img src="/images/CBDC.jpg" alt="" />
@@ -140,7 +140,7 @@ export default function Insights() {
               </div>
             </Link>
           </div>
-          <div className="col-lg-3 col- md-6 col-12 p-2">
+          <div className="col-lg-3 col- md-6 col-12 p-2" data-aos="fade-up">
             <Link to="/insights/1" className="insight_link">
               <div className="img">
                 <img src="/images/Digital-Innovation.jpg" alt="" />
@@ -150,7 +150,7 @@ export default function Insights() {
               </div>
             </Link>
           </div>
-          <div className="col-lg-3 col- md-6 col-12 p-2">
+          <div className="col-lg-3 col- md-6 col-12 p-2" data-aos="fade-up">
             <Link to="/insights/1" className="insight_link">
               <div className="img">
                 <img src="/images/ESG.jpg" alt="" />
@@ -160,7 +160,7 @@ export default function Insights() {
               </div>
             </Link>
           </div>
-          <div className="col-lg-3 col- md-6 col-12 p-2">
+          <div className="col-lg-3 col- md-6 col-12 p-2" data-aos="fade-up">
             <Link to="/insights/1" className="insight_link">
               <div className="img">
                 <img src="/images/Fintech-Banking.jpg" alt="" />
