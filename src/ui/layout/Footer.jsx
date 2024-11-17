@@ -1,6 +1,35 @@
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
+import { toast } from "react-toastify";
+import useGetSettings from "../../hooks/useGetSettings";
+import axiosInstance from "../../utils/axiosInstance";
 
 export default function Footer() {
+  const { t } = useTranslation();
+  const { data: settings } = useGetSettings();
+  const [email, setEmail] = useState("");
+  const [loading, setLoading] = useState(false);
+
+  const handleSubscribe = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const res = await axiosInstance.post("/subscribe", {
+        email: email,
+      });
+      if (res.data?.code === 200) {
+        toast.success(t("subscried"));
+        setEmail("");
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error(error?.response?.data?.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <footer>
       <div className="container">
@@ -8,20 +37,38 @@ export default function Footer() {
           <div className="col-12 p-2 mb-4">
             <div className="news_letter">
               <p>
-                SUBSCRIBE TO OUR <span>NEWSLETTER</span>
+                {t("subscribeIn")} <span>{t("newsletter")}</span>
               </p>
-              <h3>Receive the latest news and updates</h3>
-              <form>
-                <input type="email" placeholder="Enter your email" />
-                <button>Subscribe</button>
+              <h3>{t("reciveUpdates")}</h3>
+              <form onSubmit={handleSubscribe}>
+                <input
+                  type="email"
+                  placeholder={t("enterEmail")}
+                  required
+                  value={email}
+                  onChange={(e) => setEmail(e.target.value)}
+                />
+                <button
+                  style={{
+                    opacity: loading ? 0.7 : 1,
+                    pointerEvents: loading ? "none" : "auto",
+                  }}
+                >
+                  {loading ? (
+                    <i className="fa-solid fa-spinner fa-spin"></i>
+                  ) : (
+                    t("subscribe")
+                  )}
+                </button>
               </form>
             </div>
           </div>
+
           <div className="col-lg-4 col-12 p-2">
             <Link to="/" className="logo">
-              <img src="/images/logo.svg" alt="logo" />
+              <img src={settings?.logo_footer} alt="logo" />
               <span></span>
-              <img src="/images/vision-2030-logo.webp" alt="vision" />
+              <img src={settings?.second_logo_footer} alt="vision" />
             </Link>
             <div className="social_media">
               <Link>
@@ -41,82 +88,81 @@ export default function Footer() {
               </Link>
             </div>
           </div>
+
           <div className="col-lg-4 col-12 p-2">
-            <h2 className="footer_title">Important Links</h2>
+            <h2 className="footer_title">{t("importantLinks")}</h2>
             <ul className="footer_links">
               <li>
                 <Link className="footer_link" to="/about">
-                  About Us
+                  {t("about")}
                 </Link>
               </li>
               <li>
                 <Link className="footer_link" to="/services">
-                  Services
+                  {t("services")}
                 </Link>
               </li>
               <li>
                 <Link className="footer_link" to="/programs">
-                  Programs
+                  {t("actions")}
                 </Link>
               </li>
               <li>
                 <Link className="footer_link" to="/projects">
-                  Projects
+                  {t("projects")}
                 </Link>
               </li>
               <li>
                 <Link className="footer_link" to="/media">
-                  Media
+                  {t("media")}
                 </Link>
               </li>
               <li>
-                <Link className="footer_link" to="/careers">
-                  Careers
-                </Link>
-              </li>
-              <li>
-                <Link className="footer_link" to="/faqs">
-                  FAQs
+                <Link className="footer_link" to="/join-mokabat">
+                  {t("careers")}
                 </Link>
               </li>
               <li>
                 <Link className="footer_link" to="/contact">
-                  Contact
+                  {t("contact")}
+                </Link>
+              </li>
+              <li>
+                <Link className="footer_link" to="/faqs">
+                  {t("faq")}
                 </Link>
               </li>
             </ul>
           </div>
+
           <div className="col-lg-4 col-12 p-2">
-            <h2 className="footer_title">Office</h2>
+            <h2 className="footer_title">{t("contactInfo")}</h2>
             <Link
               target="_blank"
               rel="noreferrer"
               className="footer_link"
-              to="https://maps.app.goo.gl/gNd6HKnUq1K8Jp1U6"
+              to={settings?.location_link}
             >
               <i className="fas fa-map-marker-alt"></i>{" "}
-              <span>
-                Al-Amin Abdullah Al-Ali Al-Naeem Street, Al-Malaz, Riyadh 12836,
-                Kingdom of Saudi Arabia
-              </span>
+              <span>{settings?.location}</span>
             </Link>
-            <Link to="mailto:info@mokabat.com" className="footer_link">
-              <i className="fas fa-envelope"></i> <span>info@mokabat.com</span>
+            <Link to={`mailto:${settings?.email}`} className="footer_link">
+              <i className="fas fa-envelope"></i> <span>{settings?.email}</span>
             </Link>
-            <Link to="tel:+966 54 555 5555" className="footer_link">
-              <i className="fas fa-phone"></i> <span>+966 54 555 5555</span>
+            <Link to={`tel:${settings?.phone}`} className="footer_link">
+              <i className="fas fa-phone"></i> <span>{settings?.phone}</span>
             </Link>
           </div>
 
           <div className="col-12 p-2">
             <div className="copy_rights">
               <h6>
-                <span>&copy; {new Date().getFullYear()}. </span> All Rights
-                Reserved for <Link to="/">Mokabat</Link>
+                <span>&copy; {new Date().getFullYear()}. </span>{" "}
+                {t("allRights")} <Link to="/">{settings?.website_name}</Link>
               </h6>
               <div className="links">
-                <Link to="terms-conditions">Terms & Conditions</Link>
-                <Link to="privacy-policy">Privacy & Policy</Link>
+                <Link to="terms-conditions">{t("termsAndConditions")}</Link>
+                <Link to="privacy-policy">{t("privacyPloicy")}</Link>
               </div>
             </div>
           </div>

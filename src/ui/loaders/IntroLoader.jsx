@@ -1,4 +1,4 @@
-import intro from "../assets/lotties/intro.json";
+import intro from "../../assets/lotties/intro.json";
 import Lottie from "react-lottie";
 
 export default function IntroLoader({ className }) {

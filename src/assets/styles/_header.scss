@@ -145,6 +145,7 @@ header {
           display: flex;
           font-size: 14px;
           align-items: center;
+          white-space: nowrap;
           gap: 8px;
           color: $main;
         }
@@ -203,6 +204,7 @@ header {
           display: flex;
           font-size: 12px;
           align-items: center;
+          white-space: nowrap !important;
           gap: 8px;
           color: $main;
         }

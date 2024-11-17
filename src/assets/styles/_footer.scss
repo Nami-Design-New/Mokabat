@@ -44,6 +44,7 @@ footer {
         background: $main;
         color: $white;
         border-radius: 100px;
+        min-width: 120px;
         transition: $transition;
         &:hover {
           background: $second;

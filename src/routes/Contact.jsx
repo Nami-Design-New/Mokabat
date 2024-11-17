@@ -1,6 +1,21 @@
+import { useState } from "react";
+import { useTranslation } from "react-i18next";
+import { toast } from "react-toastify";
 import { Link } from "react-router-dom";
+import useGetSettings from "../hooks/useGetSettings";
+import axiosInstance from "../utils/axiosInstance";
 
 export default function Contact() {
+  const { t } = useTranslation();
+  const { data: settings } = useGetSettings();
+  const [loading, setLoading] = useState(false);
+  const [form, setForm] = useState({
+    name: "",
+    email: "",
+    subject: "",
+    message: "",
+  });
+
   function highlight(e) {
     e.target.previousElementSibling.classList.add("h");
   }
@@ -11,6 +26,28 @@ export default function Contact() {
     }
   }
 
+  const handleSendMessage = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const res = await axiosInstance.post("/contact-us", form);
+      if (res.data?.code === 200) {
+        toast.success(t("messageSent"));
+        setForm({
+          name: "",
+          email: "",
+          subject: "",
+          message: "",
+        });
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error(error?.response?.data?.message);
+    } finally {
+      setLoading(false);
+    }
+  };
+
   return (
     <>
       <section className="contact_section">
@@ -18,46 +55,44 @@ export default function Contact() {
           <div className="row">
             <div className="col-lg-6 col-12 p-2">
               <div className="contact_info">
-                <span data-aos="fade-up">get in touch</span>
-                <h1 data-aos="fade-up">
-                  We are always ready to help you and answer your questions
-                </h1>
+                <span data-aos="fade-up">{t("getInTouch")}</span>
+                <h1 data-aos="fade-up">{t("contactUsSub")}</h1>
                 <div className="blocks">
                   <div className="block" data-aos="fade-up">
-                    <h6>Call Center</h6>
-                    <Link to="tel:+966 54 555 5555">+966 54 555 5555</Link>
-                    <Link to="tel:+966 54 555 5555">+966 54 555 5555</Link>
-                  </div>
-                  <div className="block" data-aos="fade-up">
-                    <h6>Our Location</h6>
-                    <Link
-                      to="https://maps.app.goo.gl/gNd6HKnUq1K8Jp1U6"
-                      target="_blank"
-                    >
-                      Al-Amin Abdullah Al-Ali Al-Naeem Street, Al-Malaz, Riyadh
-                      12836, Kingdom of Saudi Arabia
+                    <h6>{t("callCenter")}</h6>
+                    <Link to={`tel:${settings?.phone}`}>{settings?.phone}</Link>
+                    <Link to={`tel:${settings?.other_phone}`}>
+                      {settings?.other_phone}
                     </Link>
                   </div>
                   <div className="block" data-aos="fade-up">
-                    <h6>Email</h6>
-                    <Link to="mailto:info@mokabat.com">info@mokabat.com</Link>
+                    <h6>{t("ourLocation")}</h6>
+                    <Link to={settings?.location_link} target="_blank">
+                      {settings?.location}
+                    </Link>
                   </div>
                   <div className="block" data-aos="fade-up">
-                    <h6>Social network</h6>
+                    <h6>{t("emailAddress")}</h6>
+                    <Link to={`mailto:${settings?.email}`}>
+                      {settings?.email}
+                    </Link>
+                  </div>
+                  <div className="block" data-aos="fade-up">
+                    <h6>{t("followUsContact")}</h6>
                     <div className="socials">
-                      <Link>
+                      <Link to={settings?.facebook}>
                         <i className="fab fa-facebook-f"></i>
                       </Link>
-                      <Link>
+                      <Link to={settings?.twitter}>
                         <i className="fab fa-twitter"></i>
                       </Link>
-                      <Link>
+                      <Link to={settings?.linkedin}>
                         <i className="fab fa-linkedin-in"></i>
                       </Link>
-                      <Link>
+                      <Link to={settings?.instagram}>
                         <i className="fab fa-instagram"></i>
                       </Link>
-                      <Link>
+                      <Link to={settings?.youtube}>
                         <i className="fab fa-youtube"></i>
                       </Link>
                     </div>
@@ -67,64 +102,95 @@ export default function Contact() {
             </div>
             <div className="col-lg-6 col-12 p-2">
               <div className="contact_form" data-aos="fade-up">
-                <form autoComplete="off">
+                <form autoComplete="off" onSubmit={handleSendMessage}>
                   <div className="inputfield">
-                    <label htmlFor="name">Full Name</label>
+                    <label htmlFor="name">{t("fullName")}</label>
                     <input
                       type="text"
                       id="name"
                       name="name"
                       onFocus={(e) => highlight(e)}
                       onBlur={(e) => dehighlight(e)}
+                      required
+                      value={form.name}
+                      onChange={(e) =>
+                        setForm({ ...form, name: e.target.value })
+                      }
                     />
                     <span className="highlight"></span>
                   </div>
 
                   <div className="inputfield">
-                    <label htmlFor="email">Email Address</label>
+                    <label htmlFor="email">{t("emailAddress")}</label>
                     <input
                       type="email"
                       id="email"
                       name="email"
                       onFocus={(e) => highlight(e)}
                       onBlur={(e) => dehighlight(e)}
+                      required
+                      value={form.email}
+                      onChange={(e) =>
+                        setForm({ ...form, email: e.target.value })
+                      }
                     />
                     <span className="highlight"></span>
                   </div>
 
                   <div className="inputfield">
-                    <label htmlFor="phone">Subject</label>
+                    <label htmlFor="subject">{t("subject")}</label>
                     <input
                       type="text"
                       id="subject"
                       name="subject"
                       onFocus={(e) => highlight(e)}
                       onBlur={(e) => dehighlight(e)}
+                      required
+                      value={form.subject}
+                      onChange={(e) =>
+                        setForm({ ...form, subject: e.target.value })
+                      }
                     />
                     <span className="highlight"></span>
                   </div>
 
                   <div className="inputfield">
                     <label htmlFor="message" className="message-label">
-                      Message
+                      {t("message")}
                     </label>
                     <textarea
                       name="message"
                       id="message"
                       onFocus={(e) => highlight(e)}
                       onBlur={(e) => dehighlight(e)}
-                    ></textarea>
+                      value={form.message}
+                      onChange={(e) =>
+                        setForm({ ...form, message: e.target.value })
+                      }
+                    />
                     <span className="highlight"></span>
                   </div>
 
-                  <button type="submit">
-                    <span>
-                      <i className="fa-regular fa-angle-right"></i>
-                    </span>{" "}
-                    Send Message{" "}
-                    <span>
-                      <i className="fa-regular fa-angle-right"></i>
-                    </span>
+                  <button
+                    type="submit"
+                    style={{
+                      opacity: loading ? 0.7 : 1,
+                      PointerEvent: loading ? "none" : "auto",
+                    }}
+                  >
+                    {loading ? (
+                      <i className="fa-solid fa-spinner fa-spin"></i>
+                    ) : (
+                      <>
+                        <span>
+                          <i className="fa-regular fa-angle-right"></i>
+                        </span>{" "}
+                        {t("send")}
+                        <span>
+                          <i className="fa-regular fa-angle-right"></i>
+                        </span>
+                      </>
+                    )}
                   </button>
                 </form>
               </div>
@@ -137,7 +203,7 @@ export default function Contact() {
         <div className="container">
           <div className="col-12 p-2">
             <iframe
-              src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d46051.26341000033!2d46.76029332397902!3d24.64747086994118!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3e2f043b45575437%3A0xa2bebdcec14359bd!2z2YXZhtiq2LLZhyDYp9mE2YXZhNmDINi52KjYr9in2YTZhNmH!5e0!3m2!1sar!2seg!4v1729602376391!5m2!1sar!2seg"
+              src={settings?.map_link}
               allowfullScreen=""
               loading="lazy"
               referrerPolicy="no-referrer-when-downgrade"

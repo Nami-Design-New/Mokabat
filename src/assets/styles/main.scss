@@ -69,6 +69,29 @@ body {
     .home_section .content .customBtn i {
       transform: scale(-1);
     }
+    .accordion-button::after {
+      margin-left: unset;
+      margin-right: auto;
+    }
+    .testimonials_section .header .swiper_navigation {
+      flex-direction: row-reverse;
+    }
+    footer .footer_title::after {
+      left: unset;
+      right: 0;
+      background: radial-gradient(
+        90% 100% at 100% 50%,
+        #7e98fd 0%,
+        rgba(238, 238, 238, 0) 100%
+      );
+    }
+    .contact_section .contact_form form .inputfield label {
+      left: unset;
+      right: 16px;
+    }
+    .contact_section .contact_form form button span:last-child i {
+      transform: scale(-1);
+    }
   }
 }
 
@@ -109,5 +132,5 @@ body {
   height: 100dvh;
   z-index: -10;
   object-fit: cover;
-  filter: brightness(1.1) contrast(100%) opacity(.6);
-} 
+  filter: brightness(1.1) contrast(100%) opacity(0.6);
+}

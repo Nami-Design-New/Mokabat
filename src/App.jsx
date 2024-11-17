@@ -6,7 +6,7 @@ import i18n from "./utils/i18n";
 import ParticlesComponent from "./ui/ParticlesComponent";
 import router from "./router";
 import Footer from "./ui/layout/Footer";
-import IntroLoader from "./ui/IntroLoader";
+import IntroLoader from "./ui/loaders/IntroLoader";
 import AOS from "aos";
 import "aos/dist/aos.css";
 
@@ -52,7 +52,7 @@ function App() {
 
   return (
     <>
-      <video className="bg_video" src="/images/cubes.mp4" autoPlay loop muted playsInline></video>
+      {/* <video className="bg_video" src="/images/cubes.mp4" autoPlay loop muted playsInline></video> */}
       <IntroLoader className={showIntro ? "" : "hide"} />
       <ParticlesComponent />
       <Header />

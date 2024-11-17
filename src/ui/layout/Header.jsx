@@ -5,6 +5,7 @@ import { setLanguage } from "../../redux/slices/language";
 import { useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
+import useGetSettings from "../../hooks/useGetSettings";
 
 export default function Header() {
   const header = useRef(null);
@@ -14,6 +15,7 @@ export default function Header() {
   const { t } = useTranslation();
   const [closing, setClosing] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
+  const { data: settings } = useGetSettings();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -70,7 +72,7 @@ export default function Header() {
     <header ref={header}>
       <nav className="container">
         <Link to="/" className="logo">
-          <img src="/images/logo.svg" alt="" />
+          <img src={settings?.logo_header} alt="" />
         </Link>
 
         <ul
@@ -81,7 +83,7 @@ export default function Header() {
         >
           <li className="nav_link hide_lg">
             <NavLink to="/">
-              <img src="/images/logo.svg" alt="logo" />
+              <img src={settings?.logo_header} alt="logo" />
             </NavLink>
           </li>
           <li className="nav_link" onClick={handleCloseMenu}>
@@ -105,15 +107,15 @@ export default function Header() {
           <li className="nav_link">
             <Dropdown>
               <Dropdown.Toggle id="dropdown-basic">
-                Actions <i className="fa-regular fa-angle-down"></i>
+                {t("actions")} <i className="fa-regular fa-angle-down"></i>
               </Dropdown.Toggle>
               <Dropdown.Menu className="menu">
                 <div className="inner_menu">
                   <NavLink to="/programs" onClick={handleCloseMenu}>
-                    Programs
+                    {t("programs")}
                   </NavLink>
                   <NavLink to="/bootcamp" onClick={handleCloseMenu}>
-                    Bootcamp
+                    {t("bootcamp")}
                   </NavLink>
                 </div>
               </Dropdown.Menu>

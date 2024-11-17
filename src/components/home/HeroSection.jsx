@@ -2,15 +2,22 @@ import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
 import { useScramble } from "use-scramble";
+import useGetHeroSection from "../../hooks/home/useGetHeroSection";
 
 export default function HeroSection() {
   const { t, i18n } = useTranslation();
+  const { data: heroData } = useGetHeroSection();
   const isArabic = i18n.language === "ar";
 
+  const [phrases, setPhrases] = useState([]);
   const [textIndex, setTextIndex] = useState(0);
   const [fadeIn, setFadeIn] = useState(true);
 
-  const phrases = [t("mokabat"), t("aiItSoloutions")];
+  useEffect(() => {
+    if (heroData) {
+      setPhrases(heroData?.words?.map((w) => w?.title));
+    }
+  }, [heroData]);
 
   useEffect(() => {
     const interval = setInterval(() => {
@@ -44,7 +51,7 @@ export default function HeroSection() {
           <div className="col-lg-6 col-12 p-3">
             <div className="content">
               <h1>
-                {t("weAre")}{" "}
+                {heroData?.title}{" "}
                 {isArabic ? (
                   <span
                     className={`fade-text ${fadeIn ? "fade-in" : "fade-out"}`}
@@ -55,19 +62,32 @@ export default function HeroSection() {
                   <span ref={ref}></span>
                 )}
               </h1>
-              <h1>{t("turnsIdeas")}</h1>
-              <p>{t("mokabatDesc")}</p>
+              <h1>{heroData?.sub_title}</h1>
+              <p>{heroData?.description}</p>
               <Link to="/about" className="customBtn">
                 {t("learnMore")}{" "}
                 <i className="fa-regular fa-arrow-right-long"></i>
               </Link>
             </div>
           </div>
+
           <div className="col-lg-6 col-12 p-3">
             <div className="imgs_container">
-              <img className="balls" src="/images/ball.webp" alt="" />
-              <img className="window" src="/images/squ.webp" alt="" />
-              <img className="astro" src="/images/astro.webp" alt="" />
+              <img
+                className="balls"
+                src={heroData?.image_two || "/images/ball.webp"}
+                alt=""
+              />
+              <img
+                className="window"
+                src={heroData?.image_three}
+                alt="/images/squ.webp"
+              />
+              <img
+                className="astro"
+                src={heroData?.image_one}
+                alt="/images/astro.webp"
+              />
             </div>
           </div>
         </div>

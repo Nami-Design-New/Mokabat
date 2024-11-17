@@ -1,8 +1,15 @@
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useSelector } from "react-redux";
+import { useTranslation } from "react-i18next";
 import { Autoplay } from "swiper/modules";
 import "swiper/swiper-bundle.css";
+import useGetLinkedinFeed from "../../hooks/home/useGetLinkedinFeed";
 
 export default function LinkedInFeed() {
+  const { lang } = useSelector((state) => state.language);
+  const { t } = useTranslation();
+  const { data: feed } = useGetLinkedinFeed();
+
   return (
     <section className="linkedin_section">
       <div className="container">
@@ -10,14 +17,22 @@ export default function LinkedInFeed() {
           <div className="col-12 p-2 mb-5">
             <div className="header" data-aos="fade-up">
               <h2>
-                LinkedIn <span>Feed</span>
+                {lang === "ar" ? (
+                  <>
+                    {t("feed")} <span>{t("linkedin")}</span>
+                  </>
+                ) : (
+                  <>
+                    {t("linkedin")} <span>{t("feed")}</span>
+                  </>
+                )}
               </h2>
               <a
                 href="https://www.linkedin.com/in/mokabat/"
                 target="_blank"
                 rel="noreferrer"
               >
-                Follow Us
+                {t("followUs")}
               </a>
             </div>
           </div>
@@ -30,6 +45,9 @@ export default function LinkedInFeed() {
               modules={[Autoplay]}
               className="linkedin_swiper"
               autoplay={{ delay: 0, disableOnInteraction: true }}
+              dir={lang === "ar" ? "rtl" : "ltr"}
+              rtl={lang === "ar"}
+              key={lang}
               breakpoints={{
                 992: {
                   slidesPerView: 5,
@@ -42,110 +60,22 @@ export default function LinkedInFeed() {
                 },
               }}
             >
-              <SwiperSlide>
-                <div className="feed">
-                  <img src="/images/linkedin1.jpeg" alt="1" />
-                  <div className="link">
-                    <a
-                      href="https://www.linkedin.com/in/mokabat/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <i className="fa-brands fa-linkedin-in"></i>
-                    </a>
+              {feed?.map((item) => (
+                <SwiperSlide key={item.id}>
+                  <div className="feed">
+                    {item?.type !== "video" ? (
+                      <img src={item?.file} alt={item?.link} />
+                    ) : (
+                      <video src={item?.file} autoPlay loop muted playsInline />
+                    )}
+                    <div className="link">
+                      <a href={item?.link} target="_blank" rel="noreferrer">
+                        <i className="fa-brands fa-linkedin-in"></i>
+                      </a>
+                    </div>
                   </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="feed">
-                  <video
-                    src="/images/test.mp4"
-                    autoPlay
-                    loop
-                    muted
-                    playsInline
-                  />
-                  <div className="link">
-                    <a
-                      href="https://www.linkedin.com/in/mokabat/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <i className="fa-brands fa-linkedin-in"></i>
-                    </a>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="feed">
-                  <img src="/images/linkedin1.jpeg" alt="1" />
-                  <div className="link">
-                    <a
-                      href="https://www.linkedin.com/in/mokabat/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <i className="fa-brands fa-linkedin-in"></i>
-                    </a>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="feed">
-                  <img src="/images/linkedin1.jpeg" alt="1" />
-                  <div className="link">
-                    <a
-                      href="https://www.linkedin.com/in/mokabat/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <i className="fa-brands fa-linkedin-in"></i>
-                    </a>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="feed">
-                  <img src="/images/linkedin1.jpeg" alt="1" />
-                  <div className="link">
-                    <a
-                      href="https://www.linkedin.com/in/mokabat/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <i className="fa-brands fa-linkedin-in"></i>
-                    </a>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="feed">
-                  <img src="/images/linkedin1.jpeg" alt="1" />
-                  <div className="link">
-                    <a
-                      href="https://www.linkedin.com/in/mokabat/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <i className="fa-brands fa-linkedin-in"></i>
-                    </a>
-                  </div>
-                </div>
-              </SwiperSlide>
-              <SwiperSlide>
-                <div className="feed">
-                  <img src="/images/linkedin1.jpeg" alt="1" />
-                  <div className="link">
-                    <a
-                      href="https://www.linkedin.com/in/mokabat/"
-                      target="_blank"
-                      rel="noreferrer"
-                    >
-                      <i className="fa-brands fa-linkedin-in"></i>
-                    </a>
-                  </div>
-                </div>
-              </SwiperSlide>
+                </SwiperSlide>
+              ))}
             </Swiper>
           </div>
         </div>

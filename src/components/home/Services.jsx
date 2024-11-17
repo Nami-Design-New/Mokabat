@@ -1,19 +1,21 @@
-import { useState, useRef } from "react";
+import { useState, useEffect } from "react";
 import { Accordion } from "react-bootstrap";
+import { useTranslation } from "react-i18next";
+import useGetServices from "../../hooks/services/useGetServices";
 
 export default function Services() {
+  const [images, setImages] = useState([]);
   const [activeKey, setActiveKey] = useState("0");
   const [isFading, setIsFading] = useState(false);
-  const serviceSectionRef = useRef(null);
+  const { data: services } = useGetServices();
+  const { t } = useTranslation();
 
-  const images = [
-    "/images/digital-lab-new.webp",
-    "/images/digital-studio.webp",
-    "/images/digital-factory.webp",
-    "/images/digital-platform-new.webp",
-    "/images/digital-business.webp",
-    "/images/digital-insight.webp",
-  ];
+  useEffect(() => {
+    if (services) {
+      const images = services.map((service) => service.image);
+      setImages(images);
+    }
+  }, [services]);
 
   const handleSelect = (key) => {
     setIsFading(true);
@@ -24,19 +26,15 @@ export default function Services() {
   };
 
   return (
-    <section ref={serviceSectionRef} className="services_section">
+    <section className="services_section">
       <div className="container">
         <div className="row align-items-center justify-content-center">
           <div className="col-lg-12 p-2 mb-5">
             <div className="header">
               <h2 data-aos="fade-up">
-                Our Services For Your <span>Tech Driven Future</span>
+                {t("ourServices")} <span>{t("techFuture")}</span>
               </h2>
-              <p data-aos="fade-up">
-                We offer custom solutions from start to finish, covering
-                everything from ideation and design to development, testing,
-                growth, and knowledge sharing.
-              </p>
+              <p data-aos="fade-up">{t("servicesSub")}</p>
             </div>
           </div>
 
@@ -61,39 +59,19 @@ export default function Services() {
 
           <div className="col-lg-7 col-12 p-2" data-aos="fade-up">
             <Accordion activeKey={activeKey} onSelect={handleSelect}>
-              {[
-                {
-                  title: "01  Lab",
-                  body: "A hub for co-creating and evaluating new ideas, driving innovation through incubation, acceleration, and business modeling.",
-                },
-                {
-                  title: "02  Studio",
-                  body: "Ideate on what is best for you. Learn to define your requirements, prototype, and get support to achieve your ideal UX/UI.",
-                },
-                {
-                  title: "03  Factory",
-                  body: "Here we go! Just like in a factory, this is where the products are made with our experienced talents and advanced tools.",
-                },
-                {
-                  title: "04  Platform",
-                  body: "Technical abstraction layer for seamless solution build and fintech Integration.",
-                },
-                {
-                  title: "05  Business",
-                  body: "Develop a clear and concise strategy to define and communicate your company’s unique selling points.",
-                },
-                {
-                  title: "06  Insights",
-                  body: "Take part in valuable conversations about tech products & services including yours.",
-                },
-              ].map((service, index) => (
+              {services?.map((service, index) => (
                 <Accordion.Item
                   eventKey={index.toString()}
                   key={index}
                   className={activeKey === index.toString() ? "active" : ""}
                 >
-                  <Accordion.Header>{service.title}</Accordion.Header>
-                  <Accordion.Body>{service.body}</Accordion.Body>
+                  <Accordion.Header>
+                    {index + 1 < 10 ? 0 : ""}
+                    {index + 1} &nbsp; &nbsp; {service.title}
+                  </Accordion.Header>
+                  <Accordion.Body>
+                    <p>{service.description}</p>
+                  </Accordion.Body>
                 </Accordion.Item>
               ))}
             </Accordion>

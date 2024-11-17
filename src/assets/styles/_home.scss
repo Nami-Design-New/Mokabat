@@ -262,7 +262,14 @@
       }
       .accordion-body {
         background: transparent !important;
-        color: $white !important;
+        p {
+          color: $white !important;
+          display: -webkit-box;
+          -webkit-line-clamp: 2;
+          margin: 0;
+          -webkit-box-orient: vertical;
+          overflow-y: hidden;
+        }
       }
     }
   }
@@ -391,6 +398,7 @@
         border-radius: 50%;
         border: 1px solid $main;
         color: $main;
+        @include centerFlex();
         transition: $transition;
         &:hover {
           background: $second;
@@ -455,6 +463,9 @@
       align-items: center;
       gap: 4px;
       color: $second;
+      i.uni {
+        color: #c1c1c1;
+      }
     }
     p {
       color: $main;
@@ -596,6 +607,10 @@
     p {
       color: $gray;
       margin: 0;
+      display: -webkit-box;
+      -webkit-box-orient: vertical;
+      -webkit-line-clamp: 2;
+      overflow: hidden;
     }
   }
 }

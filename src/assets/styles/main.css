@@ -834,6 +834,7 @@ body .contact_section .contact_form form button {
   align-self: center;
   padding: 12px 32px;
   border-radius: 90px;
+  min-width: 170px;
   transition: 0.3s ease-in-out;
 }
 body .contact_section .contact_form form button span {
@@ -928,6 +929,7 @@ body footer .news_letter form button {
   background: #0f2133;
   color: #fff;
   border-radius: 100px;
+  min-width: 120px;
   transition: 0.3s ease-in-out;
 }
 body footer .news_letter form button:hover {
@@ -1519,6 +1521,7 @@ body header nav .nav_links .menu button {
   display: flex;
   font-size: 14px;
   align-items: center;
+  white-space: nowrap;
   gap: 8px;
   color: #0f2133;
 }
@@ -1578,6 +1581,7 @@ body header nav .actions .menu button {
   display: flex;
   font-size: 12px;
   align-items: center;
+  white-space: nowrap !important;
   gap: 8px;
   color: #0f2133;
 }
@@ -1900,7 +1904,14 @@ body .services_section .accordion .accordion-item .accordion-button:not(.collaps
 }
 body .services_section .accordion .accordion-item .accordion-body {
   background: transparent !important;
+}
+body .services_section .accordion .accordion-item .accordion-body p {
   color: #fff !important;
+  display: -webkit-box;
+  -webkit-line-clamp: 2;
+  margin: 0;
+  -webkit-box-orient: vertical;
+  overflow-y: hidden;
 }
 body .services_section .images_container {
   width: 100%;
@@ -2030,6 +2041,9 @@ body .testimonials_section .header .swiper_navigation button {
   border-radius: 50%;
   border: 1px solid #0f2133;
   color: #0f2133;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   transition: 0.3s ease-in-out;
 }
 body .testimonials_section .header .swiper_navigation button:hover {
@@ -2096,6 +2110,9 @@ body .testimonials_section .feedback_card .rate {
   align-items: center;
   gap: 4px;
   color: #7e98fd;
+}
+body .testimonials_section .feedback_card .rate i.uni {
+  color: #c1c1c1;
 }
 body .testimonials_section .feedback_card p {
   color: #0f2133;
@@ -2233,6 +2250,10 @@ body .pros_section .project_cardd h3 {
 body .pros_section .project_cardd p {
   color: #777777;
   margin: 0;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  -webkit-line-clamp: 2;
+  overflow: hidden;
 }
 body .insights_page {
   padding: 120px 0;
@@ -3127,6 +3148,25 @@ body.ar {
   font-family: "baloo" !important;
 }
 body.ar .home_section .content .customBtn i {
+  transform: scale(-1);
+}
+body.ar .accordion-button::after {
+  margin-left: unset;
+  margin-right: auto;
+}
+body.ar .testimonials_section .header .swiper_navigation {
+  flex-direction: row-reverse;
+}
+body.ar footer .footer_title::after {
+  left: unset;
+  right: 0;
+  background: radial-gradient(90% 100% at 100% 50%, #7e98fd 0%, rgba(238, 238, 238, 0) 100%);
+}
+body.ar .contact_section .contact_form form .inputfield label {
+  left: unset;
+  right: 16px;
+}
+body.ar .contact_section .contact_form form button span:last-child i {
   transform: scale(-1);
 }
 
