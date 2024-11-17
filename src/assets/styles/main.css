@@ -3169,6 +3169,11 @@ body.ar .contact_section .contact_form form .inputfield label {
 body.ar .contact_section .contact_form form button span:last-child i {
   transform: scale(-1);
 }
+body.ar .projects_page .project_card .title::after {
+  left: unset;
+  right: 0;
+  background: radial-gradient(90% 100% at 100% 50%, #7e98fd 0%, rgba(238, 238, 238, 0) 100%);
+}
 
 .intro_loader {
   position: fixed;
