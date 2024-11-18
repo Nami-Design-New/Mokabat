@@ -38,7 +38,7 @@ const router = [
     element: <Insights />,
   },
   {
-    path: "/insights/1",
+    path: "/insights/:id",
     element: <Insight />,
   },
   {

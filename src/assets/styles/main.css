@@ -2256,7 +2256,7 @@ body .pros_section .project_cardd p {
   overflow: hidden;
 }
 body .insights_page {
-  padding: 120px 0;
+  padding: 120px 0 0;
 }
 body .insights_page .insights_swiper .img {
   width: 100%;
@@ -2444,7 +2444,8 @@ body .details_top .img .content .btns {
     flex-direction: column;
   }
 }
-body .details_top .img .content .btns button {
+body .details_top .img .content .btns button,
+body .details_top .img .content .btns a {
   border: 1px solid #fff;
   color: #fff;
   padding: 12px 24px;
@@ -2454,12 +2455,14 @@ body .details_top .img .content .btns button {
   gap: 8px;
   transition: 0.3s ease-in-out;
 }
-body .details_top .img .content .btns button:hover {
+body .details_top .img .content .btns button:hover,
+body .details_top .img .content .btns a:hover {
   background: #fff;
   color: #0f2133;
 }
 @media screen and (max-width: 576px) {
-  body .details_top .img .content .btns button {
+  body .details_top .img .content .btns button,
+  body .details_top .img .content .btns a {
     width: 100%;
     justify-content: center;
   }

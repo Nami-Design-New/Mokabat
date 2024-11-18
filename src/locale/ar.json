@@ -5,7 +5,7 @@
     "media": "الوسائط",
     "services": "الخدمات",
     "projects": "المشاريع",
-    "insights": "التحليلات",
+    "insights": "الأبحاث الرقمية",
     "actions": "التدريبات",
     "joinMokabat": "انضم لقادة الغد",
     "learnMore": "تعرف المزيد",
@@ -49,5 +49,9 @@
     "subject": "الموضوع",
     "message": "الرسالة",
     "send": "ارسال الرسالة",
-    "messageSent": "تم ارسال الرسالة بنجاح"
+    "messageSent": "تم ارسال الرسالة بنجاح",
+    "shareInsight": "مشاركة المرئيات",
+    "downloadFiles": "تنزيل الملفات",
+    "read": "إقرأ",
+    "next": "التالي"
 }

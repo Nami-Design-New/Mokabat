@@ -1,6 +1,14 @@
-import { Link } from "react-router-dom";
+import { Link, useParams } from "react-router-dom";
+import { useTranslation } from "react-i18next";
+import useGetInsight from "../hooks/insights/useGetInsight";
+import useGetInsights from "../hooks/insights/useGetInsights";
 
 export default function Insight() {
+  const { t } = useTranslation();
+  const { id } = useParams();
+  const { data: insights } = useGetInsights();
+  const { data: insight } = useGetInsight(id);
+
   const handleShare = () => {
     if (navigator.share) {
       navigator
@@ -19,16 +27,16 @@ export default function Insight() {
     <section className="insight_page">
       <div className="details_top">
         <div className="img">
-          <img src="/images/CBDC.jpg" alt="" />
+          <img src={insight?.image} alt={insight?.title} />
           <div className="content">
-            <h3 data-aos="fade-up">Transforming Finance and Banking</h3>
+            <h3 data-aos="fade-up">{insight?.title}</h3>
             <div className="btns" data-aos="fade-up">
-              <button>
-                Download files{" "}
+              <a href={insight?.file} download={insight?.title}>
+                {t("downloadFiles")}{" "}
                 <i className="fa-regular fa-cloud-arrow-down"></i>
-              </button>
+              </a>
               <button onClick={handleShare}>
-                Share Insight <i className="fa-solid fa-share"></i>
+                {t("shareInsight")} <i className="fa-solid fa-share"></i>
               </button>
             </div>
           </div>
@@ -36,56 +44,33 @@ export default function Insight() {
       </div>
       <div className="container mt-5">
         <p data-aos="fade-up">
-          <b>Strategies for Banks in a Digital Currency World</b>
+          <b>{insight?.subtitle}</b>
         </p>
-        <p data-aos="fade-up">
-          Central Bank Digital Currency (CBDC) is gaining traction worldwide as
-          countries explore its potential benefits, including improved monetary
-          policy design, enhanced financial accessibility, real-time payments,
-          secure and non-commercial transactions, and reduced physical storage
-          requirements. However, CBDC also presents risks like credential theft,
-          misuse of power, double spending, data privacy concerns, and the need
-          for cross-border interoperability. To adapt to this digital shift,
-          banks must prepare by addressing revenue impacts, zero transaction
-          charges, infrastructure setup, sandbox integration, CBDC wallet
-          development, and robust cybersecurity.
-        </p>
+        <p data-aos="fade-up">{insight?.description}</p>
         <div className="row">
           <div className="col-12 p-2">
             <h2 className="header" data-aos="fade-up">
-              Read <span>Next</span>
+              {t("read")} <span>{t("next")}</span>
             </h2>
           </div>
-          <div className="col-lg-4 col- md-6 col-12 p-2" data-aos="fade-up">
-            <Link to="/insights/1" className="insight_link">
-              <div className="img">
-                <img src="/images/Digital-Innovation.jpg" alt="" />
-                <div className="content">
-                  <h4>Powering Innovation Capabilities</h4>
-                </div>
+          {insights
+            ?.filter((i) => i?.id !== +id)
+            ?.map((insight) => (
+              <div
+                className="col-lg-4 col- md-6 col-12 p-2"
+                data-aos="fade-up"
+                key={insight?.id}
+              >
+                <Link to={`/insights/${insight?.id}`} className="insight_link">
+                  <div className="img">
+                    <img src={insight?.image} alt={insight?.title} />
+                    <div className="content">
+                      <h4>{insight?.title}</h4>
+                    </div>
+                  </div>
+                </Link>
               </div>
-            </Link>
-          </div>
-          <div className="col-lg-4 col- md-6 col-12 p-2" data-aos="fade-up">
-            <Link to="/insights/1" className="insight_link">
-              <div className="img">
-                <img src="/images/ESG.jpg" alt="" />
-                <div className="content">
-                  <h4>Banking for a Better World</h4>
-                </div>
-              </div>
-            </Link>
-          </div>
-          <div className="col-lg-4 col- md-6 col-12 p-2" data-aos="fade-up">
-            <Link to="/insights/1" className="insight_link">
-              <div className="img">
-                <img src="/images/Fintech-Banking.jpg" alt="" />
-                <div className="content">
-                  <h4>The Fintech Revolution</h4>
-                </div>
-              </div>
-            </Link>
-          </div>
+            ))}
         </div>
       </div>
     </section>

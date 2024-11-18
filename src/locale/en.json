@@ -49,5 +49,9 @@
     "subject": "Subject",
     "message": "Message",
     "send": "Send Message",
-    "messageSent": "Message Sent Successfully"
+    "messageSent": "Message Sent Successfully",
+    "shareInsight": "Share Insight",
+    "downloadFiles": "Download files",
+    "read": "Read",
+    "next": "Next"
 }

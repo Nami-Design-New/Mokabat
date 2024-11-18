@@ -1,5 +1,5 @@
 .insights_page {
-  padding: 120px 0;
+  padding: 120px 0 0;
   .insights_swiper {
     .img {
       width: 100%;
@@ -169,7 +169,8 @@
         @media screen and (max-width: 576px) {
           flex-direction: column;
         }
-        button {
+        button,
+        a {
           border: 1px solid $white;
           color: $white;
           padding: 12px 24px;
