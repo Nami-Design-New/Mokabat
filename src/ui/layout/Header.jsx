@@ -18,6 +18,8 @@ export default function Header() {
   const [showMenu, setShowMenu] = useState(false);
   const { data: settings } = useGetSettings();
   const { data: actions } = useGetActions();
+  const [showActionsDropdown, setShowActionsDropdown] = useState(false);
+  const [showLangDropdown, setShowLangDropdown] = useState(false);
 
   useEffect(() => {
     const handleScroll = () => {
@@ -54,6 +56,7 @@ export default function Header() {
   }, []);
 
   const handleLang = (newLang) => {
+    setShowLangDropdown(false);
     dispatch(setLanguage(newLang));
     i18next.changeLanguage(newLang);
     const bodyElement = document.querySelector("body");
@@ -68,6 +71,11 @@ export default function Header() {
       setShowMenu(false);
       setClosing(false);
     }, 300);
+  };
+
+  const handleActionClick = () => {
+    setShowActionsDropdown(false);
+    handleCloseMenu();
   };
 
   return (
@@ -107,7 +115,7 @@ export default function Header() {
             <NavLink to="/projects">{t("projects")}</NavLink>
           </li>
           <li className="nav_link">
-            <Dropdown>
+            <Dropdown show={showActionsDropdown} onToggle={(isOpen) => setShowActionsDropdown(isOpen)}>
               <Dropdown.Toggle id="dropdown-basic">
                 {t("actions")} <i className="fa-regular fa-angle-down"></i>
               </Dropdown.Toggle>
@@ -117,7 +125,7 @@ export default function Header() {
                     <Fragment key={action}>
                       <NavLink
                         to={`/actions/${action?.id}`}
-                        onClick={handleCloseMenu}
+                        onClick={handleActionClick}
                       >
                         {action?.title}
                       </NavLink>
@@ -143,19 +151,17 @@ export default function Header() {
             {t("joinMokabat")}
           </Link>
 
-          <Dropdown>
+          <Dropdown show={showLangDropdown} onToggle={(isOpen) => setShowLangDropdown(isOpen)}>
             <Dropdown.Toggle id="dropdown-basic">
               <i className="fa-sharp fa-solid fa-globe"></i>
             </Dropdown.Toggle>
             <Dropdown.Menu className="menu">
               <div className="inner_menu">
                 <button onClick={() => handleLang("en")}>
-                  <img src="/images/Flag_of_the_United_States.svg" alt="usa" />{" "}
-                  English
+                  <img src="/images/Flag_of_the_United_States.svg" alt="usa" /> English
                 </button>
                 <button onClick={() => handleLang("ar")}>
-                  <img src="/images/Flag_of_Saudi_Arabia.svg" alt="sa" />{" "}
-                  العربية
+                  <img src="/images/Flag_of_Saudi_Arabia.svg" alt="sa" /> العربية
                 </button>
               </div>
             </Dropdown.Menu>
