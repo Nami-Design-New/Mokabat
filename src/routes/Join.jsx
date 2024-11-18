@@ -11,6 +11,7 @@ export default function Join() {
   const { lang } = useSelector((state) => state.language);
   const [showModal, setShowModal] = useState(false);
   const [searchParams, setSearchParams] = useSearchParams();
+  const [targetId, setTargetId] = useState(null);
 
   const [searchData, setSearchData] = useState({
     title: searchParams.get("title") || "",
@@ -27,7 +28,6 @@ export default function Join() {
 
     setSearchParams(params);
   }, [searchData, setSearchParams]);
-
 
   const handleInputChange = (e) => {
     setSearchData((prev) => ({
@@ -104,7 +104,12 @@ export default function Join() {
                     <i className="fa-regular fa-user"></i> {job?.app_count}{" "}
                     {t("applicants")}
                   </span>
-                  <button onClick={() => setShowModal(true)}>
+                  <button
+                    onClick={() => {
+                      setShowModal(true);
+                      setTargetId(job?.id);
+                    }}
+                  >
                     {t("applyNow")}
                   </button>
                 </div>
@@ -113,7 +118,11 @@ export default function Join() {
           </div>
         </div>
       </div>
-      <ApplyForJobModal showModal={showModal} setShowModal={setShowModal} />
+      <ApplyForJobModal
+        id={targetId}
+        showModal={showModal}
+        setShowModal={setShowModal}
+      />
     </section>
   );
 }

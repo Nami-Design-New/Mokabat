@@ -98,5 +98,6 @@
     "uploadDesc": "Click to upload or drag your CV (PDF) here. (Maximum file size 5MB)",
     "immediate": "Immediate",
     "sixtyDays": "60 Days",
-    "thirtyDays": "30 Days"
+    "thirtyDays": "30 Days",
+    "somethingWentWrong": "Something Went Wrong"
 }

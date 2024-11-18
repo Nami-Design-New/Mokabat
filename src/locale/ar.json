@@ -98,5 +98,6 @@
     "uploadDesc": "انقر للتحميل أو اسحب سيرتك الذاتية (PDF) هنا. (الحد الأقصى لحجم الملف 5 ميغابايت)",
     "immediate": "على الفور",
     "sixtyDays": "60 يوم",
-    "thirtyDays": "30 يوم"
+    "thirtyDays": "30 يوم",
+    "somethingWentWrong": "حدث خطأ ما"
 }

@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import { Modal } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
 import InputField from "./form-elements/InputField";
@@ -8,6 +8,8 @@ import SubmitButton from "./form-elements/SubmitButton";
 import useGetNatonalities from "../hooks/careers/useGetNatonalities";
 import useGetDegrees from "../hooks/careers/useGetDegrees";
 import useGetDepartments from "../hooks/careers/useGetDepartments";
+import { toast } from "react-toastify";
+import axiosInstance from "../utils/axiosInstance";
 
 export default function ApplyForJobModal({ showModal, setShowModal, id }) {
   const { t } = useTranslation();
@@ -36,11 +38,70 @@ export default function ApplyForJobModal({ showModal, setShowModal, id }) {
     notice_period: "",
     how_find_us: "",
     file: "",
-    vacancy_id: id,
+    vacancy_id: "",
   });
 
+  useEffect(() => {
+    if (id) {
+      setFormData((prev) => ({ ...prev, vacancy_id: id }));
+    }
+  }, [id]);
+
   const handleChange = (e) => {
-    setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    if (e.target?.name === "file") {
+      setFormData((prev) => ({ ...prev, [e.target.name]: e.target.files[0] }));
+    } else {
+      setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
+    }
+  };
+
+  const hideModal = () => {
+    setShowModal(false);
+    setFormData({
+      name: "",
+      email: "",
+      age: "",
+      gender: "",
+      nationality_id: "",
+      city: "",
+      are_you_relocate: "",
+      department_id: "",
+      education_degree_id: "",
+      major: "",
+      fresh_graduate: "",
+      current_work: "",
+      last_job_title: "",
+      years_of_experience: "",
+      last_salary: "",
+      expected_salary: "",
+      notice_period: "",
+      how_find_us: "",
+      file: "",
+      vacancy_id: "",
+    });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    setLoading(true);
+    try {
+      const res = await axiosInstance.post("/applications", formData, {
+        headers: {
+          "Content-Type": "multipart/form-data",
+        },
+      });
+      if (res?.data?.code === 200) {
+        toast.success(res?.data?.message);
+        hideModal();
+      } else {
+        toast.error(t("somethingWentWrong"));
+      }
+    } catch (error) {
+      console.log(error);
+      toast.error(error?.response?.data?.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -48,14 +109,15 @@ export default function ApplyForJobModal({ showModal, setShowModal, id }) {
       centered
       show={showModal}
       size="lg"
-      onHide={() => setShowModal(false)}
+      onHide={hideModal}
+      backdrop="static"
       className="apply_for_job_modal"
     >
       <Modal.Header className="pb-0" closeButton>
         <h6>{t("joinOurFamily")}</h6>
       </Modal.Header>
       <Modal.Body>
-        <form className="form">
+        <form className="form" onSubmit={handleSubmit}>
           <p>{t("joinSub")}</p>
           <div className="row">
             <div className="col-lg-6 col-12 p-2">
@@ -142,8 +204,8 @@ export default function ApplyForJobModal({ showModal, setShowModal, id }) {
                 id="are_you_relocate"
                 name="are_you_relocate"
                 options={[
-                  { name: t("yes"), value: "yes" },
-                  { name: t("no"), value: "no" },
+                  { name: t("yes"), value: 1 },
+                  { name: t("no"), value: 0 },
                 ]}
                 value={formData?.are_you_relocate}
                 onChange={handleChange}
@@ -198,8 +260,8 @@ export default function ApplyForJobModal({ showModal, setShowModal, id }) {
                 id="fresh_graduate"
                 name="fresh_graduate"
                 options={[
-                  { name: t("yes"), value: "yes" },
-                  { name: t("no"), value: "no" },
+                  { name: t("yes"), value: 1 },
+                  { name: t("no"), value: 0 },
                 ]}
                 value={formData?.fresh_graduate}
                 onChange={handleChange}
@@ -213,8 +275,8 @@ export default function ApplyForJobModal({ showModal, setShowModal, id }) {
                 id="current_work"
                 name="current_work"
                 options={[
-                  { name: t("yes"), value: "yes" },
-                  { name: t("no"), value: "no" },
+                  { name: t("yes"), value: 1 },
+                  { name: t("no"), value: 0 },
                 ]}
                 value={formData?.current_work}
                 onChange={handleChange}
