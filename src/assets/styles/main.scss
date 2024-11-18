@@ -9,6 +9,7 @@ body {
 
   main {
     min-height: 100vh;
+    position: relative;
   }
 
   .sectionHeader {
@@ -142,4 +143,8 @@ body {
   z-index: -10;
   object-fit: cover;
   filter: brightness(1.1) contrast(100%) opacity(0.6);
+}
+
+.terms {
+  padding: 120px 0 0;
 }

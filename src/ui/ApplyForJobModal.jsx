@@ -91,7 +91,7 @@ export default function ApplyForJobModal({ showModal, setShowModal, id }) {
         },
       });
       if (res?.data?.code === 200) {
-        toast.success(res?.data?.message);
+        toast.success(t("appliedSucessfully"));
         hideModal();
       } else {
         toast.error(t("somethingWentWrong"));

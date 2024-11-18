@@ -56,7 +56,7 @@ export default function Contact() {
             <div className="col-lg-6 col-12 p-2">
               <div className="contact_info">
                 <span data-aos="fade-up">{t("getInTouch")}</span>
-                <h1 data-aos="fade-up">{t("contactUsSub")}</h1>
+                <h1 data-aos="fade-up">{settings?.contact_text}</h1>
                 <div className="blocks">
                   <div className="block" data-aos="fade-up">
                     <h6>{t("callCenter")}</h6>

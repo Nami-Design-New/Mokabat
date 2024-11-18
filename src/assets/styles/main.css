@@ -81,7 +81,7 @@ input[type=number]::-webkit-inner-spin-button {
 .Toastify__toast-body > div:last-child {
   line-height: 24px;
   flex: unset;
-  font-family: "suply-mono", sans-serif;
+  font-family: "baloo", sans-serif;
 }
 
 @media only screen and (max-width: 480px) {
@@ -262,6 +262,7 @@ body {
 }
 body main {
   min-height: 100vh;
+  position: relative;
 }
 body .sectionHeader {
   width: 100%;
@@ -353,28 +354,12 @@ body .download_assets {
 body .whyus_section {
   padding: 60px 0;
 }
-body .whyus_section .tabs-row {
-  overflow: hidden;
-  height: 400px;
-  overflow-y: auto;
-  position: relative;
-  display: flex;
-}
-body .whyus_section .tabs-row::-webkit-scrollbar {
-  height: 0;
-  width: 0;
-  display: none;
-}
-@media screen and (max-width: 991px) {
-  body .whyus_section .tabs-row {
-    height: unset !important;
-  }
-}
 body .whyus_section .tabs-wrapper {
-  gap: 16px;
   color: #0f2133;
-  height: 400px;
   border-radius: 12px;
+  position: sticky;
+  top: 120px;
+  height: calc(100dvh - 300px);
 }
 @media screen and (max-width: 991px) {
   body .whyus_section .tabs-wrapper {
@@ -385,7 +370,7 @@ body .whyus_section .tabs-wrapper .tabs {
   height: 100%;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  gap: 24px;
 }
 body .whyus_section .tabs-wrapper .tabs .tab {
   display: flex;
@@ -405,8 +390,9 @@ body .whyus_section .tabs-wrapper .tabs .tab.active {
 body .whyus_section .img-wrapper {
   height: 100%;
   display: flex;
-  position: relative;
   transition: 0.3s ease-in-out;
+  position: sticky;
+  top: 120px;
 }
 @media screen and (max-width: 991px) {
   body .whyus_section .img-wrapper {
@@ -423,8 +409,6 @@ body .whyus_section .img-wrapper img {
 }
 body .whyus_section .tabs-content-wrapper {
   flex: 1 0;
-  height: 400px;
-  overflow-y: auto;
   gap: 16px;
   border-radius: 12px;
   display: flex;
@@ -3233,4 +3217,8 @@ body.ar .projects_page .project_card .title::after {
   -o-object-fit: cover;
      object-fit: cover;
   filter: brightness(1.1) contrast(100%) opacity(0.6);
+}
+
+.terms {
+  padding: 120px 0 0;
 }/*# sourceMappingURL=main.css.map */

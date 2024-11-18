@@ -127,11 +127,11 @@ export default function Footer() {
                   {t("contact")}
                 </Link>
               </li>
-              <li>
+              {/* <li>
                 <Link className="footer_link" to="/faqs">
                   {t("faq")}
                 </Link>
-              </li>
+              </li> */}
             </ul>
           </div>
 

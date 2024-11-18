@@ -8,8 +8,10 @@ import Insights from "./routes/Insights";
 import Join from "./routes/Join";
 import Media from "./routes/Media";
 import MediaDetails from "./routes/MediaDetails";
+import Privacy from "./routes/Privacy";
 import Projects from "./routes/Projects";
 import Services from "./routes/Services";
+import Terms from "./routes/Terms";
 
 const router = [
   {
@@ -47,6 +49,14 @@ const router = [
   {
     path: "/contact",
     element: <Contact />,
+  },
+  {
+    path: "/terms-conditions",
+    element: <Terms />,
+  },
+  {
+    path: "/privacy-policy",
+    element: <Privacy />,
   },
   {
     path: "/join-mokabat",
