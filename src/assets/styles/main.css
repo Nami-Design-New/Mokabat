@@ -604,7 +604,7 @@ body .lazyDiv.loaded.up::after {
   transform: translateY(-100%);
 }
 body .our_team_section {
-  padding: 60px 0;
+  padding: 60px 0 0;
 }
 body .our_team_section .header {
   display: flex;
