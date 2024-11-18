@@ -28,6 +28,10 @@ export default function WhyUs() {
     };
   }, []);
 
+  const handleTabClick = (index) => {
+    setActiveIndex(index);
+  };
+
   const renderHTML = (htmlContent) => {
     return { __html: htmlContent };
   };
@@ -42,6 +46,7 @@ export default function WhyUs() {
                 <div
                   key={index}
                   className={`tab ${index === activeIndex ? "active" : ""}`}
+                  onClick={() => handleTabClick(index)}
                 >
                   {tab?.title}
                 </div>
@@ -52,7 +57,13 @@ export default function WhyUs() {
             {slider?.map((slide, index) => (
               <div
                 key={index}
-                className={`content-card ${activeIndex === 0 ? "active" : ""}`}
+                className={`content-card ${
+                  activeIndex === index ? "active" : ""
+                }`}
+                style={{
+                  opacity: activeIndex === index ? 1 : 0.5, 
+                  pointerEvents: activeIndex === index ? "auto" : "none",
+                }}
               >
                 <h2>{slide?.title}</h2>
                 <p
