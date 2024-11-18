@@ -2591,6 +2591,7 @@ body .media_page .blog_card {
   border-radius: 16px;
   overflow: hidden;
   display: block;
+  background: #fff;
   box-shadow: rgba(99, 99, 99, 0.074) 0px 2px 8px 0px;
 }
 body .media_page .blog_card .img {
