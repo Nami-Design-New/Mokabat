@@ -50,7 +50,10 @@ export default function ActionPage() {
                 <div className="menu">
                   {programsByDate?.length > 0 ? (
                     programsByDate?.map((program) => (
-                      <Link to="/bootcamp/1" key={program?.id}>
+                      <Link
+                        to={`/actions/${id}/${program?.id}`}
+                        key={program?.id}
+                      >
                         <span>{program?.title}</span>
                         <p>{program?.description}</p>
                       </Link>
