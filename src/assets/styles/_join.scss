@@ -65,6 +65,7 @@
         button {
           height: 32px;
           color: $second;
+          @include centerFlex();
         }
         @media screen and (max-width: 576px) {
           width: 100%;
@@ -74,6 +75,7 @@
         @include clearInput();
         height: 48px;
         border-radius: 50px;
+        min-width: 270px;
         padding: 0 12px;
         color: $main;
         box-shadow: rgba(99, 99, 99, 0.074) 0px 2px 8px 0px;

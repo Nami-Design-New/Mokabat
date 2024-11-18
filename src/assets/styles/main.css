@@ -1334,9 +1334,11 @@ body .cv_area .content {
   display: flex;
   align-items: center;
   gap: 4px;
+  padding: 8px 0;
 }
 body .cv_area .content p {
   margin: 0;
+  font-size: 12px;
   line-height: normal;
 }
 body header {
@@ -2541,6 +2543,9 @@ body .join_page .join_header .filter_form .search_form input {
 body .join_page .join_header .filter_form .search_form button {
   height: 32px;
   color: #7e98fd;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 @media screen and (max-width: 576px) {
   body .join_page .join_header .filter_form .search_form {
@@ -2553,6 +2558,7 @@ body .join_page .join_header .filter_form select {
   outline: none;
   height: 48px;
   border-radius: 50px;
+  min-width: 270px;
   padding: 0 12px;
   color: #0f2133;
   box-shadow: rgba(99, 99, 99, 0.074) 0px 2px 8px 0px;

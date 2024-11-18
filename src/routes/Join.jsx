@@ -1,119 +1,115 @@
-import { useState } from "react";
+import { useState, useEffect } from "react";
+import { useTranslation } from "react-i18next";
+import { useSelector } from "react-redux";
+import { useSearchParams } from "react-router-dom";
 import ApplyForJobModal from "../ui/ApplyForJobModal";
+import useGetVacancies from "../hooks/careers/useGetVacancies";
+import useGetDepartments from "../hooks/careers/useGetDepartments";
 
 export default function Join() {
+  const { t } = useTranslation();
+  const { lang } = useSelector((state) => state.language);
   const [showModal, setShowModal] = useState(false);
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  const [searchData, setSearchData] = useState({
+    title: searchParams.get("title") || "",
+    department_id: searchParams.get("department") || "",
+  });
+
+  const { data: jobs } = useGetVacancies(searchData);
+  const { data: deps } = useGetDepartments();
+
+  useEffect(() => {
+    const params = {};
+    if (searchData.title) params.title = searchData.title;
+    if (searchData.department_id) params.department = searchData.department_id;
+
+    setSearchParams(params);
+  }, [searchData, setSearchParams]);
+
+
+  const handleInputChange = (e) => {
+    setSearchData((prev) => ({
+      ...prev,
+      title: e.target.value,
+    }));
+  };
+
+  const handleDepartmentChange = (e) => {
+    setSearchData((prev) => ({
+      ...prev,
+      department_id: e.target.value,
+    }));
+  };
+
   return (
     <section className="join_page">
       <div className="container">
         <div className="row justify-content-center">
           <div className="col-lg-10 p-2 mb-5">
             <div className="header">
-              <h1 data-aos="fade-up">Let&apos;s Make An Impact</h1>
-              <p data-aos="fade-up">
-                Every day, beliefs influence what we do, our relationships, and
-                our triumphs. At mokabat, we operate by a steadfast commitment
-                to four core ideals that motivate us to provide the greatest
-                services and work environment for all of our stakeholders, a
-                testament to our mission and vision.
-              </p>
+              <h1 data-aos="fade-up">{t("makeAnImpact")}</h1>
+              <p data-aos="fade-up">{t("join")}</p>
             </div>
           </div>
           <div className="col-12 p-2 pt-5 pb-5">
             <div className="join_header" data-aos="fade-up">
               <h2>
-                Open <span>Vacancies</span>
+                {lang === "ar" ? (
+                  <>
+                    {t("vacancies")} <span>{t("open")}</span>
+                  </>
+                ) : (
+                  <>
+                    {t("open")} <span>{t("vacancies")}</span>
+                  </>
+                )}
               </h2>
               <div className="filter_form">
                 <div className="search_form">
-                  <input type="text" placeholder="Search..." />
+                  <input
+                    type="text"
+                    placeholder={t("search")}
+                    value={searchData.title}
+                    onChange={handleInputChange}
+                  />
                   <button>
                     <i className="fa-light fa-magnifying-glass"></i>
                   </button>
                 </div>
-                <select name="job_type" id="job_type">
-                  <option value="all">All</option>
-                  <option value="human_capital">
-                    Human Capital Department
-                  </option>
-                  <option value="marketing">Marketing and Communication</option>
-                  <option value="sales">Sales and Business Development</option>
-                  <option value="digital_factory">Digital Factory</option>
-                  <option value="digital_lab">Digital Lab </option>
-                  <option value="digital_platform">Digital Platform</option>
-                  <option value="finance_accounting">
-                    Finance and Accounting
-                  </option>
-                  <option value="information_technology">
-                    Information Technology
-                  </option>
-                  <option value="pmo">PMO</option>
-                  <option value="digital_studio">Digital Studio </option>
+                <select
+                  name="job_type"
+                  id="job_type"
+                  value={searchData.department_id}
+                  onChange={handleDepartmentChange}
+                >
+                  <option value="">{t("all")}</option>
+                  {deps?.map((dep) => (
+                    <option value={dep?.id} key={dep?.id}>
+                      {dep?.title}
+                    </option>
+                  ))}
                 </select>
               </div>
             </div>
           </div>
           <div className="vacancies">
-            <div className="vacancy_card" data-aos="fade-up">
-              <h6>Risk Manager</h6>
-              <p>
-                Sales Manager Responsibilities: Managing organizational sales by
-                developing a business plan that covers sales, revenue, and
-                expense controls. Meeting planned sales goals. Setting
-                individual sales targets with the sales team. Tracking sales
-                goals and reporting results as necessary. Overseeing the
-                activities and performance of the sales team. Coordinating with
-                marketing on lead generation. The ongoing training of your
-                salespeople. Developing your sales team through motivation,
-                counseling, and product knowledge education.
-              </p>
-              <div className="bottom">
-                <span>
-                  <i className="fa-regular fa-user"></i> 0 Applicants
-                </span>
-                <button onClick={() => setShowModal(true)}>Apply Now</button>
+            {jobs?.map((job) => (
+              <div className="vacancy_card" data-aos="fade-up" key={job?.id}>
+                <h6>{job?.title}</h6>
+                <p>{job?.description}</p>
+                <div className="bottom">
+                  <span>
+                    <i className="fa-regular fa-user"></i> {job?.app_count}{" "}
+                    {t("applicants")}
+                  </span>
+                  <button onClick={() => setShowModal(true)}>
+                    {t("applyNow")}
+                  </button>
+                </div>
               </div>
-            </div>
-            <div className="vacancy_card" data-aos="fade-up">
-              <h6>Sales Manager</h6>
-              <p>
-                Sales Manager Responsibilities: Managing organizational sales by
-                developing a business plan that covers sales, revenue, and
-                expense controls. Meeting planned sales goals. Setting
-                individual sales targets with the sales team. Tracking sales
-                goals and reporting results as necessary. Overseeing the
-                activities and performance of the sales team. Coordinating with
-                marketing on lead generation. The ongoing training of your
-                salespeople. Developing your sales team through motivation,
-                counseling, and product knowledge education.
-              </p>
-              <div className="bottom">
-                <span>
-                  <i className="fa-regular fa-user"></i> 0 Applicants
-                </span>
-                <button onClick={() => setShowModal(true)}>Apply Now</button>
-              </div>
-            </div>
-            <div className="vacancy_card" data-aos="fade-up">
-              <h6>IT Senior Manager</h6>
-              <p>
-                Sales Manager Responsibilities: Managing organizational sales by
-                developing a business plan that covers sales, revenue, and
-                expense controls. Meeting planned sales goals. Setting
-                individual sales targets with the sales team. Tracking sales
-                goals and reporting results as necessary. Overseeing the
-                activities and performance of the sales team. Coordinating with
-                marketing on lead generation. The ongoing training of your
-                salespeople. Developing your sales team through motivation,
-                counseling, and product knowledge education.
-              </p>
-              <div className="bottom">
-                <span>
-                  <i className="fa-regular fa-user"></i> 0 Applicants
-                </span>
-                <button onClick={() => setShowModal(true)}>Apply Now</button>
-              </div>
-            </div>
+            ))}
           </div>
         </div>
       </div>
