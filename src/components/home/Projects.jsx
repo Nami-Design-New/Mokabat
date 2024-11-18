@@ -15,24 +15,48 @@ export default function Projects() {
             </h2>
           </div>
 
-          {projects?.map((project) => {
-            return (
-              <div
-                className="col-lg-6 col-12 p-2 d-flex flex-column gap-5"
-                key={project.id}
-              >
-                <div className="project_cardd small" data-aos="zoom-in-up">
-                  <div className="img">
-                    <img src={project.image} alt="home" />
+          <div className="col-lg-6 col-12 p-2 d-flex flex-column gap-5">
+            {projects?.map((project, index) => {
+              if ((index + 1) % 2 !== 0) {
+                return (
+                  <div
+                    className="project_cardd small"
+                    data-aos="zoom-in-up"
+                    key={project.id}
+                  >
+                    <div className="img">
+                      <img src={project.image} alt="home" />
+                    </div>
+                    <div className="content">
+                      <h3 className="title">{project?.title}</h3>
+                      <p>{project?.description}</p>
+                    </div>
                   </div>
-                  <div className="content">
-                    <h3 className="title">{project?.title}</h3>
-                    <p>{project?.description}</p>
+                );
+              }
+            })}
+          </div>
+          <div className="col-lg-6 col-12 p-2 d-flex flex-column gap-5">
+            {projects?.map((project, index) => {
+              if ((index + 1) % 2 === 0) {
+                return (
+                  <div
+                    className="project_cardd"
+                    data-aos="zoom-in-up"
+                    key={project.id}
+                  >
+                    <div className="img">
+                      <img src={project.image} alt="home" />
+                    </div>
+                    <div className="content">
+                      <h3 className="title">{project?.title}</h3>
+                      <p>{project?.description}</p>
+                    </div>
                   </div>
-                </div>
-              </div>
-            );
-          })}
+                );
+              }
+            })}
+          </div>
         </div>
       </div>
     </section>

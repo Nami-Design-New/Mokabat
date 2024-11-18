@@ -234,16 +234,6 @@
 .lazyImg {
   position: relative;
   height: 100%;
-  &::before {
-    content: "";
-    position: absolute;
-    left: 0;
-    top: 50%;
-    border: 10px solid $main;
-    width: 100%;
-    height: 90%;
-    transform: translateY(-50%);
-  }
   .lazyDiv {
     height: 100%;
     margin: auto;

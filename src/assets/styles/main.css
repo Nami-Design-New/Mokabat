@@ -525,16 +525,6 @@ body .lazyImg {
   position: relative;
   height: 100%;
 }
-body .lazyImg::before {
-  content: "";
-  position: absolute;
-  left: 0;
-  top: 50%;
-  border: 10px solid #0f2133;
-  width: 100%;
-  height: 90%;
-  transform: translateY(-50%);
-}
 body .lazyImg .lazyDiv {
   height: 100%;
   margin: auto;
