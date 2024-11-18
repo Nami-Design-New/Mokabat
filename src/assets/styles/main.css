@@ -2755,7 +2755,7 @@ body .media_swiper .media_swiper .img .media_card h2 {
   font-size: 24px;
   margin-bottom: 12px;
 }
-body .media_swiper .media_swiper .img .media_card button {
+body .media_swiper .media_swiper .img .media_card a {
   border: 1px solid #fff;
   color: #fff;
   padding: 12px 24px;
@@ -2765,7 +2765,7 @@ body .media_swiper .media_swiper .img .media_card button {
   gap: 8px;
   transition: 0.3s ease-in-out;
 }
-body .media_swiper .media_swiper .img .media_card button:hover {
+body .media_swiper .media_swiper .img .media_card a:hover {
   border: 1px solid #7e98fd;
   color: #7e98fd;
   background: #fff;
