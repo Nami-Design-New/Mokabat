@@ -1,6 +1,6 @@
 import About from "./routes/About";
-import Bootcamp from "./routes/Bootcamp";
-import BootcampDetails from "./routes/BootcampDetails";
+import ActionDetails from "./routes/ActionDetails";
+import ActionPage from "./routes/ActionPage";
 import Contact from "./routes/Contact";
 import Home from "./routes/Home";
 import Insight from "./routes/Insight";
@@ -8,7 +8,6 @@ import Insights from "./routes/Insights";
 import Join from "./routes/Join";
 import Media from "./routes/Media";
 import MediaDetails from "./routes/MediaDetails";
-import Programs from "./routes/Programs";
 import Projects from "./routes/Projects";
 import Services from "./routes/Services";
 
@@ -54,16 +53,12 @@ const router = [
     element: <Join />,
   },
   {
-    path: "/programs",
-    element: <Programs />,
+    path: "/actions/:id",
+    element: <ActionPage />,
   },
   {
-    path: "/bootcamp",
-    element: <Bootcamp />,
-  },
-  {
-    path: "/bootcamp/:id",
-    element: <BootcampDetails />,
+    path: "/actions/:id/:actionId",
+    element: <ActionDetails />,
   },
 ];
 

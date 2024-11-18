@@ -35,6 +35,9 @@ export default function Insights() {
                 <div className="content">
                   <h2>{t("insights")}</h2>
                   <h4>{insight?.title}</h4>
+                  <p>
+                    <strong>{insight?.subtitle}</strong>
+                  </p>
                   <p>{insight?.description}</p>
                 </div>
               </div>

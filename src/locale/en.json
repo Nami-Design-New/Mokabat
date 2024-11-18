@@ -53,5 +53,11 @@
     "shareInsight": "Share Insight",
     "downloadFiles": "Download files",
     "read": "Read",
-    "next": "Next"
+    "next": "Next",
+    "noProgramsFound": "No results found",
+    "goals": "Goals",
+    "program": "Program",
+    "sessions": "Sessions",
+    "whatYouMissed": "What You Missed",
+    "upComming": "Upcomming Sessions"
 }

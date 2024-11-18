@@ -53,5 +53,11 @@
     "shareInsight": "مشاركة المرئيات",
     "downloadFiles": "تنزيل الملفات",
     "read": "إقرأ",
-    "next": "التالي"
+    "next": "التالي",
+    "noProgramsFound": "لم يتم العثور على نتائج",
+    "goals": "أهداف",
+    "program": "البرنامج",
+    "sessions": "الورش",
+    "whatYouMissed": "ما فاتك",
+    "upComming": "الورش القامه"
 }

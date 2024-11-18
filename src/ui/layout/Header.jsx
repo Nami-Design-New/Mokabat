@@ -1,4 +1,4 @@
-import { useEffect, useRef, useState } from "react";
+import { Fragment, useEffect, useRef, useState } from "react";
 import { Link, NavLink } from "react-router-dom";
 import { Dropdown } from "react-bootstrap";
 import { setLanguage } from "../../redux/slices/language";
@@ -6,6 +6,7 @@ import { useDispatch } from "react-redux";
 import { useTranslation } from "react-i18next";
 import i18next from "i18next";
 import useGetSettings from "../../hooks/useGetSettings";
+import useGetActions from "../../hooks/actions/useGetActions";
 
 export default function Header() {
   const header = useRef(null);
@@ -16,6 +17,7 @@ export default function Header() {
   const [closing, setClosing] = useState(false);
   const [showMenu, setShowMenu] = useState(false);
   const { data: settings } = useGetSettings();
+  const { data: actions } = useGetActions();
 
   useEffect(() => {
     const handleScroll = () => {
@@ -111,12 +113,16 @@ export default function Header() {
               </Dropdown.Toggle>
               <Dropdown.Menu className="menu">
                 <div className="inner_menu">
-                  <NavLink to="/programs" onClick={handleCloseMenu}>
-                    {t("programs")}
-                  </NavLink>
-                  <NavLink to="/bootcamp" onClick={handleCloseMenu}>
-                    {t("bootcamp")}
-                  </NavLink>
+                  {actions?.map((action) => (
+                    <Fragment key={action}>
+                      <NavLink
+                        to={`/actions/${action?.id}`}
+                        onClick={handleCloseMenu}
+                      >
+                        {action?.title}
+                      </NavLink>
+                    </Fragment>
+                  ))}
                 </div>
               </Dropdown.Menu>
             </Dropdown>
