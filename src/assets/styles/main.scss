@@ -90,7 +90,7 @@ body {
       left: unset;
       right: 16px;
     }
-    .contact_section .contact_form form button span:last-child i {
+    .contact_section .contact_form form button span i {
       transform: scale(-1);
     }
     .projects_page .project_card .title::after {
@@ -101,6 +101,12 @@ body {
         #7e98fd 0%,
         rgba(238, 238, 238, 0) 100%
       );
+    }
+    .media_page .blog_card .content span.link img {
+      transform: scale(-1);
+    }
+    .media_page .blog_card:hover .content span.link img {
+      transform: scale(-1) rotate(45deg) !important;
     }
   }
 }

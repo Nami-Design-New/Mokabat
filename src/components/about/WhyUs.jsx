@@ -42,7 +42,7 @@ export default function WhyUs() {
         <div className="row tabs-row">
           <div className="tabs-wrapper col-3">
             <div className="tabs">
-              {slider.map((tab, index) => (
+              {slider?.map((tab, index) => (
                 <div
                   key={index}
                   className={`tab ${index === activeIndex ? "active" : ""}`}

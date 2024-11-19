@@ -1,6 +1,8 @@
 import { useEffect, useState } from "react";
 import { Modal } from "react-bootstrap";
 import { useTranslation } from "react-i18next";
+import { toast } from "react-toastify";
+import { useQueryClient } from "@tanstack/react-query";
 import InputField from "./form-elements/InputField";
 import SelectField from "./form-elements/SelectField";
 import FileUploadField from "./form-elements/FileUploadField";
@@ -8,7 +10,6 @@ import SubmitButton from "./form-elements/SubmitButton";
 import useGetNatonalities from "../hooks/careers/useGetNatonalities";
 import useGetDegrees from "../hooks/careers/useGetDegrees";
 import useGetDepartments from "../hooks/careers/useGetDepartments";
-import { toast } from "react-toastify";
 import axiosInstance from "../utils/axiosInstance";
 
 export default function ApplyForJobModal({ showModal, setShowModal, id }) {
@@ -16,6 +17,8 @@ export default function ApplyForJobModal({ showModal, setShowModal, id }) {
   const { data: nationalities } = useGetNatonalities();
   const { data: departments } = useGetDepartments();
   const { data: degrees } = useGetDegrees();
+
+  const queryClinet = useQueryClient();
 
   const [loading, setLoading] = useState(false);
   const [formData, setFormData] = useState({
@@ -93,6 +96,7 @@ export default function ApplyForJobModal({ showModal, setShowModal, id }) {
       if (res?.data?.code === 200) {
         toast.success(t("appliedSucessfully"));
         hideModal();
+        queryClinet.invalidateQueries({ queryKey: ["jobs"] });
       } else {
         toast.error(t("somethingWentWrong"));
       }
@@ -157,7 +161,7 @@ export default function ApplyForJobModal({ showModal, setShowModal, id }) {
             </div>
             <div className="col-lg-6 col-12 p-2">
               <SelectField
-                defaultOption={"Select Gender"}
+                defaultOption={t("select")}
                 required
                 label={t("gender")}
                 id="gender"
@@ -172,7 +176,7 @@ export default function ApplyForJobModal({ showModal, setShowModal, id }) {
             </div>
             <div className="col-lg-6 col-12 p-2">
               <SelectField
-                defaultOption={"select"}
+                defaultOption={t("select")}
                 required
                 label={t("nationality")}
                 id="nationality_id"

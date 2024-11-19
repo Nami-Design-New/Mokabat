@@ -56,6 +56,7 @@
         padding: 8px 16px;
         display: flex;
         align-items: center;
+        background: #fff;
         gap: 8px;
         input {
           width: 240px;
@@ -78,6 +79,7 @@
         min-width: 270px;
         padding: 0 12px;
         color: $main;
+        background: #fff;
         box-shadow: rgba(99, 99, 99, 0.074) 0px 2px 8px 0px;
         @media screen and (max-width: 576px) {
           width: 100%;
@@ -93,6 +95,7 @@
       box-shadow: rgba(99, 99, 99, 0.074) 0px 2px 8px 0px;
       padding: 24px;
       border-radius: 16px;
+      background: #fff;
       display: flex;
       flex-direction: column;
       gap: 8px;
