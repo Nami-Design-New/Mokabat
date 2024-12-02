@@ -76,19 +76,16 @@ export default function HeroSection() {
               <img
                 className="balls"
                 src={heroData?.image_two}
-                alt="balls"
                 onLoad={() => (this.src = "/images/ball.webp")}
               />
               <img
                 className="window"
                 src={heroData?.image_three}
-                alt="squ"
                 onLoad={() => (this.src = "/images/squ.webp")}
               />
               <img
                 className="astro"
                 src={heroData?.image_one}
-                alt="astro"
                 onLoad={() => (this.src = "/images/astro.webp")}
               />
             </div>
