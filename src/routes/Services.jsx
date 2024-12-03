@@ -1,5 +1,6 @@
 import { useState } from "react";
 import { Swiper, SwiperSlide } from "swiper/react";
+import { useSelector } from "react-redux";
 import { FreeMode, Navigation, Thumbs } from "swiper/modules";
 import "swiper/css";
 import "swiper/css/free-mode";
@@ -10,6 +11,14 @@ import useGetServices from "../hooks/services/useGetServices";
 export default function Services() {
   const [thumbsSwiper, setThumbsSwiper] = useState(null);
   const { data: services } = useGetServices();
+  const { lang } = useSelector((state) => state.language);
+
+  const handleSwiperInit = (swiper) => {
+    if (swiper && swiper.destroyed) {
+      swiper.init();
+    }
+    setThumbsSwiper(swiper);
+  };
 
   return (
     <section className="services_page">
@@ -21,6 +30,8 @@ export default function Services() {
           spaceBetween={16}
           thumbs={{ swiper: thumbsSwiper }}
           modules={[FreeMode, Navigation, Thumbs]}
+          dir={lang === "ar" ? "rtl" : "ltr"}
+          key={lang}
           className="services_swiper"
         >
           {services?.map((service) => (
@@ -48,11 +59,11 @@ export default function Services() {
             slidesPerView={6}
             spaceBetween={16}
             className="services_swiper"
-            onSwiper={setThumbsSwiper}
+            onSwiper={handleSwiperInit}
             loop={true}
             freeMode={true}
-            centeredSlides={true}
             modules={[FreeMode, Navigation, Thumbs]}
+            dir={lang === "ar" ? "rtl" : "ltr"}
             breakpoints={{
               992: {
                 slidesPerView: 6,
@@ -65,8 +76,8 @@ export default function Services() {
               },
             }}
           >
-            {services?.map((service, index) => (
-              <SwiperSlide key={index}>
+            {services?.map((service) => (
+              <SwiperSlide key={service?.id}>
                 <button>{service?.title}</button>
               </SwiperSlide>
             ))}

@@ -414,16 +414,13 @@ body .whyus_section .tabs-content-wrapper {
   border-radius: 12px;
   display: flex;
   flex-direction: column;
+  scroll-behavior: smooth;
+  position: relative;
+  -ms-overflow-style: none;
+  scrollbar-width: none;
 }
 body .whyus_section .tabs-content-wrapper::-webkit-scrollbar {
-  height: 0;
-  width: 0;
   display: none;
-}
-body .whyus_section .tabs-content-wrapper::-webkit-scrollbar {
-  display: none;
-  width: 0;
-  height: 0;
 }
 body .whyus_section .statistic {
   padding: 24px 0;
@@ -463,21 +460,30 @@ body .whyus_section .content-card {
   justify-content: center;
   gap: 8px;
   padding: 16px !important;
-  transition: 0.3s ease-in-out;
   border-radius: 12px;
+  transition: all 0.3s ease-out;
+  will-change: opacity, transform;
 }
 @media screen and (min-width: 992px) {
   body .whyus_section .info,
   body .whyus_section .content-card {
-    filter: grayscale(0.5);
     opacity: 0.3;
   }
-  body .whyus_section .info:hover, body .whyus_section .info.active,
-  body .whyus_section .content-card:hover,
+  body .whyus_section .info.active,
   body .whyus_section .content-card.active {
-    filter: grayscale(0);
     opacity: 1;
     background-color: rgba(126, 151, 253, 0.137254902);
+    transform: translateZ(0);
+  }
+}
+@media screen and (min-width: 992px) {
+  body .whyus_section .info,
+  body .whyus_section .content-card {
+    filter: none;
+  }
+  body .whyus_section .info:hover,
+  body .whyus_section .content-card:hover {
+    filter: none;
   }
 }
 body .whyus_section .info p,

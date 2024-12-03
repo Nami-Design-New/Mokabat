@@ -80,21 +80,35 @@ export default function Contact() {
                   <div className="block" data-aos="fade-up">
                     <h6>{t("followUsContact")}</h6>
                     <div className="socials">
-                      <Link to={settings?.facebook}>
-                        <i className="fab fa-facebook-f"></i>
-                      </Link>
-                      <Link to={settings?.twitter}>
-                        <i className="fab fa-twitter"></i>
-                      </Link>
-                      <Link to={settings?.linkedin}>
-                        <i className="fab fa-linkedin-in"></i>
-                      </Link>
-                      <Link to={settings?.instagram}>
-                        <i className="fab fa-instagram"></i>
-                      </Link>
-                      <Link to={settings?.youtube}>
-                        <i className="fab fa-youtube"></i>
-                      </Link>
+                      {settings?.facebook && settings?.facebook !== "#" && (
+                        <Link to={settings?.facebook} target="_blank">
+                          <i className="fab fa-facebook-f"></i>
+                        </Link>
+                      )}
+
+                      {settings?.twitter && settings?.twitter !== "#" && (
+                        <Link to={settings?.twitter} target="_blank">
+                          <i className="fab fa-twitter"></i>
+                        </Link>
+                      )}
+
+                      {settings?.linkedin && settings?.linkedin !== "#" && (
+                        <Link to={settings?.linkedin} target="_blank">
+                          <i className="fab fa-linkedin-in"></i>
+                        </Link>
+                      )}
+
+                      {settings?.youtube && settings?.youtube !== "#" && (
+                        <Link to={settings?.youtube} target="_blank">
+                          <i className="fab fa-youtube"></i>
+                        </Link>
+                      )}
+
+                      {settings?.instagram && settings?.instagram !== "#" && (
+                        <Link to={settings?.instagram} target="_blank">
+                          <i className="fab fa-instagram"></i>
+                        </Link>
+                      )}
                     </div>
                   </div>
                 </div>

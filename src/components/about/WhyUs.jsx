@@ -8,10 +8,10 @@ export default function WhyUs() {
   const { data: slider } = useGetAboutSlider();
 
   useEffect(() => {
-    const options = { root: null, threshold: 0.5 };
+    const options = { root: null, threshold: 0.5, rootMargin: '0px' };
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
-        if (entry.isIntersecting) {
+        if (entry.isIntersecting && entry.boundingClientRect.y > 0) {
           setActiveIndex(parseInt(entry.target.dataset.index));
         }
       });
@@ -30,6 +30,8 @@ export default function WhyUs() {
 
   const handleTabClick = (index) => {
     setActiveIndex(index);
+    const contentCards = sectionRef.current.querySelectorAll('.content-card');
+    contentCards[index]?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
   };
 
   const renderHTML = (htmlContent) => {

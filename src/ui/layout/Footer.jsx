@@ -71,21 +71,35 @@ export default function Footer() {
               <img src={settings?.second_logo_footer} alt="vision" />
             </Link>
             <div className="social_media">
-              <Link>
-                <i className="fab fa-facebook-f"></i>
-              </Link>
-              <Link>
-                <i className="fab fa-twitter"></i>
-              </Link>
-              <Link>
-                <i className="fab fa-linkedin-in"></i>
-              </Link>
-              <Link>
-                <i className="fab fa-youtube"></i>
-              </Link>
-              <Link>
-                <i className="fab fa-instagram"></i>
-              </Link>
+              {settings?.facebook && settings?.facebook !== "#" && (
+                <Link to={settings?.facebook} target="_blank">
+                  <i className="fab fa-facebook-f"></i>
+                </Link>
+              )}
+
+              {settings?.twitter && settings?.twitter !== "#" && (
+                <Link to={settings?.twitter} target="_blank">
+                  <i className="fab fa-twitter"></i>
+                </Link>
+              )}
+
+              {settings?.linkedin && settings?.linkedin !== "#" && (
+                <Link to={settings?.linkedin} target="_blank">
+                  <i className="fab fa-linkedin-in"></i>
+                </Link>
+              )}
+
+              {settings?.youtube && settings?.youtube !== "#" && (
+                <Link to={settings?.youtube} target="_blank">
+                  <i className="fab fa-youtube"></i>
+                </Link>
+              )}
+
+              {settings?.instagram && settings?.instagram !== "#" && (
+                <Link to={settings?.instagram} target="_blank">
+                  <i className="fab fa-instagram"></i>
+                </Link>
+              )}
             </div>
           </div>
 
@@ -127,11 +141,6 @@ export default function Footer() {
                   {t("contact")}
                 </Link>
               </li>
-              {/* <li>
-                <Link className="footer_link" to="/faqs">
-                  {t("faq")}
-                </Link>
-              </li> */}
             </ul>
           </div>
 
