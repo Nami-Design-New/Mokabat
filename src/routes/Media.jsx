@@ -37,7 +37,7 @@ export default function Media() {
                   <div className="media_card">
                     <h2>{slide?.title}</h2>
                     <p>{slide?.description}</p>
-                    <a href={slide?.file} download={slide?.title}>
+                    <a href={slide?.file} target="_blank" download={slide?.title}>
                       {t("downloadFiles")}{" "}
                       <i className="fa-regular fa-cloud-arrow-down"></i>{" "}
                     </a>

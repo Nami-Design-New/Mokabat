@@ -31,7 +31,7 @@ export default function Insight() {
           <div className="content">
             <h3 data-aos="fade-up">{insight?.title}</h3>
             <div className="btns" data-aos="fade-up">
-              <a href={insight?.file} download={insight?.title}>
+              <a href={insight?.file}  target="_blank" download={insight?.title}>
                 {t("downloadFiles")}{" "}
                 <i className="fa-regular fa-cloud-arrow-down"></i>
               </a>
