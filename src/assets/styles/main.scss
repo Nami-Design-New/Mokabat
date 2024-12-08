@@ -66,7 +66,7 @@ body {
 
   &.ar {
     direction: rtl;
-    font-family: "baloo" !important;
+    font-family: "El Messiri", sans-serif !important;
     .home_section .content .customBtn i {
       transform: scale(-1);
     }
@@ -107,6 +107,12 @@ body {
     }
     .media_page .blog_card:hover .content span.link img {
       transform: scale(-1) rotate(45deg) !important;
+    }
+    @media screen and (max-width: 992px) {
+      header nav .nav_links .menu_btn {
+        left: 16px;
+        right: initial;
+      }
     }
   }
 }
