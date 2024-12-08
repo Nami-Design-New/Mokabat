@@ -60,11 +60,17 @@ export default function Services() {
             // spaceBetween={16}
             className="services_swiper"
             onSwiper={handleSwiperInit}
-            // loop={true}
-            freeMode={true}
-            // centeredSlides={true}
+            watchSlidesProgress={true}
+            watchSlidesVisibility={true}
+            freeMode={{
+              enabled: true,
+              sticky: false,
+              momentumRatio: 0.25
+            }}
             modules={[FreeMode, Navigation, Thumbs]}
             dir={lang === "ar" ? "rtl" : "ltr"}
+            // touchRatio={1.5}
+            // touchAngle={45}
           >
             {services?.map((service) => (
               <SwiperSlide key={service?.id}>
