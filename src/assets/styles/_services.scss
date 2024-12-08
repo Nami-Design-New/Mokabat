@@ -57,14 +57,17 @@
     gap: 6px;
     transition: $transition;
     border-radius: 12px;
+    padding: 0 16px;
     @include centerFlex();
+    user-select: none;
     @include clearInput();
   }
-
+  .swiper-wrapper {
+    width: fit-content; 
+  }
   .swiper-slide-thumb-active {
     button {
       background: $second;
-      padding: 0 16px;
       color: $white;
     }
   }

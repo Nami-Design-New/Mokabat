@@ -3164,16 +3164,23 @@ body .thumbs button {
   gap: 6px;
   transition: 0.3s ease-in-out;
   border-radius: 12px;
+  padding: 0 16px;
   display: flex;
   align-items: center;
   justify-content: center;
+  -webkit-user-select: none;
+     -moz-user-select: none;
+          user-select: none;
   border: none;
   background: none;
   outline: none;
 }
+body .thumbs .swiper-wrapper {
+  width: -moz-fit-content;
+  width: fit-content;
+}
 body .thumbs .swiper-slide-thumb-active button {
   background: #7e98fd;
-  padding: 0 16px;
   color: #fff;
 }
 body.ar {

@@ -24,7 +24,7 @@ export default function Services() {
     <section className="services_page">
       <div className="container">
         <Swiper
-          loop={true}
+          // loop={true}
           speed={1000}
           slidesPerView={1}
           spaceBetween={16}
@@ -57,12 +57,12 @@ export default function Services() {
           <Swiper
             speed={1000}
             slidesPerView="auto"
-            spaceBetween={16}
+            // spaceBetween={16}
             className="services_swiper"
             onSwiper={handleSwiperInit}
-            loop={true}
+            // loop={true}
             freeMode={true}
-            centeredSlides={true}
+            // centeredSlides={true}
             modules={[FreeMode, Navigation, Thumbs]}
             dir={lang === "ar" ? "rtl" : "ltr"}
           >
