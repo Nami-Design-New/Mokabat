@@ -1,91 +1,97 @@
-import { useRef, useState, useEffect } from "react";
-import useGetAboutSlider from "../../hooks/about/useGetAboutSlider";
+import { ParallaxProvider } from "react-scroll-parallax";
+import { useState, useEffect, useRef } from "react";
+import useGetAboutSlider from "./../../hooks/about/useGetAboutSlider";
 
 export default function WhyUs() {
-  const sectionRef = useRef(null);
+  return (
+    <ParallaxProvider>
+      <WhyUsContent />
+    </ParallaxProvider>
+  );
+}
+
+function WhyUsContent() {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [lastActiveIndex, setLastActiveIndex] = useState(0);
-
   const { data: slider } = useGetAboutSlider();
+  const contentRefs = useRef([]);
 
-  const handleTabClick = (index) => {
-    setLastActiveIndex(activeIndex);
-    setActiveIndex(index);
-    const contentCards = sectionRef.current.querySelectorAll(".content-card");
-    contentCards[index]?.scrollIntoView({
-      behavior: "smooth",
-      block: "nearest",
-    });
-  };
-
-  const handleContentClick = (index) => {
-    setLastActiveIndex(activeIndex);
-    setActiveIndex(index);
-  };
-
-  const renderHTML = (htmlContent) => {
-    return { __html: htmlContent };
-  };
+  const isScrollingRef = useRef(false);
 
   useEffect(() => {
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            const index = parseInt(entry.target.dataset.index);
-            setLastActiveIndex(activeIndex);
-            setActiveIndex(index);
-          }
-        });
-      },
-      {
-        threshold: 0.5,
-        rootMargin: "-20% 0px -20% 0px",
-      }
-    );
-    const contentCards = sectionRef.current.querySelectorAll(".content-card");
-    contentCards.forEach((card) => observer.observe(card));
+    const handleScroll = () => {
+      if (isScrollingRef.current) return;
 
-    return () => observer.disconnect();
+      const visibleIndex = contentRefs.current.findIndex((ref) => {
+        if (!ref) return false;
+        const rect = ref.getBoundingClientRect();
+        return rect.top >= 150 && rect.top < window.innerHeight / 2;
+      });
+
+      if (visibleIndex !== -1 && visibleIndex !== activeIndex) {
+        setActiveIndex(visibleIndex);
+      }
+    };
+
+    window.addEventListener("scroll", handleScroll);
+    return () => window.removeEventListener("scroll", handleScroll);
   }, [activeIndex]);
 
+  const handleSelect = (index) => {
+    setActiveIndex(index);
+    isScrollingRef.current = true;
+
+    document.getElementById(`content-${index}`).scrollIntoView({
+      behavior: "smooth",
+      block: "center",
+    });
+
+    setTimeout(() => {
+      isScrollingRef.current = false;
+    }, 500);
+  };
+
+  const renderHTML = (html) => ({ __html: html });
+
+  const getTransitionStyles = (index) => ({
+    opacity: activeIndex === index ? 1 : 0.5,
+    transform: `translateY(${activeIndex === index ? 0 : "20px"})`,
+    transition: "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
+  });
+
   return (
-    <section className="whyus_section" ref={sectionRef}>
+    <section className="whyus_section">
       <div className="container">
         <div className="row tabs-row">
-          <div className="tabs-wrapper col-3">
+          <div className="tabs-wrapper col-3" data-aos="fade-up">
             <div className="tabs">
               {slider?.map((tab, index) => (
                 <div
                   key={index}
                   className={`tab ${index === activeIndex ? "active" : ""}`}
-                  onClick={() => handleTabClick(index)}
+                  onClick={() => handleSelect(index)}
+                  style={{
+                    transition: "all 0.6s cubic-bezier(0.4, 0, 0.2, 1)",
+                  }}
                 >
                   {tab?.title}
                 </div>
               ))}
             </div>
           </div>
-          <div className="tabs-content-wrapper col-6 py-2 px-4">
+
+          <div
+            className="tabs-content-wrapper col-6 py-2 px-4"
+            data-aos="fade-up"
+          >
             {slider?.map((slide, index) => (
               <div
+                id={`content-${index}`}
                 key={index}
-                data-index={index}
+                ref={(el) => (contentRefs.current[index] = el)}
                 className={`content-card ${
                   activeIndex === index ? "active" : ""
                 }`}
-                style={{
-                  opacity:
-                    activeIndex === index
-                      ? 1
-                      : index === lastActiveIndex
-                      ? 0.8
-                      : 0.5,
-                  pointerEvents: "auto",
-                  cursor: "pointer",
-                  transition: "opacity 0.3s ease",
-                }}
-                onClick={() => handleContentClick(index)}
+                style={getTransitionStyles(index)}
               >
                 <h2>{slide?.title}</h2>
                 <p
@@ -95,7 +101,7 @@ export default function WhyUs() {
               </div>
             ))}
           </div>
-          <div className="img-wrapper col-3">
+          <div className="img-wrapper col-3" data-aos="fade-up">
             <div className="lazyImg">
               <img
                 src={slider?.map((slide) => slide?.image)?.[activeIndex]}

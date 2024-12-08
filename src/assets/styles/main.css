@@ -383,10 +383,16 @@ body .whyus_section .tabs-wrapper .tabs .tab {
   font-size: 20px !important;
   font-weight: 600;
   color: #0f2133;
+  will-change: transform;
 }
 body .whyus_section .tabs-wrapper .tabs .tab.active {
   color: #7e98fd !important;
   font-size: 32px !important;
+}
+body .whyus_section .tabs-wrapper .tabs .tab.active {
+  color: #7e98fd !important;
+  font-size: 32px !important;
+  will-change: transform;
 }
 body .whyus_section .img-wrapper {
   height: 100%;
@@ -408,9 +414,18 @@ body .whyus_section .img-wrapper img {
   border-radius: 12px;
   transition: 0.3s ease-in-out;
 }
+body .whyus_section .img-wrapper .lazyImg {
+  will-change: transform;
+  backface-visibility: hidden;
+  perspective: 1000px;
+}
+body .whyus_section .img-wrapper .lazyImg img {
+  will-change: transform;
+  backface-visibility: hidden;
+}
 body .whyus_section .tabs-content-wrapper {
   flex: 1 0;
-  gap: 16px;
+  gap: 32px;
   border-radius: 12px;
   display: flex;
   flex-direction: column;
@@ -424,6 +439,17 @@ body .whyus_section .tabs-content-wrapper::-webkit-scrollbar {
   display: none;
   width: 0;
   height: 0;
+}
+body .whyus_section .tabs-content-wrapper .content-card {
+  will-change: transform, opacity;
+  transform-origin: center center;
+  backface-visibility: hidden;
+  perspective: 1000px;
+  cursor: pointer;
+  transition: opacity 0.6s ease, transform 0.6s ease;
+}
+body .whyus_section .tabs-content-wrapper .content-card.active {
+  z-index: 2;
 }
 body .whyus_section .statistic {
   padding: 24px 0;
@@ -658,6 +684,9 @@ body .our_team_section .team-member .social-media a {
 body .our_team_section .team-member .social-media a i {
   font-size: 14px;
   color: #0f2133;
+}
+body .our_team_section .swiper-wrapper {
+  justify-content: center !important;
 }
 body .contact_section {
   padding: 120px 0 60px;
@@ -3094,6 +3123,7 @@ body .services_page .img img {
 }
 body .services_page .swiper-slide {
   height: auto;
+  width: auto;
 }
 body .services_page .sercvice_content {
   display: flex;
@@ -3143,6 +3173,7 @@ body .thumbs button {
 }
 body .thumbs .swiper-slide-thumb-active button {
   background: #7e98fd;
+  padding: 0 16px;
   color: #fff;
 }
 body.ar {

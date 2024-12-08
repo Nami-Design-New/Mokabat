@@ -56,25 +56,15 @@ export default function Services() {
         <div className="thumbs">
           <Swiper
             speed={1000}
-            slidesPerView={6}
+            slidesPerView="auto"
             spaceBetween={16}
             className="services_swiper"
             onSwiper={handleSwiperInit}
             loop={true}
             freeMode={true}
+            centeredSlides={true}
             modules={[FreeMode, Navigation, Thumbs]}
             dir={lang === "ar" ? "rtl" : "ltr"}
-            breakpoints={{
-              992: {
-                slidesPerView: 6,
-              },
-              768: {
-                slidesPerView: 5,
-              },
-              350: {
-                slidesPerView: 3,
-              },
-            }}
           >
             {services?.map((service) => (
               <SwiperSlide key={service?.id}>

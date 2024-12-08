@@ -90,6 +90,13 @@
           color: $second !important;
           font-size: 32px !important;
         }
+
+        will-change: transform;
+        &.active {
+          color: $second !important;
+          font-size: 32px !important;
+          will-change: transform;
+        }
       }
     }
   }
@@ -112,12 +119,23 @@
       border-radius: 12px;
       transition: $transition;
     }
+
+    .lazyImg {
+      will-change: transform;
+      backface-visibility: hidden;
+      perspective: 1000px;
+
+      img {
+        will-change: transform;
+        backface-visibility: hidden;
+      }
+    }
   }
 
   .tabs-content-wrapper {
     flex: 1 0;
 
-    gap: 16px;
+    gap: 32px;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
@@ -141,6 +159,18 @@
       display: none;
       width: 0;
       height: 0;
+    }
+
+    .content-card {
+      will-change: transform, opacity;
+      transform-origin: center center;
+      backface-visibility: hidden;
+      perspective: 1000px;
+      cursor: pointer;
+      transition: opacity 0.6s ease, transform 0.6s ease;
+      &.active {
+        z-index: 2;
+      }
     }
   }
 
@@ -375,5 +405,9 @@
         }
       }
     }
+  }
+
+  .swiper-wrapper {
+    justify-content: center !important;
   }
 }
