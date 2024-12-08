@@ -411,7 +411,7 @@
   .swiper-wrapper {
     justify-content: center !important;
     @media screen and (max-width: 576px) {
-      justify-content: unset;
+      justify-content: unset !important;
     }
   }
 }

@@ -52,14 +52,7 @@ function App() {
 
   return (
     <>
-      <video
-        className="bg_video"
-        src="/images/cubes.mp4"
-        autoPlay
-        loop
-        muted
-        playsInline
-      ></video>
+      
       <IntroLoader className={showIntro ? "" : "hide"} />
       <ParticlesComponent />
       <Header />

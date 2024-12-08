@@ -246,6 +246,7 @@
         box-shadow: none !important;
         background: transparent !important;
         color: $main !important;
+        text-align: start;
         &::after {
           content: "\f00d";
           font-family: "Font Awesome 6 Pro";

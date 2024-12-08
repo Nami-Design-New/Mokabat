@@ -692,7 +692,7 @@ body .our_team_section .swiper-wrapper {
 }
 @media screen and (max-width: 576px) {
   body .our_team_section .swiper-wrapper {
-    justify-content: unset;
+    justify-content: unset !important;
   }
 }
 body .contact_section {
@@ -1900,6 +1900,7 @@ body .services_section .accordion .accordion-item .accordion-button {
   box-shadow: none !important;
   background: transparent !important;
   color: #0f2133 !important;
+  text-align: start;
 }
 body .services_section .accordion .accordion-item .accordion-button::after {
   content: "\f00d";
