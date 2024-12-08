@@ -356,6 +356,7 @@
 
   .team-member {
     width: 100%;
+    height: 100%;
     background: rgba(0, 0, 0, 0.04);
     border: 1px solid #ffffff21;
     backdrop-filter: blur(6px);
@@ -409,5 +410,8 @@
 
   .swiper-wrapper {
     justify-content: center !important;
+    @media screen and (max-width: 576px) {
+      justify-content: unset;
+    }
   }
 }
