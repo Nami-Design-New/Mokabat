@@ -1,14 +1,14 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay } from "swiper/modules";
 import { useSelector } from "react-redux";
-import { useTranslation } from "react-i18next";
 import "swiper/swiper-bundle.css";
 import useGetAboutMokabat from "../../hooks/home/useGetAboutMokabat";
+import useGetSettings from "./../../hooks/useGetSettings";
 
 export default function AboutSection() {
   const { lang } = useSelector((state) => state.language);
   const { data: aboutData } = useGetAboutMokabat();
-  const { t } = useTranslation();
+  const { data: settings } = useGetSettings();
 
   return (
     <section className="about_section">
@@ -16,10 +16,10 @@ export default function AboutSection() {
         <div className="row">
           <div className="col-12 p-2 mb-3">
             <h2 className="text-center" data-aos="fade-up">
-              {t("aboutMokabat")}
+              {settings?.about_mokabat_title}
             </h2>
             <h6 className="text-center" data-aos="fade-up">
-              {t("aboutMokabatSub")}
+              {settings?.about_mokabat_desc}
             </h6>
           </div>
           <div className="col-12 p-2" data-aos="fade-up">

@@ -4,12 +4,14 @@ import { Link } from "react-router-dom";
 import { toast } from "react-toastify";
 import useGetSettings from "../../hooks/useGetSettings";
 import axiosInstance from "../../utils/axiosInstance";
+import useGetApperance from "../../hooks/useGetApperance";
 
 export default function Footer() {
   const { t } = useTranslation();
   const { data: settings } = useGetSettings();
   const [email, setEmail] = useState("");
   const [loading, setLoading] = useState(false);
+  const { data: appearance } = useGetApperance();
 
   const handleSubscribe = async (e) => {
     e.preventDefault();
@@ -34,35 +36,37 @@ export default function Footer() {
     <footer>
       <div className="container">
         <div className="row">
-          <div className="col-12 p-2 mb-4">
-            <div className="news_letter">
-              <p>
-                {t("subscribeIn")} <span>{t("newsletter")}</span>
-              </p>
-              <h3>{t("reciveUpdates")}</h3>
-              <form onSubmit={handleSubscribe}>
-                <input
-                  type="email"
-                  placeholder={t("enterEmail")}
-                  required
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                />
-                <button
-                  style={{
-                    opacity: loading ? 0.7 : 1,
-                    pointerEvents: loading ? "none" : "auto",
-                  }}
-                >
-                  {loading ? (
-                    <i className="fa-solid fa-spinner fa-spin"></i>
-                  ) : (
-                    t("subscribe")
-                  )}
-                </button>
-              </form>
+          {appearance?.subscribe === "on" && (
+            <div className="col-12 p-2 mb-4">
+              <div className="news_letter">
+                <p>
+                  {t("subscribeIn")} <span>{t("newsletter")}</span>
+                </p>
+                <h3>{t("reciveUpdates")}</h3>
+                <form onSubmit={handleSubscribe}>
+                  <input
+                    type="email"
+                    placeholder={t("enterEmail")}
+                    required
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                  />
+                  <button
+                    style={{
+                      opacity: loading ? 0.7 : 1,
+                      pointerEvents: loading ? "none" : "auto",
+                    }}
+                  >
+                    {loading ? (
+                      <i className="fa-solid fa-spinner fa-spin"></i>
+                    ) : (
+                      t("subscribe")
+                    )}
+                  </button>
+                </form>
+              </div>
             </div>
-          </div>
+          )}
 
           <div className="col-lg-4 col-12 p-2">
             <Link to="/" className="logo">

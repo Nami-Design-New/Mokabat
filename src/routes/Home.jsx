@@ -5,17 +5,19 @@ import LinkedInFeed from "../components/home/LinkedInFeed";
 import Projects from "../components/home/Projects";
 import Services from "../components/home/Services";
 import Testimonials from "../components/home/Testimonials";
+import useGetApperance from "../hooks/useGetApperance";
 
 export default function Home() {
+  const { data: appearance } = useGetApperance();
   return (
     <>
-      <HeroSection />
-      <AboutSection />
-      <Services />
-      <Projects />
-      <Testimonials />
-      <Actions />
-      <LinkedInFeed />
+      {appearance?.banners === "on" && <HeroSection />}
+      {appearance?.about_mokabat === "on" && <AboutSection />}
+      {appearance?.services === "on" && <Services />}
+      {appearance?.projects === "on" && <Projects />}
+      {appearance?.feedbacks === "on" && <Testimonials />}
+      {appearance?.action_home === "on" && <Actions />}
+      {appearance?.linkedin_feed === "on" && <LinkedInFeed />}
     </>
   );
 }

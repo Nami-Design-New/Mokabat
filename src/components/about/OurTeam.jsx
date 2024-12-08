@@ -4,6 +4,7 @@ import { useSelector } from "react-redux";
 import "swiper/swiper-bundle.css";
 import useGetTeam from "../../hooks/about/useGetTeam";
 import { useTranslation } from "react-i18next";
+import { Link } from "react-router-dom";
 
 export default function OurTeam() {
   const { t } = useTranslation();
@@ -52,24 +53,32 @@ export default function OurTeam() {
                 <p>{employee?.job_title}</p>
                 <ul className="social-media">
                   <li>
-                    <a href={employee?.facebook}>
-                      <i className="fa-brands fa-facebook-f"></i>
-                    </a>
+                    {employee?.facebook && employee?.facebook !== "#" && (
+                      <Link to={employee?.facebook} target="_blank">
+                        <i className="fab fa-facebook-f"></i>
+                      </Link>
+                    )}
                   </li>
                   <li>
-                    <a href={employee?.instagram}>
-                      <i className="fa-brands fa-instagram"></i>
-                    </a>
+                    {employee?.instagram && employee?.instagram !== "#" && (
+                      <Link to={employee?.instagram} target="_blank">
+                        <i className="fa-brands fa-instagram"></i>
+                      </Link>
+                    )}
                   </li>
                   <li>
-                    <a href={employee?.twitter}>
-                      <i className="fa-brands fa-twitter"></i>
-                    </a>
+                    {employee?.twitter && employee?.twitter !== "#" && (
+                      <Link to={employee?.twitter} target="_blank">
+                        <i className="fa-brands fa-twitter"></i>
+                      </Link>
+                    )}
                   </li>
                   <li>
-                    <a href={employee?.linkedin}>
-                      <i className="fa-brands fa-linkedin-in"></i>
-                    </a>
+                    {employee?.linkedin && employee?.linkedin !== "#" && (
+                      <Link to={employee?.linkedin} target="_blank">
+                        <i className="fa-brands fa-linkedin-in"></i>
+                      </Link>
+                    )}
                   </li>
                 </ul>
               </div>

@@ -1,15 +1,16 @@
-import { useTranslation } from "react-i18next";
 import useGetProjects from "../hooks/projects/useGetProjects";
+import useGetSettings from "../hooks/useGetSettings";
 
 export default function Projects() {
-  const { t } = useTranslation();
+  const { data: settings } = useGetSettings();
   const { data: projects } = useGetProjects();
 
   return (
     <section className="projects_page">
       <div className="container">
         <h1 data-aos="fade-up">
-          {t("mokabatExperience")} <span>{t("drivingInnovation")}</span>
+          {settings?.first_project_text}{" "}
+          <span>{settings?.second_project_text}</span>
         </h1>
         <div className="projects">
           {projects?.map((project, index) => {

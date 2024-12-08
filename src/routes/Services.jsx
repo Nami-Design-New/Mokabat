@@ -57,7 +57,6 @@ export default function Services() {
           <Swiper
             speed={1000}
             slidesPerView="auto"
-            // spaceBetween={16}
             className="services_swiper"
             onSwiper={handleSwiperInit}
             watchSlidesProgress={true}
