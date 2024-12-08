@@ -100,10 +100,10 @@ export default function Join() {
                 <h6>{job?.title}</h6>
                 <p>{job?.description}</p>
                 <div className="bottom">
-                  <span>
+                  {/*<span>
                     <i className="fa-regular fa-user"></i> {job?.app_count}{" "}
                     {t("applicants")}
-                  </span>
+                  </span>*/}
                   <button
                     onClick={() => {
                       setShowModal(true);
