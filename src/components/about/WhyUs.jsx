@@ -11,8 +11,11 @@ export default function WhyUs() {
   const handleTabClick = (index) => {
     setLastActiveIndex(activeIndex);
     setActiveIndex(index);
-    const contentCards = sectionRef.current.querySelectorAll('.content-card');
-    contentCards[index]?.scrollIntoView({ behavior: 'smooth', block: 'nearest' });
+    const contentCards = sectionRef.current.querySelectorAll(".content-card");
+    contentCards[index]?.scrollIntoView({
+      behavior: "smooth",
+      block: "nearest",
+    });
   };
 
   const handleContentClick = (index) => {
@@ -25,27 +28,29 @@ export default function WhyUs() {
   };
 
   useEffect(() => {
-    const observer = new IntersectionObserver((entries) => {
-      entries.forEach(entry => {
-        if (entry.isIntersecting) {
-          const index = parseInt(entry.target.dataset.index);
-          setLastActiveIndex(activeIndex);
-          setActiveIndex(index);
-        }
-      });
-    }, {
-      threshold: 0.5,
-      rootMargin: '-20% 0px -20% 0px'
-    });
-
-    const contentCards = sectionRef.current.querySelectorAll('.content-card');
-    contentCards.forEach(card => observer.observe(card));
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            const index = parseInt(entry.target.dataset.index);
+            setLastActiveIndex(activeIndex);
+            setActiveIndex(index);
+          }
+        });
+      },
+      {
+        threshold: 0.5,
+        rootMargin: "-20% 0px -20% 0px",
+      }
+    );
+    const contentCards = sectionRef.current.querySelectorAll(".content-card");
+    contentCards.forEach((card) => observer.observe(card));
 
     return () => observer.disconnect();
-  }, []);
+  }, [activeIndex]);
 
   return (
-    <section className="whyus_section" ref={sectionRef} >
+    <section className="whyus_section" ref={sectionRef}>
       <div className="container">
         <div className="row tabs-row">
           <div className="tabs-wrapper col-3">
@@ -70,11 +75,15 @@ export default function WhyUs() {
                   activeIndex === index ? "active" : ""
                 }`}
                 style={{
-                  opacity: activeIndex === index ? 1 : 
-                          index === lastActiveIndex ? 0.8 : 0.5,
+                  opacity:
+                    activeIndex === index
+                      ? 1
+                      : index === lastActiveIndex
+                      ? 0.8
+                      : 0.5,
                   pointerEvents: "auto",
                   cursor: "pointer",
-                  transition: "opacity 0.3s ease"
+                  transition: "opacity 0.3s ease",
                 }}
                 onClick={() => handleContentClick(index)}
               >
@@ -82,7 +91,7 @@ export default function WhyUs() {
                 <p
                   className="des"
                   dangerouslySetInnerHTML={renderHTML(slide?.description)}
-                ></p>
+                />
               </div>
             ))}
           </div>

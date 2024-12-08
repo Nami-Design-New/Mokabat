@@ -5,7 +5,7 @@ import axiosInstance from "../../utils/axiosInstance";
 export default function useGetAboutSlider() {
   const { lang } = useSelector((state) => state.language);
   const { data, isLoading, error, refetch } = useQuery({
-    queryKey: ["about-slider", lang],
+    queryKey: ["about-us-slider", lang],
 
     queryFn: async () => {
       const res = await axiosInstance.get("/about-us-slider");
