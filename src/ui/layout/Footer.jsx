@@ -23,6 +23,8 @@ export default function Footer() {
       if (res.data?.code === 200) {
         toast.success(t("subscried"));
         setEmail("");
+      } else {
+        toast.error(res?.data?.message);
       }
     } catch (error) {
       console.log(error);

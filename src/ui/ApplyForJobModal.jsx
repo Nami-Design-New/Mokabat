@@ -98,7 +98,7 @@ export default function ApplyForJobModal({ showModal, setShowModal, id }) {
         hideModal();
         queryClinet.invalidateQueries({ queryKey: ["jobs"] });
       } else {
-        toast.error(t("somethingWentWrong"));
+        toast.error(res?.data?.message);
       }
     } catch (error) {
       console.log(error);

@@ -39,9 +39,10 @@ export default function Contact() {
           subject: "",
           message: "",
         });
+      } else {
+        toast.error(res?.data?.message);
       }
     } catch (error) {
-      console.log(error);
       toast.error(error?.response?.data?.message);
     } finally {
       setLoading(false);
@@ -60,10 +61,16 @@ export default function Contact() {
                 <div className="blocks">
                   <div className="block" data-aos="fade-up">
                     <h6>{t("callCenter")}</h6>
-                    <Link to={`tel:${settings?.phone}`}>{settings?.phone}</Link>
-                    <Link to={`tel:${settings?.other_phone}`}>
-                      {settings?.other_phone}
-                    </Link>
+                    {settings?.phone && (
+                      <Link to={`tel:${settings?.phone}`}>
+                        {settings?.phone}
+                      </Link>
+                    )}
+                    {settings?.other_phone && (
+                      <Link to={`tel:${settings?.other_phone}`}>
+                        {settings?.other_phone}
+                      </Link>
+                    )}
                   </div>
                   <div className="block" data-aos="fade-up">
                     <h6>{t("ourLocation")}</h6>
