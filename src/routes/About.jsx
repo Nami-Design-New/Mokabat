@@ -18,6 +18,7 @@ export default function About() {
                 <a
                   data-aos="fade-up"
                   href={about?.file}
+                  target="_blank"
                   download={about?.title}
                   className="download_assets"
                 >
