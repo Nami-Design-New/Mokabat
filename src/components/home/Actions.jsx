@@ -20,7 +20,7 @@ export default function Actions() {
             <div className="col-lg-5 col-12 p-3" key={action.id}>
               <div className="program_card" data-aos="fade-up">
                 <img src={action?.image} alt="" />
-                <Link to={`/programs/${action?.id}`} className="program_link">
+                <Link to={`/actions/${action?.id}`} className="program_link">
                   <h6>{action?.title}</h6>
                   <div className="hiddenText">
                     <p>{action?.description}</p>
