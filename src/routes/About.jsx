@@ -18,7 +18,7 @@ export default function About() {
                 <a
                   data-aos="fade-up"
                   href={about?.file}
-                  download
+                  download={about?.title}
                   className="download_assets"
                 >
                   {t("downloadBourchoure")}{" "}

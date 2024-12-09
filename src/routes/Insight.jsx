@@ -13,8 +13,8 @@ export default function Insight() {
     if (navigator.share) {
       navigator
         .share({
-          title: "",
-          text: "",
+          title: insight?.title,
+          text: insight?.subtitle,
           url: window.location.href,
         })
         .catch((error) => ("Error sharing:", error));
@@ -31,7 +31,11 @@ export default function Insight() {
           <div className="content">
             <h3 data-aos="fade-up">{insight?.title}</h3>
             <div className="btns" data-aos="fade-up">
-              <a href={insight?.file}  target="_blank" download={insight?.title}>
+              <a
+                href={insight?.file}
+                target="_blank"
+                download={insight?.title + ".pdf"}
+              >
                 {t("downloadFiles")}{" "}
                 <i className="fa-regular fa-cloud-arrow-down"></i>
               </a>

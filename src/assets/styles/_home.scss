@@ -111,12 +111,6 @@
       span {
         color: $second;
       }
-      &:first-of-type {
-        @media screen and (max-width: 768px) {
-          display: flex;
-          flex-direction: column;
-        }
-      }
     }
     p {
       padding-inline-end: 12px;

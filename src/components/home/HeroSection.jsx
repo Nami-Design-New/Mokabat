@@ -1,13 +1,11 @@
 import { useEffect, useState } from "react";
 import { useTranslation } from "react-i18next";
 import { Link } from "react-router-dom";
-import { useScramble } from "use-scramble";
 import useGetHeroSection from "../../hooks/home/useGetHeroSection";
 
 export default function HeroSection() {
-  const { t, i18n } = useTranslation();
-  const { data: heroData } = useGetHeroSection();
-  const isArabic = i18n.language === "ar";
+  const { t } = useTranslation();
+  const { data: heroData, isLoading } = useGetHeroSection();
 
   const [phrases, setPhrases] = useState([]);
   const [textIndex, setTextIndex] = useState(0);
@@ -31,16 +29,6 @@ export default function HeroSection() {
     return () => clearInterval(interval);
   }, [phrases.length]);
 
-  const { ref } = useScramble({
-    text: isArabic ? "" : phrases[textIndex],
-    speed: 0.5,
-    tick: 2,
-    step: 1,
-    scramble: 8,
-    seed: 0,
-    ease: "easeInOutQuad",
-  });
-
   return (
     <section className="home_section">
       <div className="pattern">
@@ -52,15 +40,11 @@ export default function HeroSection() {
             <div className="content">
               <h1>
                 {heroData?.title}{" "}
-                {isArabic ? (
-                  <span
-                    className={`fade-text ${fadeIn ? "fade-in" : "fade-out"}`}
-                  >
-                    {phrases[textIndex]}
-                  </span>
-                ) : (
-                  <span ref={ref}></span>
-                )}
+                <span
+                  className={`fade-text ${fadeIn ? "fade-in" : "fade-out"}`}
+                >
+                  {phrases[textIndex]}
+                </span>
               </h1>
               <h1>{heroData?.sub_title}</h1>
               <p>{heroData?.description}</p>
@@ -72,23 +56,25 @@ export default function HeroSection() {
           </div>
 
           <div className="col-lg-6 col-12 p-3">
-            <div className="imgs_container">
-              <img
-                className="balls"
-                src={heroData?.image_two}
-                onLoad={(event) => (event.target.src = "/images/ball.webp")}
-              />
-              <img
-                className="window"
-                src={heroData?.image_three}
-                onLoad={(event) => (event.target.src = "/images/squ.webp")}
-              />
-              <img
-                className="astro"
-                src={heroData?.image_one}
-                onLoad={(event) => (event.target.src = "/images/astro.webp")}
-              />
-            </div>
+            {isLoading ? null : (
+              <div className="imgs_container">
+                <img
+                  className="balls"
+                  src={heroData?.image_two}
+                  onLoad={(event) => (event.target.src = "/images/ball.webp")}
+                />
+                <img
+                  className="window"
+                  src={heroData?.image_three}
+                  onLoad={(event) => (event.target.src = "/images/squ.webp")}
+                />
+                <img
+                  className="astro"
+                  src={heroData?.image_one}
+                  onLoad={(event) => (event.target.src = "/images/astro.webp")}
+                />
+              </div>
+            )}
           </div>
         </div>
       </div>
