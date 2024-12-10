@@ -108,7 +108,9 @@
         font-size: 14px;
       }
       .bottom {
-        @include space-between();
+        display: flex;
+        align-items: center;
+        justify-content: end;
       }
 
       span,

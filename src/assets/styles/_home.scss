@@ -28,6 +28,7 @@
 .home_section {
   position: relative;
   padding-top: 100px;
+  min-height: 70vh;
 
   @media screen and (max-width: 576px) {
     overflow-x: hidden !important;

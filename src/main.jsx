@@ -11,6 +11,7 @@ const queryClient = new QueryClient();
 
 import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
 import "../node_modules/react-toastify/dist/ReactToastify.css";
+import "aos/dist/aos.css";
 import "./assets/styles/all.min.css";
 import "./assets/styles/main.css";
 

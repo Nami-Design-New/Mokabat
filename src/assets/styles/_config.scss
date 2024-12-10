@@ -1,15 +1,9 @@
-@import url('https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap');
-
+@import url("https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap");
 
 @font-face {
   font-family: "outfit";
   src: url("../webfonts/outfit.ttf");
 }
-
-// @font-face {
-//   font-family: "baloo";
-//   src: url("../webfonts/baloo.ttf");
-// }
 
 @mixin centerFlex {
   display: flex;
@@ -132,7 +126,7 @@ $shadow: 0px 2px 8px #0000001a;
 .Toastify__toast-body > div:last-child {
   line-height: 24px;
   flex: unset;
-  font-family: "baloo", sans-serif;
+  font-family: "El Messiri", sans-serif;
 }
 
 @media only screen and (max-width: 480px) {

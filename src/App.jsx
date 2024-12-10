@@ -1,18 +1,21 @@
 import { useEffect, useState } from "react";
 import { useSelector } from "react-redux";
 import { Route, Routes, useLocation } from "react-router-dom";
+import { useCookies } from "react-cookie";
 import Header from "./ui/layout/Header";
-import i18n from "./utils/i18n";
-import ParticlesComponent from "./ui/ParticlesComponent";
-import router from "./router";
 import Footer from "./ui/layout/Footer";
 import IntroLoader from "./ui/loaders/IntroLoader";
+import ParticlesComponent from "./ui/ParticlesComponent";
+
+import axiosInstance from "./utils/axiosInstance";
+import i18n from "./utils/i18n";
 import AOS from "aos";
-import "aos/dist/aos.css";
+import router from "./router";
 
 function App() {
   const language = useSelector((state) => state.language.lang);
   const location = useLocation();
+  const [cookie, setCookie] = useCookies(["visited"]);
   const [showIntro, setShowIntro] = useState(true);
 
   useEffect(() => {
@@ -49,6 +52,31 @@ function App() {
     const timer = setTimeout(() => setShowIntro(false), 3000);
     return () => clearTimeout(timer);
   }, []);
+
+  useEffect(() => {
+    const { visited } = cookie;
+
+    console.log();
+
+    const handleVisit = async () => {
+      try {
+        const res = await axiosInstance.post("/visits");
+        if (res?.status === 200) {
+          setCookie("visited", true, {
+            path: "/",
+            secure: true,
+            sameSite: "Strict",
+          });
+        }
+      } catch (error) {
+        console.log(error?.response?.data?.message);
+      }
+    };
+
+    if (!visited) {
+      handleVisit();
+    }
+  }, [cookie, setCookie]);
 
   return (
     <>

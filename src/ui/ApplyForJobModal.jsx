@@ -87,6 +87,13 @@ export default function ApplyForJobModal({ showModal, setShowModal, id }) {
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
+
+    if (!formData?.file) {
+      toast.error(t("uploadResume"));
+      setLoading(false);
+      return;
+    }
+
     try {
       const res = await axiosInstance.post("/applications", formData, {
         headers: {
@@ -360,7 +367,6 @@ export default function ApplyForJobModal({ showModal, setShowModal, id }) {
             <div className="col-12 p-2">
               <FileUploadField
                 label={t("uploadYourCv")}
-                required
                 id="file"
                 name="file"
                 Accept="application/pdf, application/msword, application/vnd.openxmlformats-officedocument.wordprocessingml.document"
