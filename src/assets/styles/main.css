@@ -3212,24 +3212,70 @@ body .services_page .sercvice_content ul {
   flex-direction: column;
   gap: 8px;
 }
+body .slider_container {
+  position: relative;
+}
+body .slider_container .controls {
+  display: flex;
+  gap: 12px;
+  padding: 8px;
+  width: 100%;
+  justify-content: center;
+  align-items: center;
+}
+body .slider_container .prev,
+body .slider_container .next {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  background: #fff;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border: none;
+  background: none;
+  outline: none;
+  transition: 0.3s ease-in-out;
+  background-color: white;
+}
+body .slider_container .prev.swiper-button-disabled,
+body .slider_container .next.swiper-button-disabled {
+  opacity: 0.4;
+  pointer-events: none;
+}
+body .slider_container .prev:hover,
+body .slider_container .next:hover {
+  background: #7e98fd;
+  color: #fff;
+}
+body .slider_container .prev i,
+body .slider_container .next i {
+  font-size: 14px;
+}
 body .thumbs {
   width: 100%;
-  position: sticky;
-  bottom: 0;
   align-items: center;
+  justify-content: center;
   display: flex;
-  gap: 24px;
+  gap: 8px;
+  z-index: 999;
+  flex-wrap: wrap;
+  background-color: #fff;
+  padding: 8px;
+  border-radius: 8px;
+  box-shadow: 0px 2px 8px rgba(0, 0, 0, 0.1019607843);
 }
-body .thumbs .swiper_container {
-  z-index: 99;
-  padding: 12px;
-  border-radius: 12px;
-  background: #fafafa;
-}
-body .thumbs .swiper_container button {
-  width: 100%;
+body .thumbs button {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #0f2133;
+  font-size: 16px;
+  border: 1px solid #0f2133;
   height: 50px;
   gap: 6px;
+  white-space: nowrap;
   transition: 0.3s ease-in-out;
   border-radius: 12px;
   padding: 0 16px;
@@ -3243,13 +3289,10 @@ body .thumbs .swiper_container button {
   background: none;
   outline: none;
 }
-body .thumbs .swiper-wrapper {
-  width: -moz-fit-content;
-  width: fit-content;
-}
-body .thumbs .swiper-slide-thumb-active button {
+body .thumbs button.active {
   background: #7e98fd;
   color: #fff;
+  border-color: #7e98fd;
 }
 body.ar {
   direction: rtl;

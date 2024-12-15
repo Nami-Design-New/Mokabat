@@ -129,7 +129,7 @@ export default function Header() {
               <NavLink to="/projects">{t("projects")}</NavLink>
             </li>
           )}
-          {appearances?.actions_page !== "off" && (
+          {appearances?.action_page !== "off" && (
             <li className="nav_link">
               <Dropdown
                 show={showActionsDropdown}
