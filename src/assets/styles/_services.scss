@@ -41,25 +41,31 @@
 
 .thumbs {
   width: 100%;
-  padding: 12px;
-  background: #fafafa;
-  border-radius: 12px;
   position: sticky;
   bottom: 0;
-  z-index: 99;
-  button {
-    width: 100%;
-    height: 50px;
-    gap: 6px;
-    transition: $transition;
+  align-items: center;
+  display: flex;
+  gap: 24px;
+  .swiper_container {
+    z-index: 99;
+    padding: 12px;
     border-radius: 12px;
-    padding: 0 16px;
-    @include centerFlex();
-    user-select: none;
-    @include clearInput();
+    background: #fafafa;
+    button {
+      width: 100%;
+      height: 50px;
+      gap: 6px;
+      transition: $transition;
+      border-radius: 12px;
+      padding: 0 16px;
+      @include centerFlex();
+      user-select: none;
+      @include clearInput();
+    }
   }
+
   .swiper-wrapper {
-    width: fit-content; 
+    width: fit-content;
   }
   .swiper-slide-thumb-active {
     button {

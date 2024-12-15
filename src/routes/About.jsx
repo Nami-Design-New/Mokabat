@@ -2,10 +2,12 @@ import { useTranslation } from "react-i18next";
 import OurTeam from "../components/about/OurTeam";
 import useGetAbout from "../hooks/about/useGetAbout";
 import WhyUs from "./../components/about/WhyUs";
+import useGetApperance from "../hooks/useGetApperance";
 
 export default function About() {
   const { t } = useTranslation();
   const { data: about } = useGetAbout();
+  const { data: appearance } = useGetApperance();
   return (
     <>
       <section className="about_page">
@@ -31,7 +33,7 @@ export default function About() {
         </div>
       </section>
       <WhyUs />
-      <OurTeam />
+      {appearance?.team !== "off" && <OurTeam />}
     </>
   );
 }

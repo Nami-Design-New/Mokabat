@@ -24,12 +24,15 @@ export default function Services() {
     <section className="services_page">
       <div className="container">
         <Swiper
-          // loop={true}
           speed={1000}
           slidesPerView={1}
           spaceBetween={16}
           thumbs={{ swiper: thumbsSwiper }}
           modules={[FreeMode, Navigation, Thumbs]}
+          navigation={{
+            nextEl: ".next",
+            prevEl: ".prev",
+          }}
           dir={lang === "ar" ? "rtl" : "ltr"}
           key={lang}
           className="services_swiper"
@@ -54,29 +57,41 @@ export default function Services() {
         </Swiper>
 
         <div className="thumbs">
-          <Swiper
-            speed={1000}
-            slidesPerView="auto"
-            className="services_swiper"
-            onSwiper={handleSwiperInit}
-            watchSlidesProgress={true}
-            watchSlidesVisibility={true}
-            freeMode={{
-              enabled: true,
-              sticky: false,
-              momentumRatio: 0.25
-            }}
-            modules={[FreeMode, Navigation, Thumbs]}
-            dir={lang === "ar" ? "rtl" : "ltr"}
-            // touchRatio={1.5}
-            // touchAngle={45}
-          >
-            {services?.map((service) => (
-              <SwiperSlide key={service?.id}>
-                <button>{service?.title}</button>
-              </SwiperSlide>
-            ))}
-          </Swiper>
+          <button className="prev">
+            <i className="fa-solid fa-arrow-right"></i>
+          </button>
+
+          <div className="swiper_container">
+            <Swiper
+              speed={1000}
+              slidesPerView="auto"
+              className="services_swiper"
+              onSwiper={handleSwiperInit}
+              watchSlidesProgress={true}
+              watchSlidesVisibility={true}
+              navigation={{
+                nextEl: ".next",
+                prevEl: ".prev",
+              }}
+              freeMode={{
+                enabled: true,
+                sticky: false,
+                momentumRatio: 0.25,
+              }}
+              modules={[FreeMode, Navigation, Thumbs]}
+              dir={lang === "ar" ? "rtl" : "ltr"}
+            >
+              {services?.map((service) => (
+                <SwiperSlide key={service?.id}>
+                  <button>{service?.title}</button>
+                </SwiperSlide>
+              ))}
+            </Swiper>
+          </div>
+          
+          <button className="next">
+            <i className="fa-solid fa-arrow-left"></i>
+          </button>
         </div>
       </div>
     </section>

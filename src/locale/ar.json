@@ -102,5 +102,10 @@
     "thirtyDays": "30 يوم",
     "somethingWentWrong": "حدث خطأ ما",
     "appliedSucessfully": "تم التقديم بنجاح",
-    "select": "إختر"
+    "select": "إختر",
+    "error": {
+        "pageNotFound": "هذا الرابط غير موجود لدينا او ربما تم حذفه. كيف وصلت الي هنا ؟",
+        "noAccountWithThisId": "لا يوجد مستخدم لدينا لديه هذا الـ ID. كيف وصلت الي هنا ؟",
+        "goHome": "الرئيسية"
+    }
 }

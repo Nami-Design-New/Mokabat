@@ -113,39 +113,46 @@ export default function Footer() {
             <h2 className="footer_title">{t("importantLinks")}</h2>
             <ul className="footer_links">
               <li>
-                <Link className="footer_link" to="/about">
-                  {t("about")}
-                </Link>
+                {appearance?.about_us_page !== "off" && (
+                  <Link className="footer_link" to="/about">
+                    {t("about")}
+                  </Link>
+                )}
               </li>
               <li>
-                <Link className="footer_link" to="/services">
-                  {t("services")}
-                </Link>
+                {appearance?.service_page !== "off" && (
+                  <Link className="footer_link" to="/services">
+                    {t("services")}
+                  </Link>
+                )}
               </li>
               <li>
-                <Link className="footer_link" to="/programs">
-                  {t("actions")}
-                </Link>
+                {appearance?.projects_page !== "off" && (
+                  <Link className="footer_link" to="/projects">
+                    {t("projects")}
+                  </Link>
+                )}
               </li>
               <li>
-                <Link className="footer_link" to="/projects">
-                  {t("projects")}
-                </Link>
+                {appearance?.media_page !== "off" && (
+                  <Link className="footer_link" to="/media">
+                    {t("media")}
+                  </Link>
+                )}
               </li>
               <li>
-                <Link className="footer_link" to="/media">
-                  {t("media")}
-                </Link>
+                {appearance?.careers_page !== "off" && (
+                  <Link className="footer_link" to="/join-mokabat">
+                    {t("careers")}
+                  </Link>
+                )}
               </li>
               <li>
-                <Link className="footer_link" to="/join-mokabat">
-                  {t("careers")}
-                </Link>
-              </li>
-              <li>
-                <Link className="footer_link" to="/contact">
-                  {t("contact")}
-                </Link>
+                {appearance?.contact_us_page !== "off" && (
+                  <Link className="footer_link" to="/contact">
+                    {t("contact")}
+                  </Link>
+                )}
               </li>
             </ul>
           </div>

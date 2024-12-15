@@ -11,6 +11,7 @@ import axiosInstance from "./utils/axiosInstance";
 import i18n from "./utils/i18n";
 import AOS from "aos";
 import router from "./router";
+import ApperanceCheck from "./routes/ApperanceCheck";
 
 function App() {
   const language = useSelector((state) => state.language.lang);
@@ -94,7 +95,15 @@ function App() {
       <main>
         <Routes>
           {router.map((route) => (
-            <Route key={route.path} path={route.path} element={route.element} />
+            <Route
+              key={route.path}
+              path={route.path}
+              element={
+                <ApperanceCheck checkKey={route.checkKey}>
+                  {route.element}
+                </ApperanceCheck>
+              }
+            />
           ))}
         </Routes>
       </main>

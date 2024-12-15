@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap");
 @font-face {
   font-family: "outfit";
   src: url("../webfonts/outfit.ttf");
@@ -78,7 +78,7 @@ input[type=number]::-webkit-inner-spin-button {
 .Toastify__toast-body > div:last-child {
   line-height: 24px;
   flex: unset;
-  font-family: "baloo", sans-serif;
+  font-family: "Almarai", sans-serif;
 }
 
 @media only screen and (max-width: 480px) {
@@ -252,6 +252,67 @@ input[type=number]::-webkit-inner-spin-button {
 
 .swiper-slide {
   height: auto !important;
+}
+
+.error-section {
+  padding: 60px 16px;
+  min-height: 100dvh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 16px;
+  flex-direction: column;
+  align-items: center;
+}
+.error-section img {
+  height: 300px;
+  margin-bottom: 24px;
+}
+@media screen and (max-width: 576px) {
+  .error-section img {
+    height: 230px;
+  }
+}
+.error-section h2 {
+  margin: 0;
+  text-align: center;
+  font-size: 24px;
+  color: #0f2133;
+  line-height: 1.7;
+  max-width: 700px;
+  margin: 0 auto;
+}
+@media screen and (max-width: 576px) {
+  .error-section h2 {
+    font-size: 20px;
+  }
+}
+.error-section a {
+  color: #7e98fd;
+  border: 1px solid #7e98fd;
+  position: relative;
+  transition: 0.3s ease-in-out;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px 24px;
+  transition: 0.3s ease-in-out;
+  border-radius: 12px;
+  gap: 8px;
+  background: none;
+  display: flex;
+  align-items: center;
+  font-size: 16px;
+  position: relative;
+  transition: 0.3s ease-in-out;
+}
+.error-section a i {
+  font-size: 16px;
+}
+.error-section a:hover {
+  color: #fff;
+  border-color: #7e98fd;
+  background-color: #7e98fd;
 }
 
 body {
@@ -1689,6 +1750,7 @@ body header nav .menu_btn:hover::after {
 body .home_section {
   position: relative;
   padding-top: 100px;
+  min-height: 70vh;
 }
 @media screen and (max-width: 576px) {
   body .home_section {
@@ -1773,12 +1835,6 @@ body .home_section .content h1 {
 body .home_section .content h1 span {
   color: #7e98fd;
 }
-@media screen and (max-width: 768px) {
-  body .home_section .content h1:first-of-type {
-    display: flex;
-    flex-direction: column;
-  }
-}
 body .home_section .content p {
   padding-inline-end: 12px;
 }
@@ -1844,7 +1900,6 @@ body .about_section .about_card .content h2 {
 }
 body .about_section .about_card p {
   margin-top: 16px;
-  text-wrap: balance;
   color: #0f2133;
 }
 body .services_section {
@@ -2609,7 +2664,7 @@ body .join_page .vacancies .vacancy_card p {
 body .join_page .vacancies .vacancy_card .bottom {
   display: flex;
   align-items: center;
-  justify-content: space-between;
+  justify-content: end;
 }
 body .join_page .vacancies .vacancy_card span,
 body .join_page .vacancies .vacancy_card button {
@@ -3159,14 +3214,19 @@ body .services_page .sercvice_content ul {
 }
 body .thumbs {
   width: 100%;
-  padding: 12px;
-  background: #fafafa;
-  border-radius: 12px;
   position: sticky;
   bottom: 0;
-  z-index: 99;
+  align-items: center;
+  display: flex;
+  gap: 24px;
 }
-body .thumbs button {
+body .thumbs .swiper_container {
+  z-index: 99;
+  padding: 12px;
+  border-radius: 12px;
+  background: #fafafa;
+}
+body .thumbs .swiper_container button {
   width: 100%;
   height: 50px;
   gap: 6px;
@@ -3193,7 +3253,7 @@ body .thumbs .swiper-slide-thumb-active button {
 }
 body.ar {
   direction: rtl;
-  font-family: "El Messiri", sans-serif !important;
+  font-family: "Almarai", sans-serif;
 }
 body.ar .home_section .content .customBtn i {
   transform: scale(-1);

@@ -102,5 +102,10 @@
     "thirtyDays": "30 Days",
     "somethingWentWrong": "Something Went Wrong",
     "appliedSucessfully": "Application sent successfully",
-    "select": "Select"
+    "select": "Select",
+    "error": {
+        "pageNotFound": "This link doesn't exist or may have been deleted. How did you get here?",
+        "noAccountWithThisId": "No user exists with this ID. How did you get here?",
+        "goHome": "Home"
+    }
 }

@@ -1,4 +1,4 @@
-@import url("https://fonts.googleapis.com/css2?family=El+Messiri:wght@400..700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&display=swap");
 
 @font-face {
   font-family: "outfit";
@@ -126,7 +126,7 @@ $shadow: 0px 2px 8px #0000001a;
 .Toastify__toast-body > div:last-child {
   line-height: 24px;
   flex: unset;
-  font-family: "El Messiri", sans-serif;
+  font-family: "Almarai", sans-serif;
 }
 
 @media only screen and (max-width: 480px) {
@@ -291,4 +291,57 @@ $shadow: 0px 2px 8px #0000001a;
 
 .swiper-slide {
   height: auto !important;
+}
+
+.error-section {
+  padding: 60px 16px;
+  min-height: 100dvh;
+  @include centerFlex();
+  gap: 16px;
+  flex-direction: column;
+  align-items: center;
+  img {
+    height: 300px;
+    margin-bottom: 24px;
+    @media screen and (max-width: 576px) {
+      height: 230px;
+    }
+  }
+  h2 {
+    margin: 0;
+    text-align: center;
+    font-size: 24px;
+    color: $main;
+    line-height: 1.7;
+    max-width: 700px;
+    margin: 0 auto;
+    @media screen and (max-width: 576px) {
+      font-size: 20px;
+    }
+  }
+  a {
+    color: $second;
+    border: 1px solid $second;
+    position: relative;
+    transition: $transition;
+    @include centerFlex();
+    padding: 8px 24px;
+    transition: $transition;
+    border-radius: 12px;
+    gap: 8px;
+    background: none;
+    display: flex;
+    align-items: center;
+    font-size: 16px;
+    position: relative;
+    transition: $transition;
+    i {
+      font-size: 16px;
+    }
+    &:hover {
+      color: $white;
+      border-color: $second;
+      background-color: $second;
+    }
+  }
 }
