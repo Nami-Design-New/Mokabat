@@ -161,13 +161,25 @@
       height: 0;
     }
 
+    .responsiveImg {
+      display: none;
+      max-height: 300px;
+      margin-bottom: 24px;
+      object-fit: cover;
+      border-radius: 12px;
+      @media screen and (max-width: 992px) {
+        display: block;
+      }
+    }
     .content-card {
       will-change: transform, opacity;
       transform-origin: center center;
       backface-visibility: hidden;
       perspective: 1000px;
       cursor: pointer;
-      transition: opacity 0.6s ease, transform 0.6s ease;
+      transition:
+        opacity 0.6s ease,
+        transform 0.6s ease;
       &.active {
         z-index: 2;
       }

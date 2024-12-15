@@ -93,6 +93,7 @@ function WhyUsContent() {
                 }`}
                 style={getTransitionStyles(index)}
               >
+                <img className="responsiveImg" src={slide?.image} alt={slide?.title} />
                 <h2>{slide?.title}</h2>
                 <p
                   className="des"
